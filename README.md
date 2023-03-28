@@ -9,8 +9,8 @@ In this online ressource, all suggested topics are briefly introduced and then k
 ## Data regulations & concepts
 ### Privacy & Ethics
 Health information is sensitive and hence needs to be highly protected and should not be generously shared. 
-* Anonymization 18
-* Pseudonymization 19
+* Anonymization - Meurers et al. 2021 <https://doi.org/10.1093/gigascience/giab068>
+* Pseudonymization - Zuo et al. 2021 <https://doi.org/10.2196/29871>
 * Synthetic data as surrogate 20
 * Systemic oversight and ethics 21,22
 * URLs and URLs in angle brackets will automatically get turned into links http://www.example.com or <http://www.example.com>
