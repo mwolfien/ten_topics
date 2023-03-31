@@ -87,5 +87,5 @@ Large volumes of data collected from patient registries, health centers, genomic
 5. Add yourself to the contributors list!
 
 ### Contributors list
-[Markus Wolfien](https://github.com/mwolfien)
+[Markus Wolfien](https://github.com/mwolfien)  
 [Julia Scheel](https://github.com/JuliaScheel)
