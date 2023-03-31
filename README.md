@@ -88,3 +88,4 @@ Large volumes of data collected from patient registries, health centers, genomic
 
 ### Contributors list
 [Markus Wolfien](https://github.com/mwolfien)
+[Julia Scheel](https://github.com/JuliaScheel)
