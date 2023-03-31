@@ -78,15 +78,15 @@ Large volumes of data collected from patient registries, health centers, genomic
 * Data storage and processing setups - [Ismail et al. 2020](https://doi.org/10.2196/17508), [Ozaydin et al. 2020](https://doi.org/10.2196/18579)  
 
 ### Disease Maps
-Disease Maps are a community-driven systems medicine approach to represent and model disease mechanisms. Disease maps serve both as a knowledgebase and analytical tools for advanced Omics data integration and interpretation, as well as hypothesis generation. These maps can further serve as a basis for clinical decision support systems ([Mazein, A., Ostaszewski, M., Kuperstein, I. et al. 2018](https://doi.org/10.1038/s41540-018-0059-y)). 
+Disease Maps are a community-driven systems medicine approach to represent and model disease mechanisms. Disease maps serve both as a knowledgebase and analytical tools for advanced Omics data integration and interpretation, as well as hypothesis generation. These maps can further serve as a basis for clinical decision support systems ([Mazein et al. 2018](https://doi.org/10.1038/s41540-018-0059-y)). 
 
-Example Disease Maps
+Example Disease Maps:
 * COVID-19 Disease Map - [Ostaszewski et al. 2021](https://www.embopress.org/doi/full/10.15252/msb.202110387)
 * Atlas of Inflammation Resolution (AIR) - [Serhan and Gupta et al. 2020](https://doi.org/10.1016/j.mam.2020.100894)
-* NaviCenta - (Navigate the Placenta) - [Scheel et al, 2021](https://www.sbi.uni-rostock.de/minerva/index.xhtml?id=NaviCenta)
-* CyFi-Map (Cystic Fibrosis) - [Pereira, C., Mazein, A., Farinha, C.M. et al 2021](https://doi.org/10.1038/s41598-021-01618-3)
-* Cellular Atlas of the Rheumatic Joint - [Zerrouk and Aghakhani et al 2022](https://doi.org/10.3389/fsysb.2022.925791)
-* AsthmaMap - [Mazein et al 2021](https://doi.org/10.1016/j.jaci.2020.11.032)
+* NaviCenta - (Navigate the Placenta) - [Scheel et al. 2021](https://www.sbi.uni-rostock.de/minerva/index.xhtml?id=NaviCenta)
+* CyFi-Map (Cystic Fibrosis) - [Pereira et al. 2021](https://doi.org/10.1038/s41598-021-01618-3)
+* Cellular Atlas of the Rheumatic Joint - [Zerrouk and Aghakhani 2022](https://doi.org/10.3389/fsysb.2022.925791)
+* AsthmaMap - [Mazein et al. 2021](https://doi.org/10.1016/j.jaci.2020.11.032)
 
 ## Contribution
 
@@ -94,8 +94,9 @@ Example Disease Maps
 1. "Star" or "Watch" our project =) (optional)
 2. Fork the project
 3. Contribute towards the desired topic, in which your keyword and or reference fits best. Here, it is good to stick to the orinial ten topics as much as possible. If there is no actual topic available, novel ones can be proposed and integrated.
-4. Create a pull request and we will merge your suggestion(s) to the main branch after curation.
-5. Add yourself to the contributors list!
+4. Add yourself to the contributors list!
+5. Create a pull request and we will merge your suggestion(s) to the main branch after curation.
+
 
 ### Contributors list
 [Markus Wolfien](https://github.com/mwolfien)  
