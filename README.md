@@ -75,7 +75,18 @@ Large volumes of data collected from patient registries, health centers, genomic
 ## Additional Topics
 
 ### Computational Infrastructure
-* Data storage and processing setups - [Ismail et al. 2020](https://doi.org/10.2196/17508), [Ozaydin et al. 2020](https://doi.org/10.2196/18579)
+* Data storage and processing setups - [Ismail et al. 2020](https://doi.org/10.2196/17508), [Ozaydin et al. 2020](https://doi.org/10.2196/18579)  
+
+### Disease Maps
+Disease Maps are a community-driven systems medicine approach to represent and model disease mechanisms. Disease maps serve both as a knowledgebase and analytical tools for advanced Omics data integration and interpretation, as well as hypothesis generation. These maps can further serve as a basis for clinical decision support systems [Mazein, A., Ostaszewski, M., Kuperstein, I. et al. 2018](https://doi.org/10.1038/s41540-018-0059-y). 
+
+Example Disease Maps
+* COVID-19 Disease Map
+* Atlas of Inflammation Resolution (AIR)
+* NaviCenta - (Navigate the Placenta)
+* CyFi-Map (Cystic Fibrosis)
+* Cellular Atlas of the Rheumatic Joint
+* Asthma-ap
 
 ## Contribution
 
