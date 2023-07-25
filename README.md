@@ -64,13 +64,16 @@ Data quality depends on the quality of single data elements, data completeness, 
 Clinical Decision Support Systems (CDSS) are computer systems designed to assist the medical staff with decision making tasks about individual patients and based on clinical data ([Sutton et al. 2020](https://doi.org/10.1038/s41746-020-0221-y)).
 * Positive impact of a CDSS - [Shen et al. 2021](https://doi.org/10.1093/JAMIA/OCAA250), [Ronicke et al. 2019](https://doi.org/10.1186/S13023-019-1040-6), [Eltorai et al. 2020](https://doi.org/10.1097/RTI.0000000000000453), [](https://doi.org/), [Groenhof et al. 2019](https://doi.org/10.1007/S12471-019-01308-W)
 * Negative impact of a CDSS - [Olakotan et al. 2020](https://doi.org/10.3233/SHTI200293), [Jacobs et al. 2021](https://doi.org/10.1038/s41398-021-01224-x)
-* Explainable AI (XAI) - [Antoniadi et al. 2021](https://doi.org/10.3390/APP11115088), [Wolfien et al. 2020](https://doi.org/10.1016/J.EBIOM.2020.102862)
+* Explainable AI (XAI) - [Antoniadi et al. 2021](https://doi.org/10.3390/APP11115088), [Wolfien et al. 2020](https://doi.org/10.1016/J.EBIOM.2020.102862), [Kostick-Quenet and Gerke 2022](https://www.nature.com/articles/s41746-022-00737-z)
 * A CDM as basis for an AI - [Reps et al. 2018](https://doi.org/10.1093/JAMIA/OCY032), [Chapter 13 Patient-Level Prediction | The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/PatientLevelPrediction.html)
+* Effect of Large Language Models (LLM) - [Sinhal et al. 2023](https://www.nature.com/articles/s41586-023-06291-2) 
+* Acceptance of AI among healthcare professionals in hospitals - [Lambert et al. 2023](https://www.nature.com/articles/s41746-023-00852-5)
 
 ### Topic 10: Visualizations
-Large volumes of data collected from patient registries, health centers, genomic databases, and public records can potentially improve the efficiency and quality of healthcare via enhancing the interoperability of medical systems, assisting in clinical decision making, and delivering feedback on effective procedures. 121  
-* Dashboards with postive influence 127, like R Shiny 125 or Plotly Dash 126
-* Visualization of multi-dimensional biomedical data, e.g., cBioPortal 129, 130, 131, or i2b2 132,133
+Large volumes of data collected from patient registries, health centers, genomic databases, and public records can potentially improve the efficiency and quality of healthcare via enhancing the interoperability of medical systems, assisting in clinical decision making, and delivering feedback on effective procedures. 
+* User-centred design for AI in health care - [Seneviratne et al. 2022](https://informatics.bmj.com/content/29/1/e100656)
+* Dashboards with postive influence [Clarke et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27332223/), like [R Shiny](https://shiny.posit.co/) or [Plotly Dash](https://zenodo.org/record/3346213)
+* Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [Gao et al. 2016](http://dx.doi.org/10.1126/scisignal.2004088), [Reimer et al. 2021](http://dx.doi.org/10.3233/SHTI210833), [Brlek et al. 2021](http://dx.doi.org/10.3390/cancers13133247), or i2b2 [Murphy et al. 2010](http://dx.doi.org/10.1136/jamia.2009.000893), [Castro et al. 2022](http://dx.doi.org/10.1093/jamia/ocab264)
 
 ## Additional Topics
 
