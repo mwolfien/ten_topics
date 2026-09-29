@@ -1,0 +1,702 @@
+# References of "Ten Topics for Medical Informatics".
+# Each entry: label (shown as link text), year, doi OR url, type, added (YYYY or YYYY-MM).
+# type: article | preprint | book | resource | website
+
+references:
+  meurers2021:
+    label: "Meurers et al. 2021"
+    year: 2021
+    doi: "10.1093/gigascience/giab068"
+    type: article
+    added: "2023"
+  zuo2021:
+    label: "Zuo et al. 2021"
+    year: 2021
+    doi: "10.2196/29871"
+    type: article
+    added: "2023"
+  chen2021:
+    label: "Chen et al. 2021"
+    year: 2021
+    doi: "10.1038/s41551-021-00751-8"
+    type: article
+    added: "2023"
+  kaabachi2025:
+    label: "Kaabachi et al. 2025"
+    year: 2025
+    doi: "10.1038/s41746-024-01359-3"
+    type: article
+    added: "2026-09"
+  vayena2018:
+    label: "Vayena et al. 2018"
+    year: 2018
+    doi: "10.1177/1073110518766026"
+    type: article
+    added: "2023"
+  mclennan2022:
+    label: "McLennan et al. 2022"
+    year: 2022
+    doi: "10.1186/S12910-022-00746-3"
+    type: article
+    added: "2023"
+  ong2024:
+    label: "Ong et al. 2024"
+    year: 2024
+    doi: "10.1016/S2589-7500(24)00061-X"
+    type: article
+    added: "2026-09"
+  haltaufderheide2024:
+    label: "Haltaufderheide and Ranisch 2024"
+    year: 2024
+    doi: "10.1038/s41746-024-01157-x"
+    type: article
+    added: "2026-09"
+  gilbert2024:
+    label: "Gilbert 2024"
+    year: 2024
+    doi: "10.1038/s41746-024-01116-6"
+    type: article
+    added: "2026-09"
+  hayrinen2008:
+    label: "Häyrinen et al. 2008"
+    year: 2008
+    doi: "10.1016/J.IJMEDINF.2007.09.001"
+    type: article
+    added: "2023"
+  brender2000:
+    label: "Brender et al. 2000"
+    year: 2000
+    doi: "10.1016/S1386-5056(00)00092-7"
+    type: article
+    added: "2023"
+  haux2002:
+    label: "Haux et al. 2002"
+    year: 2002
+    doi: "10.1016/S1386-5056(02)00030-8"
+    type: article
+    added: "2023"
+  dehoop2021:
+    label: "De Hoop et al. 2021"
+    year: 2021
+    doi: "10.1055/S-0041-1739519"
+    type: article
+    added: "2023"
+  millar2016:
+    label: "Millar, 2016"
+    year: 2016
+    doi: "10.3233/978-1-61499-658-3-683"
+    type: article
+    added: "2023"
+  schaaf2021:
+    label: "Schaaf et al. 2021"
+    year: 2021
+    doi: "10.1186/S12911-021-01435-8"
+    type: article
+    added: "2023"
+  holmgren2024:
+    label: "Holmgren et al. 2024"
+    year: 2024
+    doi: "10.1001/jamainternmed.2024.4123"
+    type: article
+    added: "2026-09"
+  tierney2024:
+    label: "Tierney et al. 2024"
+    year: 2024
+    doi: "10.1056/CAT.23.0404"
+    type: article
+    added: "2026-09"
+  olson2025:
+    label: "Olson et al. 2025"
+    year: 2025
+    doi: "10.1001/jamanetworkopen.2025.34976"
+    type: article
+    added: "2026-09"
+  lukac2025:
+    label: "Lukac et al. 2025"
+    year: 2025
+    doi: "10.1056/AIoa2501000"
+    type: article
+    added: "2026-09"
+  soroush2024:
+    label: "Soroush et al. 2024"
+    year: 2024
+    doi: "10.1056/AIdbp2300040"
+    type: article
+    added: "2026-09"
+  palmblad2019:
+    label: "Palmblad et al. 2019"
+    year: 2019
+    doi: "10.1093/BIOINFORMATICS/BTY646"
+    type: article
+    added: "2023"
+  xu2018:
+    label: "Xu et al. 2018"
+    year: 2018
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5961786/"
+    type: article
+    added: "2023"
+  gierend2024:
+    label: "Gierend et al. 2024"
+    year: 2024
+    doi: "10.2196/51297"
+    type: article
+    added: "2026-09"
+  inau2021:
+    label: "Inau et al. 2021"
+    year: 2021
+    doi: "10.2196/22505"
+    type: article
+    added: "2023"
+  queraltrosinach2021:
+    label: "Queralt-Rosinach et al. 2021"
+    year: 2021
+    doi: "10.1101/2021.08.13.21262023"
+    type: preprint
+    added: "2023"
+  frexia2021:
+    label: "Frexia et al. 2021"
+    year: 2021
+    doi: "10.3233/SHTI210131"
+    type: article
+    added: "2023"
+  tai2025:
+    label: "Tai et al. 2025"
+    year: 2025
+    doi: "10.1016/j.jclinepi.2025.111920"
+    type: article
+    added: "2026-09"
+  scheibner2021:
+    label: "Scheibner et al. 2021"
+    year: 2021
+    doi: "10.2196/25120"
+    type: article
+    added: "2023"
+  gaye2014:
+    label: "Gaye et al. 2014"
+    year: 2014
+    doi: "10.1093/IJE/DYU188"
+    type: article
+    added: "2023"
+  marcon2021:
+    label: "Marcon et al. 2021"
+    year: 2021
+    doi: "10.1371/JOURNAL.PCBI.1008880"
+    type: article
+    added: "2023"
+  beyan2020:
+    label: "Beyan et al. 2020"
+    year: 2020
+    doi: "10.1162/DINT_A_00032"
+    type: article
+    added: "2023"
+  dong2021:
+    label: "Dong et al. 2021"
+    year: 2021
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8378657/"
+    type: article
+    added: "2023"
+  teo2024:
+    label: "Teo et al. 2024"
+    year: 2024
+    doi: "10.1016/j.xcrm.2024.101419"
+    type: article
+    added: "2026-09"
+  eden2025:
+    label: "Eden et al. 2025"
+    year: 2025
+    doi: "10.1038/s41746-025-01836-3"
+    type: article
+    added: "2026-09"
+  hussein2025:
+    label: "Hussein et al. 2025"
+    year: 2025
+    doi: "10.2196/69813"
+    type: article
+    added: "2026-09"
+  negrocalduch2021:
+    label: "Negro-Calduch et al. 2021"
+    year: 2021
+    doi: "10.1016/J.IJMEDINF.2021.104507"
+    type: article
+    added: "2023"
+  prasser2019:
+    label: "Prasser et al. 2019"
+    year: 2019
+    doi: "10.1016/J.IJMEDINF.2019.03.006"
+    type: article
+    added: "2023"
+  liaw2021:
+    label: "Liaw et al. 2021"
+    year: 2021
+    doi: "10.1093/JAMIA/OCAA340"
+    type: article
+    added: "2023"
+  helgheim2019:
+    label: "Helgheim et al. 2019"
+    year: 2019
+    doi: "10.3390/IJERPH16050769"
+    type: article
+    added: "2023"
+  book-of-ohdsi-etl:
+    label: "Chapter 6 Extract Transform Load | The Book of OHDSI"
+    url: "https://ohdsi.github.io/TheBookOfOhdsi/ExtractTransformLoad.html#introduction-1"
+    type: resource
+    added: "2023"
+  guo2019:
+    label: "Guo et al. 2019"
+    year: 2019
+    doi: "10.1093/JAMIA/OCZ143"
+    type: article
+    added: "2023"
+  wiest2024:
+    label: "Wiest et al. 2024"
+    year: 2024
+    doi: "10.1038/s41746-024-01233-2"
+    type: article
+    added: "2026-09"
+  hein2025:
+    label: "Hein et al. 2025"
+    year: 2025
+    doi: "10.1038/s41746-025-01686-z"
+    type: article
+    added: "2026-09"
+  hu2026:
+    label: "Hu et al. 2026"
+    year: 2026
+    doi: "10.1093/jamia/ocaf213"
+    type: article
+    added: "2026-09"
+  andersen2018:
+    label: "Andersen et al. 2018"
+    year: 2018
+    doi: "10.1515/bmt-2017-0021"
+    type: article
+    added: "2023"
+  lehne2019:
+    label: "Lehne et al. 2019"
+    year: 2019
+    doi: "10.3233/SHTI190805"
+    type: article
+    added: "2023"
+  bender2013:
+    label: "Bender and Sartipi, 2013"
+    year: 2013
+    doi: "10.1109/CBMS.2013.6627810"
+    type: article
+    added: "2023"
+  smart-health-it-apps:
+    label: "Smart Health IT"
+    url: "https://apps.smarthealthit.org/apps/featured"
+    type: resource
+    added: "2023"
+  lamprinakos2014:
+    label: "Lamprinakos et al. 2014"
+    year: 2014
+    doi: "10.4108/icst.mobihealth.2014.257232"
+    type: article
+    added: "2023"
+  benhamida2020:
+    label: "Benhamida et al. 2020"
+    year: 2020
+    doi: "10.1109/CINTI51262.2020.9305828"
+    type: article
+    added: "2023"
+  mandel2016:
+    label: "Mandel et al. 2016"
+    year: 2016
+    doi: "10.1093/JAMIA/OCV189"
+    type: article
+    added: "2023"
+  li2024:
+    label: "Li et al. 2024"
+    year: 2024
+    doi: "10.1056/AIcs2300301"
+    type: article
+    added: "2026-09"
+  engelke2025:
+    label: "Engelke et al. 2025"
+    year: 2025
+    doi: "10.1093/jamia/ocaf165"
+    type: article
+    added: "2026-09"
+  garza2016:
+    label: "Garza et al. 2016"
+    year: 2016
+    doi: "10.1016/J.JBI.2016.10.016"
+    type: article
+    added: "2023"
+  reinecke2021:
+    label: "Reinecke et al. 2021"
+    year: 2021
+    doi: "10.3233/SHTI210546"
+    type: article
+    added: "2023"
+  peng2021:
+    label: "Peng et al. 2021"
+    year: 2021
+    doi: "10.3233/SHTI210545"
+    type: article
+    added: "2023"
+  ahmadi2022:
+    label: "Ahmadi et al. 2022"
+    year: 2022
+    doi: "10.3390/ijms231911834"
+    type: article
+    added: "2023"
+  park2022:
+    label: "Park et al. 2022"
+    year: 2022
+    doi: "10.3349/YMJ.2022.63.S74"
+    type: article
+    added: "2023"
+  wang2025:
+    label: "Wang et al. 2025a"
+    year: 2025
+    doi: "10.1038/s41746-025-01581-7"
+    type: article
+    added: "2026-09"
+  cai2025:
+    label: "Cai et al. 2025"
+    year: 2025
+    doi: "10.1001/jamaophthalmol.2024.6555"
+    type: article
+    added: "2026-09"
+  adams2025:
+    label: "Adams et al. 2025"
+    year: 2025
+    doi: "10.2196/69004"
+    type: article
+    added: "2026-09"
+  blacketer2021:
+    label: "Blacketer et al. 2021"
+    year: 2021
+    doi: "10.1093/JAMIA/OCAB132"
+    type: article
+    added: "2023"
+  voss2024:
+    label: "Voss et al. 2024"
+    year: 2024
+    doi: "10.1093/jamia/ocad214"
+    type: article
+    added: "2026-09"
+  blacketer2025:
+    label: "Blacketer et al. 2025"
+    year: 2025
+    doi: "10.2196/74119"
+    type: article
+    added: "2026-09"
+  goncalves2020:
+    label: "Goncalves et al. 2020"
+    year: 2020
+    doi: "10.1186/S12874-020-00977-1"
+    type: article
+    added: "2023"
+  lobe2022:
+    label: "Löbe et al. 2022"
+    year: 2022
+    doi: "10.3233/SHTI210904"
+    type: article
+    added: "2023"
+  wang2015:
+    label: "Wang and Strong, 2015"
+    year: 2015
+    doi: "10.1080/07421222.1996.11518099"
+    type: article
+    added: "2023"
+  wahyudi2018:
+    label: "Wahyudi et al. 2018"
+    year: 2018
+    doi: "10.1007/S10796-017-9822-7"
+    type: article
+    added: "2023"
+  schwabe2024:
+    label: "Schwabe et al. 2024"
+    year: 2024
+    doi: "10.1038/s41746-024-01196-4"
+    type: article
+    added: "2026-09"
+  hahn2022:
+    label: "Hahn et al. 2022"
+    year: 2022
+    doi: "10.3390/JPM12081278"
+    type: article
+    added: "2023"
+  vallevik2024:
+    label: "Vallevik et al. 2024"
+    year: 2024
+    doi: "10.1016/j.ijmedinf.2024.105413"
+    type: article
+    added: "2026-09"
+  sutton2020:
+    label: "Sutton et al. 2020"
+    year: 2020
+    doi: "10.1038/s41746-020-0221-y"
+    type: article
+    added: "2023"
+  shen2021:
+    label: "Shen et al. 2021"
+    year: 2021
+    doi: "10.1093/JAMIA/OCAA250"
+    type: article
+    added: "2023"
+  ronicke2019:
+    label: "Ronicke et al. 2019"
+    year: 2019
+    doi: "10.1186/S13023-019-1040-6"
+    type: article
+    added: "2023"
+  eltorai2020:
+    label: "Eltorai et al. 2020"
+    year: 2020
+    doi: "10.1097/RTI.0000000000000453"
+    type: article
+    added: "2023"
+  groenhof2019:
+    label: "Groenhof et al. 2019"
+    year: 2019
+    doi: "10.1007/S12471-019-01308-W"
+    type: article
+    added: "2023"
+  olakotan2020:
+    label: "Olakotan et al. 2020"
+    year: 2020
+    doi: "10.3233/SHTI200293"
+    type: article
+    added: "2023"
+  jacobs2021:
+    label: "Jacobs et al. 2021"
+    year: 2021
+    doi: "10.1038/s41398-021-01224-x"
+    type: article
+    added: "2023"
+  antoniadi2021:
+    label: "Antoniadi et al. 2021"
+    year: 2021
+    doi: "10.3390/APP11115088"
+    type: article
+    added: "2023"
+  wolfien2020:
+    label: "Wolfien et al. 2020"
+    year: 2020
+    doi: "10.1016/J.EBIOM.2020.102862"
+    type: article
+    added: "2023"
+  kostickquenet2022:
+    label: "Kostick-Quenet and Gerke 2022"
+    year: 2022
+    doi: "10.1038/s41746-022-00737-z"
+    type: article
+    added: "2023"
+  reps2018:
+    label: "Reps et al. 2018"
+    year: 2018
+    doi: "10.1093/JAMIA/OCY032"
+    type: article
+    added: "2023"
+  book-of-ohdsi-plp:
+    label: "Chapter 13 Patient-Level Prediction | The Book of OHDSI"
+    url: "https://ohdsi.github.io/TheBookOfOhdsi/PatientLevelPrediction.html"
+    type: resource
+    added: "2023"
+  singhal2023:
+    label: "Singhal et al. 2023"
+    year: 2023
+    doi: "10.1038/s41586-023-06291-2"
+    type: article
+    added: "2023"
+  singhal2025:
+    label: "Singhal et al. 2025"
+    year: 2025
+    doi: "10.1038/s41591-024-03423-7"
+    type: article
+    added: "2026-09"
+  vanveen2024:
+    label: "Van Veen et al. 2024"
+    year: 2024
+    doi: "10.1038/s41591-024-02855-5"
+    type: article
+    added: "2026-09"
+  tu2025:
+    label: "Tu et al. 2025"
+    year: 2025
+    doi: "10.1038/s41586-025-08866-7"
+    type: article
+    added: "2026-09"
+  hager2024:
+    label: "Hager et al. 2024"
+    year: 2024
+    doi: "10.1038/s41591-024-03097-1"
+    type: article
+    added: "2026-09"
+  goh2024:
+    label: "Goh et al. 2024"
+    year: 2024
+    doi: "10.1001/jamanetworkopen.2024.40969"
+    type: article
+    added: "2026-09"
+  wolfien2026:
+    label: "Wolfien et al. 2026"
+    year: 2026
+    url: "https://www.mdpi.com/2413-4155/8/9/266"
+    type: article
+    added: "2026-09"
+  lambert2023:
+    label: "Lambert et al. 2023"
+    year: 2023
+    doi: "10.1038/s41746-023-00852-5"
+    type: article
+    added: "2023"
+  bayor2025:
+    label: "Bayor et al. 2025"
+    year: 2025
+    doi: "10.2196/63733"
+    type: article
+    added: "2026-09"
+  seneviratne2022:
+    label: "Seneviratne et al. 2022"
+    year: 2022
+    url: "https://informatics.bmj.com/content/29/1/e100656"
+    type: article
+    added: "2023"
+  hassan2024:
+    label: "Hassan et al. 2024"
+    year: 2024
+    doi: "10.1038/s41746-024-01326-y"
+    type: article
+    added: "2026-09"
+  clarke2016:
+    label: "Clarke et al. 2016"
+    year: 2016
+    url: "https://pubmed.ncbi.nlm.nih.gov/27332223/"
+    type: article
+    added: "2023"
+  vornhagen2026:
+    label: "Vornhagen et al. 2026"
+    year: 2026
+    doi: "10.2196/77361"
+    type: article
+    added: "2026-09"
+  r-shiny:
+    label: "R Shiny"
+    url: "https://shiny.posit.co/"
+    type: resource
+    added: "2023"
+  plotly-dash:
+    label: "Plotly Dash"
+    url: "https://zenodo.org/record/3346213"
+    type: resource
+    added: "2023"
+  gao2016:
+    label: "Gao et al. 2016"
+    year: 2016
+    doi: "10.1126/scisignal.2004088"
+    type: article
+    added: "2023"
+  reimer2021:
+    label: "Reimer et al. 2021"
+    year: 2021
+    doi: "10.3233/SHTI210833"
+    type: article
+    added: "2023"
+  brlek2021:
+    label: "Brlek et al. 2021"
+    year: 2021
+    doi: "10.3390/cancers13133247"
+    type: article
+    added: "2023"
+  murphy2010:
+    label: "Murphy et al. 2010"
+    year: 2010
+    doi: "10.1136/jamia.2009.000893"
+    type: article
+    added: "2023"
+  castro2022:
+    label: "Castro et al. 2022"
+    year: 2022
+    doi: "10.1093/jamia/ocab264"
+    type: article
+    added: "2023"
+  ismail2020:
+    label: "Ismail et al. 2020"
+    year: 2020
+    doi: "10.2196/17508"
+    type: article
+    added: "2023"
+  ozaydin2020:
+    label: "Ozaydin et al. 2020"
+    year: 2020
+    doi: "10.2196/18579"
+    type: article
+    added: "2023"
+  allofus2024:
+    label: "All of Us Research Program Genomics Investigators 2024"
+    year: 2024
+    doi: "10.1038/s41586-023-06957-x"
+    type: article
+    added: "2026-09"
+  wang2025b:
+    label: "Wang et al. 2025b"
+    year: 2025
+    doi: "10.1038/s41746-025-02126-8"
+    type: article
+    added: "2026-09"
+  mazein2018:
+    label: "Mazein et al. 2018"
+    year: 2018
+    doi: "10.1038/s41540-018-0059-y"
+    type: article
+    added: "2023"
+  ostaszewski2021:
+    label: "Ostaszewski et al. 2021"
+    year: 2021
+    doi: "10.15252/msb.202110387"
+    type: article
+    added: "2023"
+  serhan2020:
+    label: "Serhan and Gupta et al. 2020"
+    year: 2020
+    doi: "10.1016/j.mam.2020.100894"
+    type: article
+    added: "2023"
+  scheel2021:
+    label: "Scheel et al. 2021"
+    year: 2021
+    url: "https://www.sbi.uni-rostock.de/minerva/index.xhtml?id=NaviCenta"
+    type: website
+    added: "2023"
+  pereira2021:
+    label: "Pereira et al. 2021"
+    year: 2021
+    doi: "10.1038/s41598-021-01618-3"
+    type: article
+    added: "2023"
+  zerrouk2022:
+    label: "Zerrouk and Aghakhani 2022"
+    year: 2022
+    doi: "10.3389/fsysb.2022.925791"
+    type: article
+    added: "2023"
+  zerrouk2024:
+    label: "Zerrouk et al. 2024a"
+    year: 2024
+    doi: "10.1038/s41540-024-00337-5"
+    type: article
+    added: "2026-09"
+  zerrouk2024b:
+    label: "Zerrouk et al. 2024b"
+    year: 2024
+    doi: "10.1038/s41746-024-01396-y"
+    type: article
+    added: "2026-09"
+  mazein2021:
+    label: "Mazein et al. 2021"
+    year: 2021
+    doi: "10.1016/j.jaci.2020.11.032"
+    type: article
+    added: "2023"
+  balaur2025:
+    label: "Balaur et al. 2025"
+    year: 2025
+    doi: "10.1038/s41597-025-05147-w"
+    type: article
+    added: "2026-09"

@@ -1,0 +1,46 @@
+name: Monthly link check
+
+on:
+  schedule:
+    - cron: "17 4 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Check DOIs and links
+        id: check
+        run: |
+          set -o pipefail
+          python scripts/tentopics.py links | tee report.txt
+      - name: Report broken references in an issue
+        if: failure() && steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Broken references found by the monthly link check"
+          {
+            echo "The [monthly link check](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) found problems:"
+            echo
+            echo '```'
+            cat report.txt
+            echo '```'
+            echo
+            echo "Please fix the entries in \`data/references.yaml\` and regenerate the README."
+          } > body.md
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body-file body.md
+          else
+            gh issue create --title "$title" --body-file body.md
+          fi

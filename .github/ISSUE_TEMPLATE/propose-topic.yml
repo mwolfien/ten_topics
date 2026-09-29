@@ -1,0 +1,33 @@
+name: Propose a topic
+description: Propose a new topic or a change to the topic structure.
+title: "[Topic] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The collection sticks to the original ten topics as much as possible. New topics are welcome where no existing topic fits.
+  - type: input
+    id: title
+    attributes:
+      label: Topic title
+      placeholder: "Generative AI and Large Language Models"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Short introduction
+      description: Two or three sentences, as they would appear below the topic heading.
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Relation to existing topics
+      description: Why does it not fit into an existing topic? Which existing items would move?
+  - type: textarea
+    id: references
+    attributes:
+      label: Initial keywords and references
+      description: A few keyword items, each with one or more DOIs.
