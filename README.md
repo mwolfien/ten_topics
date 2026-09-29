@@ -79,6 +79,7 @@ Clinical Decision Support Systems (CDSS) are computer systems designed to assist
 * A CDM as basis for an AI - [Reps et al. 2018](https://doi.org/10.1093/JAMIA/OCY032), [Chapter 13 Patient-Level Prediction | The Book of OHDSI](https://ohdsi.github.io/TheBookOfOhdsi/PatientLevelPrediction.html)
 * Effect of Large Language Models (LLM) - [Singhal et al. 2023](https://www.nature.com/articles/s41586-023-06291-2), [Singhal et al. 2025](https://doi.org/10.1038/s41591-024-03423-7), [Van Veen et al. 2024](https://doi.org/10.1038/s41591-024-02855-5), or conversational diagnostic AI - [Tu et al. 2025](https://doi.org/10.1038/s41586-025-08866-7)
 * Limitations of LLMs in clinical decision-making and their influence on physicians' diagnostic reasoning - [Hager et al. 2024](https://doi.org/10.1038/s41591-024-03097-1), [Goh et al. 2024](https://doi.org/10.1001/jamanetworkopen.2024.40969)
+* Retrieval-augmented generation (RAG) to ground biomedical LLMs in curated, versioned, and auditable sources within research and clinical data infrastructures - [Wolfien et al. 2026](https://www.mdpi.com/2413-4155/8/9/266)
 * Acceptance of AI among healthcare professionals in hospitals - [Lambert et al. 2023](https://www.nature.com/articles/s41746-023-00852-5)
 * User-centred design characteristics and challenges of CDSS - [Bayor et al. 2025](https://doi.org/10.2196/63733)
 
