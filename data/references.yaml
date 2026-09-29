@@ -289,10 +289,10 @@ references:
     url: "https://apps.smarthealthit.org/apps/featured"
     type: resource
     added: "2023"
-  lamprinakos2015:
-    label: "Lamprinakos et al. 2015"
-    year: 2015
-    doi: "10.1109/MOBIHEALTH.2014.7015927"
+  lamprinakos2014:
+    label: "Lamprinakos et al. 2014"
+    year: 2014
+    doi: "10.4108/icst.mobihealth.2014.257232"
     type: article
     added: "2023"
   benhamida2020:

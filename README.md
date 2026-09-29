@@ -66,7 +66,7 @@ Semantic and syntactic interoperability can be ensured by communication exchange
 
 * FHIR communication standard - [Andersen et al. 2018](https://doi.org/10.1515/bmt-2017-0021), [Lehne et al. 2019](https://doi.org/10.3233/SHTI190805), [Bender and Sartipi, 2013](https://doi.org/10.1109/CBMS.2013.6627810)
 * SMART-on-FHIR enables third-party app development for health care applications - [Smart Health IT](https://apps.smarthealthit.org/apps/featured)
-* Used for mobile health applications - [Lamprinakos et al. 2015](https://doi.org/10.1109/MOBIHEALTH.2014.7015927), [Benhamida et al. 2020](https://doi.org/10.1109/CINTI51262.2020.9305828), [Mandel et al. 2016](https://doi.org/10.1093/JAMIA/OCV189)
+* Used for mobile health applications - [Lamprinakos et al. 2014](https://doi.org/10.4108/icst.mobihealth.2014.257232), [Benhamida et al. 2020](https://doi.org/10.1109/CINTI51262.2020.9305828), [Mandel et al. 2016](https://doi.org/10.1093/JAMIA/OCV189)
 * Combining FHIR and LLMs, e.g., to convert clinical text into FHIR resources - [Li et al. 2024](https://doi.org/10.1056/AIcs2300301), or for clinical predictions directly on FHIR data - [Engelke et al. 2025](https://doi.org/10.1093/jamia/ocaf165)
 
 ### Topic 7: Observational Medical Outcomes Partnership Common Data Models

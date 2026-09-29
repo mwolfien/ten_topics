@@ -68,7 +68,7 @@ sections:
           - items:
               - "FHIR communication standard - [@andersen2018], [@lehne2019], [@bender2013]"
               - "SMART-on-FHIR enables third-party app development for health care applications - [@smart-health-it-apps]"
-              - "Used for mobile health applications - [@lamprinakos2015], [@benhamida2020], [@mandel2016]"
+              - "Used for mobile health applications - [@lamprinakos2014], [@benhamida2020], [@mandel2016]"
               - "Combining FHIR and LLMs, e.g., to convert clinical text into FHIR resources - [@li2024], or for clinical predictions directly on FHIR data - [@engelke2025]"
       - id: omop-cdm
         number: 7
