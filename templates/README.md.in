@@ -1,0 +1,37 @@
+<!-- This file is generated from data/topics.yaml, data/references.yaml and templates/README.md.in.
+     Do not edit it directly: edit those files and run `python scripts/tentopics.py build`. -->
+# Ten Topics for Medical Informatics
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
+[![Checks](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml/badge.svg)](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml)
+![References](https://img.shields.io/badge/references-{{N_REFERENCES}}-blue)
+![Last update](https://img.shields.io/badge/last_update-{{LAST_UPDATE}}-green)
+
+The vast and heterogeneous data being constantly generated in the clinics can provide great wealth for patients and research alike. The quickly evolving field of Medical Informatics research contributed numerous concepts, algorithms, and standards to facilitate this development.
+The here addressed topics are part of our viewpoint article "Ten Topics to Get Started in Medical Informatics Research" - [Wolfien et al. 2023](https://doi.org/10.2196/45948), published in the Journal of Medical Internet Research.
+
+This underlying summary and digital extension should provide likewise a condensed and extensible resource for the identified important, initial ten topics and beyond. It is maintained as a living, curated collection: contributors are welcome to comprehensively improve and extend the current state (see [Contributing](#contributing)).
+
+In this online resource for content extension, all suggested topics are briefly introduced and then key words indicate topics and in-depth literature for further reading. In addition, the topics are set to cover current aspects and open research gaps of the Medical Informatics domain, including data regulations & concepts, data harmonization & processing, and data evaluation, visualization & dissemination.
+
+{{TOPICS}}
+
+## How to cite
+
+If you use this resource, please cite the original article:
+
+> Wolfien M, Ahmadi N, Fitzer K, Grummt S, Heine KL, Jung IC, Krefting D, Kühn A, Peng Y, Reinecke I, Scheel J, Schmidt T, Schmücker P, Schüttler C, Waltemath D, Zoch M, Sedlmayr M. Ten Topics to Get Started in Medical Informatics Research. *J Med Internet Res* 2023;25:e45948. [doi:10.2196/45948](https://doi.org/10.2196/45948)
+
+To cite a specific version of this living collection, use the "Cite this repository" button (see [CITATION.cff](CITATION.cff)). Changes between versions are listed in the [CHANGELOG](CHANGELOG.md).
+
+## Contributing
+
+Suggestions are very welcome! The quickest way is to [suggest a reference](https://github.com/mwolfien/ten_topics/issues/new?template=suggest-reference.yml) or [propose a new topic](https://github.com/mwolfien/ten_topics/issues/new?template=propose-topic.yml) via an issue. To contribute directly, please read [CONTRIBUTING.md](CONTRIBUTING.md): it describes the inclusion criteria and how to add a reference to `data/references.yaml` and `data/topics.yaml`. Please stick to the original ten topics as much as possible; if no existing topic fits, novel ones can be proposed and integrated.
+
+### Contributors list
+[Markus Wolfien](https://github.com/mwolfien)
+[Julia Scheel](https://github.com/JuliaScheel)
+
+## License
+
+The content of this repository is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE).

@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: >-
+  If you use this resource, please cite the original article (preferred citation).
+  To cite a specific version of this living collection, cite the repository.
+type: dataset
+title: "Ten Topics for Medical Informatics"
+abstract: >-
+  A living, curated collection of key topics and in-depth literature to get
+  started in Medical Informatics research, extending the viewpoint article
+  "Ten Topics to Get Started in Medical Informatics Research".
+authors:
+  - family-names: Wolfien
+    given-names: Markus
+  - family-names: Scheel
+    given-names: Julia
+repository-code: "https://github.com/mwolfien/ten_topics"
+license: CC-BY-4.0
+keywords:
+  - medical informatics
+  - health informatics
+  - FHIR
+  - OMOP
+  - clinical decision support
+  - living review
+preferred-citation:
+  type: article
+  title: "Ten Topics to Get Started in Medical Informatics Research"
+  authors:
+    - family-names: Wolfien
+      given-names: Markus
+    - family-names: Ahmadi
+      given-names: Najia
+    - family-names: Fitzer
+      given-names: Kai
+    - family-names: Grummt
+      given-names: Sophia
+    - family-names: Heine
+      given-names: Kilian-Ludwig
+    - family-names: Jung
+      given-names: Ian-C
+    - family-names: Krefting
+      given-names: Dagmar
+    - family-names: Kühn
+      given-names: Andreas
+    - family-names: Peng
+      given-names: Yuan
+    - family-names: Reinecke
+      given-names: Ines
+    - family-names: Scheel
+      given-names: Julia
+    - family-names: Schmidt
+      given-names: Tobias
+    - family-names: Schmücker
+      given-names: Paul
+    - family-names: Schüttler
+      given-names: Christina
+    - family-names: Waltemath
+      given-names: Dagmar
+    - family-names: Zoch
+      given-names: Michele
+    - family-names: Sedlmayr
+      given-names: Martin
+  journal: "Journal of Medical Internet Research"
+  volume: 25
+  start: e45948
+  year: 2023
+  doi: 10.2196/45948

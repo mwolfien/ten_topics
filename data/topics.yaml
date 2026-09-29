@@ -1,0 +1,141 @@
+# Topic structure of "Ten Topics for Medical Informatics".
+# README.md is generated from this file and data/references.yaml:
+#   python scripts/tentopics.py build
+# Cite references with [@id]; ids are defined in data/references.yaml.
+
+sections:
+  - title: "Data regulations & concepts"
+    topics:
+      - id: privacy-ethics
+        number: 1
+        title: "Privacy & Ethics"
+        body:
+          - "Health information is sensitive and hence needs to be highly protected and should not be generously shared."
+          - items:
+              - "Anonymization - [@meurers2021]"
+              - "Pseudonymization - [@zuo2021]"
+              - "Synthetic data as surrogate - [@chen2021], with privacy and utility metrics - [@kaabachi2025]"
+              - "Systemic oversight and embedded ethics - [@vayena2018], [@mclennan2022]"
+              - "Ethical and regulatory challenges of Large Language Models (LLMs) in medicine - [@ong2024], [@haltaufderheide2024]"
+              - "EU AI Act and its implications for digital medicine - [@gilbert2024]"
+      - id: ehr-cis
+        number: 2
+        title: "Electronic health records & Clinical information systems"
+        body:
+          - "Hospitals run clinical information systems (CIS) to collect, store, and alter clinical data about patients. A CIS, independent of the specialization and specific vendor, covers many clinical subdomains and integrates the patient-related data to support doctors in their daily routine."
+          - "The implementation of an EHR, including an individual's medical data in a bundled form, into the CIS is one key aspect."
+          - items:
+              - "EHR - [@hayrinen2008]"
+              - "Systematic terminologies for EHR improvement - [@brender2000], [@haux2002], [@dehoop2021], [@millar2016]"
+              - "Improving the usability and user acceptance of EHRs - [@schaaf2021]"
+              - "Reducing EHR documentation burden with team-based documentation support - [@holmgren2024] and ambient AI scribes - [@tierney2024], [@olson2025], [@lukac2025]"
+              - "Limitations of LLMs for medical coding with standard terminologies - [@soroush2024]"
+      - id: data-provenance
+        number: 3
+        title: "Data Provenance"
+        body:
+          - "When explainable data is processed with interoperable tools, scientists can create automated and reusable workflows, provide access to reproducible research outcomes, and data analysis pipelines ([@palmblad2019])."
+          - items:
+              - "Data provenance - [@palmblad2019], [@xu2018], [@gierend2024]"
+              - "FAIRification - [@inau2021], [@queraltrosinach2021], [@frexia2021], [@tai2025]"
+      - id: data-sharing
+        number: 4
+        title: "Data Sharing"
+        body:
+          - "Cross-sectional medical data sharing is critical in modern clinical practice and medical research, in which the challenge of privacy-preserving transfer and utility needs to be addressed ([@scheibner2021])."
+          - items:
+              - "Federated learning, with e.g., DataSHIELD - [@gaye2014], [@marcon2021] or Personal Health Train - [@beyan2020]"
+              - "Secure-multi-party computation (SPMC) - [@dong2021]"
+              - "Clinical applications, technical architectures, and governance of federated learning - [@teo2024], [@eden2025]"
+              - "Secondary use of health data in the European Health Data Space (EHDS) - [@hussein2025]"
+  - title: "Data harmonization & processing"
+    topics:
+      - id: etl
+        number: 5
+        title: "Extract, Transform, and Load (ETL) processes"
+        body:
+          - "Data handling in Medical Informatics remains a major challenge. Even though most data in medicine is available electronically, it often lacks interoperability ([@negrocalduch2021]). As a first step to actually use the data, processes to Extract, Transform, and Load (ETL) are needed to obtain harmonized data from different data systems or clinical entities."
+          - items:
+              - "ETL, as safe, secure, and accurate - [@prasser2019], [@liaw2021]"
+              - "ETL, as scalable - [@helgheim2019], and reusable - [@book-of-ohdsi-etl] process"
+              - "Perform quality checks - [@guo2019]"
+              - "LLMs to extract structured information from unstructured clinical text - [@wiest2024], [@hein2025], [@hu2026]"
+      - id: fhir
+        number: 6
+        title: "Fast Healthcare Interoperability Resources"
+        body:
+          - "Semantic and syntactic interoperability can be ensured by communication exchange standards, such as the Fast Healthcare Interoperability Resources (FHIR) standard of Health Level 7 (HL7) and medical terminologies."
+          - items:
+              - "FHIR communication standard - [@andersen2018], [@lehne2019], [@bender2013]"
+              - "SMART-on-FHIR enables third-party app development for health care applications - [@smart-health-it-apps]"
+              - "Used for mobile health applications - [@lamprinakos2015], [@benhamida2020], [@mandel2016]"
+              - "Combining FHIR and LLMs, e.g., to convert clinical text into FHIR resources - [@li2024], or for clinical predictions directly on FHIR data - [@engelke2025]"
+      - id: omop-cdm
+        number: 7
+        title: "Observational Medical Outcomes Partnership Common Data Models"
+        body:
+          - "Data harmonization enables research teams to run real-world observational studies based on heterogeneous data across country borders. Thus, harmonized data embedded in a common data model (CDM), which is an agreement about the utilization of standardized terminologies for data representation, is crucial to exchange data and results on a large scale."
+          - items:
+              - "OMOP and OHDSI - [@garza2016], [@reinecke2021]"
+              - "Applied to genomics, oncology, and imaging projects among others - [@peng2021], [@ahmadi2022], [@park2022], [@wang2025]"
+              - "Large-scale federated OHDSI network studies - [@cai2025]"
+              - "LLM-based automated mapping of source data to OMOP concepts - [@adams2025]"
+              - "EHDEN Academy as a versatile training network - [@blacketer2021], with learnings from building the European Health Data & Evidence Network (EHDEN) - [@voss2024], [@blacketer2025]"
+  - title: "Data evaluation, visualization & dissemination"
+    topics:
+      - id: data-quality
+        number: 8
+        title: "Data Quality"
+        body:
+          - "Data quality depends on the quality of single data elements, data completeness, data conformance, and data plausibility aspects that may considerably determine the validity and veracity of analysis results."
+          - items:
+              - "High data quality as a fundamental requirement - [@goncalves2020]"
+              - "Data quality indicators and evaluation principles - [@lobe2022], [@wang2015], [@wahyudi2018]"
+              - "Data quality for trustworthy AI in medicine (METRIC framework) - [@schwabe2024]"
+              - "Publish high quality synthetic medical datasets - [@hahn2022], and assess their quality - [@vallevik2024], [@kaabachi2025]"
+      - id: cdss
+        number: 9
+        title: "Clinical Decision Support Systems"
+        body:
+          - "Clinical Decision Support Systems (CDSS) are computer systems designed to assist the medical staff with decision making tasks about individual patients and based on clinical data ([@sutton2020])."
+          - items:
+              - "Positive impact of a CDSS - [@shen2021], [@ronicke2019], [@eltorai2020], [@groenhof2019]"
+              - "Negative impact of a CDSS - [@olakotan2020], [@jacobs2021]"
+              - "Explainable AI (XAI) - [@antoniadi2021], [@wolfien2020], [@kostickquenet2022]"
+              - "A CDM as basis for an AI - [@reps2018], [@book-of-ohdsi-plp]"
+              - "Effect of Large Language Models (LLM) - [@singhal2023], [@singhal2025], [@vanveen2024], or conversational diagnostic AI - [@tu2025]"
+              - "Limitations of LLMs in clinical decision-making and their influence on physicians' diagnostic reasoning - [@hager2024], [@goh2024]"
+              - "Retrieval-augmented generation (RAG) to ground biomedical LLMs in curated, versioned, and auditable sources within research and clinical data infrastructures - [@wolfien2026]"
+              - "Acceptance of AI among healthcare professionals in hospitals - [@lambert2023]"
+              - "User-centred design characteristics and challenges of CDSS - [@bayor2025]"
+      - id: visualizations
+        number: 10
+        title: "Visualizations"
+        body:
+          - "Large volumes of data collected from patient registries, health centers, genomic databases, and public records can potentially improve the efficiency and quality of healthcare via enhancing the interoperability of medical systems, assisting in clinical decision making, and delivering feedback on effective procedures."
+          - items:
+              - "User-centred design for AI in health care - [@seneviratne2022], users' perspectives on AI-enabled decision aids - [@hassan2024]"
+              - "Dashboards with positive influence [@clarke2016] and design practices - [@vornhagen2026], like [@r-shiny] or [@plotly-dash]"
+              - "Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [@gao2016], [@reimer2021], [@brlek2021], or i2b2 [@murphy2010], [@castro2022]"
+  - title: "Additional Topics"
+    topics:
+      - id: computational-infrastructure
+        title: "Computational Infrastructure"
+        body:
+          - items:
+              - "Data storage and processing setups - [@ismail2020], [@ozaydin2020]"
+              - "Cloud-based research platforms for large-scale cohort and genomic data, e.g., All of Us Researcher Workbench - [@allofus2024]"
+              - "Synthetic data and federated networks for privacy-preserving access to real-world data - [@wang2025b]"
+      - id: disease-maps
+        title: "Disease Maps"
+        body:
+          - "Disease Maps are a community-driven systems medicine approach to represent and model disease mechanisms. Disease maps serve both as a knowledgebase and analytical tools for advanced Omics data integration and interpretation, as well as hypothesis generation. These maps can further serve as a basis for clinical decision support systems ([@mazein2018])."
+          - "Example Disease Maps:"
+          - items:
+              - "COVID-19 Disease Map - [@ostaszewski2021]"
+              - "Atlas of Inflammation Resolution (AIR) - [@serhan2020]"
+              - "NaviCenta - (Navigate the Placenta) - [@scheel2021]"
+              - "CyFi-Map (Cystic Fibrosis) - [@pereira2021]"
+              - "Cellular Atlas of the Rheumatic Joint - [@zerrouk2022], extended towards large-scale Boolean models - [@zerrouk2024] and a multi-cellular virtual twin of the synovial joint - [@zerrouk2024b]"
+              - "AsthmaMap - [@mazein2021]"
+          - "FAIR assessment of Disease Maps to foster open science and crowdsourcing - [@balaur2025]"

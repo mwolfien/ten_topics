@@ -1,0 +1,64 @@
+name: Suggest a reference
+description: Suggest an article or resource for one of the topics.
+title: "[Reference] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for your suggestion! Please check the [inclusion criteria](https://github.com/mwolfien/ten_topics/blob/main/CONTRIBUTING.md#inclusion-criteria) first.
+  - type: input
+    id: doi
+    attributes:
+      label: DOI or URL
+      placeholder: "10.1038/s41746-024-01157-x"
+    validations:
+      required: true
+  - type: input
+    id: citation
+    attributes:
+      label: Short citation
+      description: First author, year and journal.
+      placeholder: "Haltaufderheide and Ranisch 2024, npj Digital Medicine"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - "Topic 1: Privacy & Ethics"
+        - "Topic 2: Electronic health records & Clinical information systems"
+        - "Topic 3: Data Provenance"
+        - "Topic 4: Data Sharing"
+        - "Topic 5: Extract, Transform, and Load (ETL) processes"
+        - "Topic 6: Fast Healthcare Interoperability Resources"
+        - "Topic 7: Observational Medical Outcomes Partnership Common Data Models"
+        - "Topic 8: Data Quality"
+        - "Topic 9: Clinical Decision Support Systems"
+        - "Topic 10: Visualizations"
+        - "Additional: Computational Infrastructure"
+        - "Additional: Disease Maps"
+        - "Other / new topic"
+    validations:
+      required: true
+  - type: input
+    id: keyword
+    attributes:
+      label: Keyword item
+      description: Which existing keyword item it belongs to, or a new one.
+      placeholder: "Ethical and regulatory challenges of Large Language Models (LLMs) in medicine"
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why should it be included?
+      description: What does it add to the topic? Is it a review, a landmark study, or a practical resource?
+    validations:
+      required: true
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Inclusion criteria
+      options:
+        - label: The article is published in a Q1 journal or has more than 20 citations (or I explained the exception above).
+        - label: I checked that it is not already part of the collection.
