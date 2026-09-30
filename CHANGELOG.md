@@ -10,6 +10,7 @@ Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [
 - Downloads of all references (and per topic) as BibTeX and CSL-JSON, plus the topic structure as JSON.
 - Release helper `scripts/tentopics.py release-notes` and release checklist in `RELEASING.md`.
 - Pilot of interactive, bilingual learning modules under `learn/` (German and English): lessons in Markdown with dropdown quizzes, matching exercises, reflection questions and "why this matters for you" notes for five audiences. First module: history and development of medical informatics. See `learn/README.md`.
+- Bilingual website frame: navigation, footer, search and a German start page at `/de/`, with a language switch on every page and `hreflang` links between language versions. Topics and references stay in English.
 
 ### Content
 - Added titles, journals and PubMed IDs to 94 references (from PubMed).

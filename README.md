@@ -8,7 +8,7 @@
 ![References](https://img.shields.io/badge/references-120-blue)
 ![Last update](https://img.shields.io/badge/last_update-2026--09-green)
 
-**Website:** [mwolfien.github.io/ten_topics](https://mwolfien.github.io/ten_topics/): search all topics and references, and download them as [BibTeX](https://mwolfien.github.io/ten_topics/data/references.bib) or [CSL-JSON](https://mwolfien.github.io/ten_topics/data/references.json).
+**Website:** [mwolfien.github.io/ten_topics](https://mwolfien.github.io/ten_topics/) ([Deutsch](https://mwolfien.github.io/ten_topics/de/)): search all topics and references, download them as [BibTeX](https://mwolfien.github.io/ten_topics/data/references.bib) or [CSL-JSON](https://mwolfien.github.io/ten_topics/data/references.json), and try the interactive [learning modules](https://mwolfien.github.io/ten_topics/learn/) in English and German.
 
 The vast and heterogeneous data being constantly generated in the clinics can provide great wealth for patients and research alike. The quickly evolving field of Medical Informatics research contributed numerous concepts, algorithms, and standards to facilitate this development.
 The here addressed topics are part of our viewpoint article "Ten Topics to Get Started in Medical Informatics Research" - [Wolfien et al. 2023](https://doi.org/10.2196/45948), published in the Journal of Medical Internet Research.

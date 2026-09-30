@@ -313,14 +313,12 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
             other_url = f"{base}/learn/{mid}/{other}/" if other else None
             other_link = f"{root}learn/{mid}/{other}/index.html" if other else None
             body = [module_html(mod, references, ref_url, topic_lookup, root, other, other_link)]
-            alt = f'<link rel="alternate" hreflang="{lang}" href="{base}/{path}">'
-            if other:
-                alt += f'\n<link rel="alternate" hreflang="{other}" href="{other_url}">'
-            extra = alt + f'\n<script src="{root}assets/learn.js" defer></script>'
+            extra = f'<script src="{root}assets/learn.js" defer></script>'
             write(path + "index.html", page(
                 base=base, path=path, title=mod["title"], description=mod["summary"], body="\n".join(body),
                 jsonld=module_jsonld(mod, base, f"{base}/{path}", other_url, references, ref_url),
-                current="learn", extra_head=extra, lang=lang))
+                current="learn", extra_head=extra, lang=lang,
+                translation=f"learn/{mid}/{other}/index.html" if other else None))
             urls.append(f"{base}/{path}")
             cards[lang].append(
                 f'<li class="card"><h3><a href="{mid}/{lang}/index.html" hreflang="{lang}">{esc(mod["title"])}</a></h3>'
