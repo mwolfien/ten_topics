@@ -67,7 +67,7 @@ The validation rejects, for example, unknown or unused reference ids, duplicate 
 
 - Pull requests are checked automatically (data validation, README up to date, DOIs and links) and reviewed by a maintainer before merging.
 - Links and DOIs are additionally checked once a month; broken ones are reported in an issue.
-- Larger updates are released as new versions and noted in the [CHANGELOG](CHANGELOG.md), so that each version can be cited.
+- Larger updates are released as new versions and noted in the [CHANGELOG](CHANGELOG.md), so that each version can be cited. The release steps are described in [RELEASING.md](RELEASING.md).
 
 ## License
 

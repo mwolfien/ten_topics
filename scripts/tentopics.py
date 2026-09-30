@@ -13,6 +13,7 @@ Usage:
   python scripts/tentopics.py build           regenerate README.md
   python scripts/tentopics.py build --check   fail if README.md is out of date
   python scripts/tentopics.py links           check that DOIs and URLs resolve
+  python scripts/tentopics.py release-notes   summarize references added since the last release
 """
 
 import argparse
@@ -227,6 +228,46 @@ def check_links(references):
     return fails
 
 
+# --------------------------------------------------------------------------- release notes
+
+def _added_key(value):
+    """Sortable key for `added` values: "2023" sorts before "2023-01"."""
+    return str(value) if "-" in str(value) else f"{value}-00"
+
+
+def release_notes(topics, references, since=None):
+    """Markdown summary of the references added since `since` (default: the latest `added`)."""
+    since = since or max((str(r["added"]) for r in references.values()), key=_added_key)
+    new = {rid for rid, ref in references.items() if _added_key(ref["added"]) >= _added_key(since)}
+
+    def cite(match):
+        ref = references[match.group(1)]
+        text = f"[{ref['label']}]({link(ref)})"
+        return f"**{text}**" if match.group(1) in new else text
+
+    out, listed = [], set()
+    for section in topics["sections"]:
+        for topic in section["topics"]:
+            items = [item for block in topic["body"] if isinstance(block, dict) for item in block["items"]]
+            items = [item for item in items if set(CITE.findall(item)) & new]
+            if not items:
+                continue
+            prefix = f"Topic {topic['number']}: " if topic.get("number") else ""
+            out += [f"### {prefix}{topic['title']}"]
+            out += [f"- {CITE.sub(cite, item)}" for item in items]
+            out += [""]
+            listed |= {rid for item in items for rid in CITE.findall(item)} & new
+    n_topics = sum(1 for line in out if line.startswith("### "))
+    head = [f"## What's new since {since}", "",
+            f"{len(new)} new references in {n_topics} topics "
+            f"({len(references)} references in total). New references are shown in bold.", ""]
+    missing = new - listed  # e.g. cited only in introductory text
+    if missing:
+        out += ["### Also added", ""]
+        out += [f"- [{references[r]['label']}]({link(references[r])})" for r in sorted(missing)] + [""]
+    return "\n".join(head + out).rstrip() + "\n"
+
+
 # --------------------------------------------------------------------------- main
 
 def main():
@@ -236,6 +277,8 @@ def main():
     build = sub.add_parser("build", help="regenerate README.md")
     build.add_argument("--check", action="store_true", help="fail if README.md is out of date")
     sub.add_parser("links", help="check that DOIs and URLs resolve")
+    notes = sub.add_parser("release-notes", help="summarize references added since the last release")
+    notes.add_argument("--since", help="YYYY or YYYY-MM (default: the most recent `added` value)")
     args = parser.parse_args()
 
     try:
@@ -261,6 +304,10 @@ def main():
             print(f"wrote {README.relative_to(ROOT)}")
     elif args.command == "links":
         sys.exit(1 if check_links(references) else 0)
+    elif args.command == "release-notes":
+        if args.since and not ADDED.match(args.since):
+            sys.exit("--since must be YYYY or YYYY-MM")
+        print(release_notes(topics, references, args.since), end="")
 
 
 if __name__ == "__main__":
