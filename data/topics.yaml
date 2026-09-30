@@ -116,7 +116,7 @@ sections:
           - items:
               - "User-centred design for AI in health care - [@seneviratne2022], users' perspectives on AI-enabled decision aids - [@hassan2024]"
               - "Dashboards with positive influence [@clarke2016] and design practices - [@vornhagen2026], like [@r-shiny] or [@plotly-dash]"
-              - "Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [@gao2016], [@reimer2021], [@brlek2021], or i2b2 [@murphy2010], [@castro2022]"
+              - "Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [@gao2013], [@reimer2021], [@brlek2021], or i2b2 [@murphy2010], [@castro2022]"
   - title: "Additional Topics"
     topics:
       - id: computational-infrastructure

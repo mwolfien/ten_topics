@@ -3,6 +3,17 @@
 This collection is a living resource. Notable changes to its content and structure are listed here.
 Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [10.5281/zenodo.23047297](https://doi.org/10.5281/zenodo.23047297) always resolves to the latest version.
 
+## Unreleased
+
+### Structure
+- Website at https://mwolfien.github.io/ten_topics/ with one page per topic, full-text search, an "all references" page, schema.org metadata, a sitemap and `llms.txt`/`llms-full.txt` for LLMs. It is built by `scripts/tentopics.py site` and deployed automatically.
+- Downloads of all references (and per topic) as BibTeX and CSL-JSON, plus the topic structure as JSON.
+- Release helper `scripts/tentopics.py release-notes` and release checklist in `RELEASING.md`.
+
+### Content
+- Added titles, journals and PubMed IDs to 94 references (from PubMed).
+- Corrected the year of the cBioPortal paper (Gao et al. 2013, previously listed as 2016).
+
 ## 2026-09
 
 ### Content

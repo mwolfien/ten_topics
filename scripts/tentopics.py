@@ -14,6 +14,7 @@ Usage:
   python scripts/tentopics.py build --check   fail if README.md is out of date
   python scripts/tentopics.py links           check that DOIs and URLs resolve
   python scripts/tentopics.py release-notes   summarize references added since the last release
+  python scripts/tentopics.py site            build the website into _site/
 """
 
 import argparse
@@ -37,7 +38,7 @@ CITE = re.compile(r"\[@([a-z0-9-]+)\]")
 DOI = re.compile(r"^10\.\d{4,9}/\S+$")
 ADDED = re.compile(r"^\d{4}(-\d{2})?$")
 TYPES = {"article", "preprint", "book", "resource", "website"}
-REF_FIELDS = {"label", "year", "doi", "url", "type", "added", "title", "journal", "note"}
+REF_FIELDS = {"label", "year", "doi", "url", "type", "added", "title", "journal", "pmid", "note"}
 USER_AGENT = "ten-topics-link-check (+https://github.com/mwolfien/ten_topics)"
 
 
@@ -118,6 +119,8 @@ def validate(topics, references):
             errors.append(f"{where}: type must be one of {sorted(TYPES)}")
         if ref.get("type") != "resource" and not isinstance(ref.get("year"), int):
             errors.append(f"{where}: missing or non-numeric year")
+        if "pmid" in ref and not re.fullmatch(r"\d{1,9}", str(ref["pmid"])):
+            errors.append(f"{where}: pmid must be numeric")
         if not ADDED.match(str(ref.get("added", ""))):
             errors.append(f"{where}: added must be YYYY or YYYY-MM (as a quoted string)")
 
@@ -279,6 +282,10 @@ def main():
     sub.add_parser("links", help="check that DOIs and URLs resolve")
     notes = sub.add_parser("release-notes", help="summarize references added since the last release")
     notes.add_argument("--since", help="YYYY or YYYY-MM (default: the most recent `added` value)")
+    site = sub.add_parser("site", help="build the website")
+    site.add_argument("--out", default=str(ROOT / "_site"), help="output directory (default: _site)")
+    site.add_argument("--base-url", default="https://mwolfien.github.io/ten_topics",
+                      help="public URL of the site, used for canonical links, sitemap and llms.txt")
     args = parser.parse_args()
 
     try:
@@ -308,6 +315,14 @@ def main():
         if args.since and not ADDED.match(args.since):
             sys.exit("--since must be YYYY or YYYY-MM")
         print(release_notes(topics, references, args.since), end="")
+    elif args.command == "site":
+        import website  # scripts/website.py
+        out = Path(args.out).resolve()
+        broken = website.build(topics, references, out, args.base_url)
+        if broken:
+            print("\n".join(broken))
+            sys.exit(f"{len(broken)} broken internal link(s) in the site")
+        print(f"wrote site to {out}")
 
 
 if __name__ == "__main__":

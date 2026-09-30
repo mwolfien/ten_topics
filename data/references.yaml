@@ -5,80 +5,119 @@
 references:
   meurers2021:
     label: "Meurers et al. 2021"
+    title: "A scalable software solution for anonymizing high-dimensional biomedical data"
+    journal: "GigaScience"
     year: 2021
     doi: "10.1093/gigascience/giab068"
+    pmid: "34605868"
     type: article
     added: "2023"
   zuo2021:
     label: "Zuo et al. 2021"
+    title: "Data Anonymization for Pervasive Health Care: Systematic Literature Mapping Study"
+    journal: "JMIR Medical Informatics"
     year: 2021
     doi: "10.2196/29871"
+    pmid: "34652278"
     type: article
     added: "2023"
   chen2021:
     label: "Chen et al. 2021"
+    title: "Synthetic data in machine learning for medicine and healthcare"
+    journal: "Nature Biomedical Engineering"
     year: 2021
     doi: "10.1038/s41551-021-00751-8"
+    pmid: "34131324"
     type: article
     added: "2023"
   kaabachi2025:
     label: "Kaabachi et al. 2025"
+    title: "A scoping review of privacy and utility metrics in medical synthetic data"
+    journal: "npj Digital Medicine"
     year: 2025
     doi: "10.1038/s41746-024-01359-3"
+    pmid: "39870798"
     type: article
     added: "2026-09"
   vayena2018:
     label: "Vayena et al. 2018"
+    title: "Health Research with Big Data: Time for Systemic Oversight"
+    journal: "Journal of Law, Medicine & Ethics"
     year: 2018
     doi: "10.1177/1073110518766026"
+    pmid: "30034208"
     type: article
     added: "2023"
   mclennan2022:
     label: "McLennan et al. 2022"
+    title: "Embedded ethics: a proposal for integrating ethics into the development of medical AI"
+    journal: "BMC Medical Ethics"
     year: 2022
     doi: "10.1186/S12910-022-00746-3"
+    pmid: "35081955"
     type: article
     added: "2023"
   ong2024:
     label: "Ong et al. 2024"
+    title: "Ethical and regulatory challenges of large language models in medicine"
+    journal: "The Lancet Digital Health"
     year: 2024
     doi: "10.1016/S2589-7500(24)00061-X"
+    pmid: "38658283"
     type: article
     added: "2026-09"
   haltaufderheide2024:
     label: "Haltaufderheide and Ranisch 2024"
+    title: "The ethics of ChatGPT in medicine and healthcare: a systematic review on Large Language Models (LLMs)"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01157-x"
+    pmid: "38977771"
     type: article
     added: "2026-09"
   gilbert2024:
     label: "Gilbert 2024"
+    title: "The EU passes the AI Act and its implications for digital medicine are unclear"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01116-6"
+    pmid: "38778162"
     type: article
     added: "2026-09"
   hayrinen2008:
     label: "Häyrinen et al. 2008"
+    title: "Definition, structure, content, use and impacts of electronic health records: a review of the research literature"
+    journal: "International Journal of Medical Informatics"
     year: 2008
     doi: "10.1016/J.IJMEDINF.2007.09.001"
+    pmid: "17951106"
     type: article
     added: "2023"
   brender2000:
     label: "Brender et al. 2000"
+    title: "Research needs and priorities in health informatics"
+    journal: "International Journal of Medical Informatics"
     year: 2000
     doi: "10.1016/S1386-5056(00)00092-7"
+    pmid: "10978926"
     type: article
     added: "2023"
   haux2002:
     label: "Haux et al. 2002"
+    title: "Health care in the information society. A prognosis for the year 2013"
+    journal: "International Journal of Medical Informatics"
     year: 2002
     doi: "10.1016/S1386-5056(02)00030-8"
+    pmid: "12453552"
     type: article
     added: "2023"
   dehoop2021:
     label: "De Hoop et al. 2021"
+    title: "Evaluating Electronic Health Record Limitations and Time Expenditure in a German Medical Center"
+    journal: "Applied Clinical Informatics"
     year: 2021
     doi: "10.1055/S-0041-1739519"
+    pmid: "34937102"
     type: article
     added: "2023"
   millar2016:
@@ -89,14 +128,20 @@ references:
     added: "2023"
   schaaf2021:
     label: "Schaaf et al. 2021"
+    title: "Evaluation of a clinical decision support system for rare diseases: a qualitative study"
+    journal: "BMC Medical Informatics and Decision Making"
     year: 2021
     doi: "10.1186/S12911-021-01435-8"
+    pmid: "33602191"
     type: article
     added: "2023"
   holmgren2024:
     label: "Holmgren et al. 2024"
+    title: "Physician EHR Time and Visit Volume Following Adoption of Team-Based Documentation Support"
+    journal: "JAMA Internal Medicine"
     year: 2024
     doi: "10.1001/jamainternmed.2024.4123"
+    pmid: "39186284"
     type: article
     added: "2026-09"
   tierney2024:
@@ -107,14 +152,20 @@ references:
     added: "2026-09"
   olson2025:
     label: "Olson et al. 2025"
+    title: "Use of Ambient AI Scribes to Reduce Administrative Burden and Professional Burnout"
+    journal: "JAMA Network Open"
     year: 2025
     doi: "10.1001/jamanetworkopen.2025.34976"
+    pmid: "41037268"
     type: article
     added: "2026-09"
   lukac2025:
     label: "Lukac et al. 2025"
+    title: "Ambient AI Scribes in Clinical Practice: A Randomized Trial"
+    journal: "NEJM AI"
     year: 2025
     doi: "10.1056/AIoa2501000"
+    pmid: "41497288"
     type: article
     added: "2026-09"
   soroush2024:
@@ -125,8 +176,11 @@ references:
     added: "2026-09"
   palmblad2019:
     label: "Palmblad et al. 2019"
+    title: "Automated workflow composition in mass spectrometry-based proteomics"
+    journal: "Bioinformatics"
     year: 2019
     doi: "10.1093/BIOINFORMATICS/BTY646"
+    pmid: "30060113"
     type: article
     added: "2023"
   xu2018:
@@ -137,14 +191,20 @@ references:
     added: "2023"
   gierend2024:
     label: "Gierend et al. 2024"
+    title: "Provenance Information for Biomedical Data and Workflows: Scoping Review"
+    journal: "Journal of Medical Internet Research"
     year: 2024
     doi: "10.2196/51297"
+    pmid: "39178413"
     type: article
     added: "2026-09"
   inau2021:
     label: "Inau et al. 2021"
+    title: "Initiatives, Concepts, and Implementation Practices of FAIR (Findable, Accessible, Interoperable, and Reusable) Data Principles in Health Data Stewardship Practice: Protocol for a Scoping Review"
+    journal: "JMIR Research Protocols"
     year: 2021
     doi: "10.2196/22505"
+    pmid: "33528373"
     type: article
     added: "2023"
   queraltrosinach2021:
@@ -155,32 +215,47 @@ references:
     added: "2023"
   frexia2021:
     label: "Frexia et al. 2021"
+    title: "openEHR Is FAIR-Enabling by Design"
+    journal: "Studies in Health Technology and Informatics"
     year: 2021
     doi: "10.3233/SHTI210131"
+    pmid: "34042716"
     type: article
     added: "2023"
   tai2025:
     label: "Tai et al. 2025"
+    title: "FAIRification of biomedical research data"
+    journal: "Journal of Clinical Epidemiology"
     year: 2025
     doi: "10.1016/j.jclinepi.2025.111920"
+    pmid: "40774362"
     type: article
     added: "2026-09"
   scheibner2021:
     label: "Scheibner et al. 2021"
+    title: "Revolutionizing Medical Data Sharing Using Advanced Privacy-Enhancing Technologies: Technical, Legal, and Ethical Synthesis"
+    journal: "Journal of Medical Internet Research"
     year: 2021
     doi: "10.2196/25120"
+    pmid: "33629963"
     type: article
     added: "2023"
   gaye2014:
     label: "Gaye et al. 2014"
+    title: "DataSHIELD: taking the analysis to the data, not the data to the analysis"
+    journal: "International Journal of Epidemiology"
     year: 2014
     doi: "10.1093/IJE/DYU188"
+    pmid: "25261970"
     type: article
     added: "2023"
   marcon2021:
     label: "Marcon et al. 2021"
+    title: "Orchestrating privacy-protected big data analyses of data from different resources with R and DataSHIELD"
+    journal: "PLOS Computational Biology"
     year: 2021
     doi: "10.1371/JOURNAL.PCBI.1008880"
+    pmid: "33784300"
     type: article
     added: "2023"
   beyan2020:
@@ -197,44 +272,65 @@ references:
     added: "2023"
   teo2024:
     label: "Teo et al. 2024"
+    title: "Federated machine learning in healthcare: A systematic review on clinical applications and technical architecture"
+    journal: "Cell Reports Medicine"
     year: 2024
     doi: "10.1016/j.xcrm.2024.101419"
+    pmid: "38340728"
     type: article
     added: "2026-09"
   eden2025:
     label: "Eden et al. 2025"
+    title: "A scoping review of the governance of federated learning in healthcare"
+    journal: "npj Digital Medicine"
     year: 2025
     doi: "10.1038/s41746-025-01836-3"
+    pmid: "40640574"
     type: article
     added: "2026-09"
   hussein2025:
     label: "Hussein et al. 2025"
+    title: "Interoperability Framework of the European Health Data Space for the Secondary Use of Data: Interactive European Interoperability Framework-Based Standards Compliance Toolkit for AI-Driven Projects"
+    journal: "Journal of Medical Internet Research"
     year: 2025
     doi: "10.2196/69813"
+    pmid: "40266673"
     type: article
     added: "2026-09"
   negrocalduch2021:
     label: "Negro-Calduch et al. 2021"
+    title: "Technological progress in electronic health record system optimization: Systematic review of systematic literature reviews"
+    journal: "International Journal of Medical Informatics"
     year: 2021
     doi: "10.1016/J.IJMEDINF.2021.104507"
+    pmid: "34049051"
     type: article
     added: "2023"
   prasser2019:
     label: "Prasser et al. 2019"
+    title: "Privacy-enhancing ETL-processes for biomedical data"
+    journal: "International Journal of Medical Informatics"
     year: 2019
     doi: "10.1016/J.IJMEDINF.2019.03.006"
+    pmid: "31029266"
     type: article
     added: "2023"
   liaw2021:
     label: "Liaw et al. 2021"
+    title: "Quality assessment of real-world data repositories across the data life cycle: A literature review"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2021
     doi: "10.1093/JAMIA/OCAA340"
+    pmid: "33496785"
     type: article
     added: "2023"
   helgheim2019:
     label: "Helgheim et al. 2019"
+    title: "Merging Data Diversity of Clinical Medical Records to Improve Effectiveness"
+    journal: "International Journal of Environmental Research and Public Health"
     year: 2019
     doi: "10.3390/IJERPH16050769"
+    pmid: "30832447"
     type: article
     added: "2023"
   book-of-ohdsi-etl:
@@ -244,38 +340,56 @@ references:
     added: "2023"
   guo2019:
     label: "Guo et al. 2019"
+    title: "Comparison of the cohort selection performance of Australian Medicines Terminology to Anatomical Therapeutic Chemical mappings"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2019
     doi: "10.1093/JAMIA/OCZ143"
+    pmid: "31545380"
     type: article
     added: "2023"
   wiest2024:
     label: "Wiest et al. 2024"
+    title: "Privacy-preserving large language models for structured medical information retrieval"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01233-2"
+    pmid: "39304709"
     type: article
     added: "2026-09"
   hein2025:
     label: "Hein et al. 2025"
+    title: "Iterative refinement and goal articulation to optimize large language models for clinical information extraction"
+    journal: "npj Digital Medicine"
     year: 2025
     doi: "10.1038/s41746-025-01686-z"
+    pmid: "40410408"
     type: article
     added: "2026-09"
   hu2026:
     label: "Hu et al. 2026"
+    title: "Information extraction from clinical notes: are we ready to switch to large language models?"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2026
     doi: "10.1093/jamia/ocaf213"
+    pmid: "41533750"
     type: article
     added: "2026-09"
   andersen2018:
     label: "Andersen et al. 2018"
+    title: "Connecting the clinical IT infrastructure to a service-oriented architecture of medical devices"
+    journal: "Biomedical Engineering / Biomedizinische Technik"
     year: 2018
     doi: "10.1515/bmt-2017-0021"
+    pmid: "29272252"
     type: article
     added: "2023"
   lehne2019:
     label: "Lehne et al. 2019"
+    title: "The Use of FHIR in Digital Health - A Review of the Scientific Literature"
+    journal: "Studies in Health Technology and Informatics"
     year: 2019
     doi: "10.3233/SHTI190805"
+    pmid: "31483254"
     type: article
     added: "2023"
   bender2013:
@@ -303,98 +417,146 @@ references:
     added: "2023"
   mandel2016:
     label: "Mandel et al. 2016"
+    title: "SMART on FHIR: a standards-based, interoperable apps platform for electronic health records"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2016
     doi: "10.1093/JAMIA/OCV189"
+    pmid: "26911829"
     type: article
     added: "2023"
   li2024:
     label: "Li et al. 2024"
+    title: "FHIR-GPT Enhances Health Interoperability with Large Language Models"
+    journal: "NEJM AI"
     year: 2024
     doi: "10.1056/AIcs2300301"
+    pmid: "40746832"
     type: article
     added: "2026-09"
   engelke2025:
     label: "Engelke et al. 2025"
+    title: "FHIR-Former: enhancing clinical predictions through Fast Healthcare Interoperability Resources and large language models"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2025
     doi: "10.1093/jamia/ocaf165"
+    pmid: "41082356"
     type: article
     added: "2026-09"
   garza2016:
     label: "Garza et al. 2016"
+    title: "Evaluating common data models for use with a longitudinal community registry"
+    journal: "Journal of Biomedical Informatics"
     year: 2016
     doi: "10.1016/J.JBI.2016.10.016"
+    pmid: "27989817"
     type: article
     added: "2023"
   reinecke2021:
     label: "Reinecke et al. 2021"
+    title: "The Usage of OHDSI OMOP - A Scoping Review"
+    journal: "Studies in Health Technology and Informatics"
     year: 2021
     doi: "10.3233/SHTI210546"
+    pmid: "34545824"
     type: article
     added: "2023"
   peng2021:
     label: "Peng et al. 2021"
+    title: "Towards the Representation of Genomic Data in HL7 FHIR and OMOP CDM"
+    journal: "Studies in Health Technology and Informatics"
     year: 2021
     doi: "10.3233/SHTI210545"
+    pmid: "34545823"
     type: article
     added: "2023"
   ahmadi2022:
     label: "Ahmadi et al. 2022"
+    title: "OMOP CDM Can Facilitate Data-Driven Studies for Cancer Prediction: A Systematic Review"
+    journal: "International Journal of Molecular Sciences"
     year: 2022
     doi: "10.3390/ijms231911834"
+    pmid: "36233137"
     type: article
     added: "2023"
   park2022:
     label: "Park et al. 2022"
+    title: "Development and Validation of the Radiology Common Data Model (R-CDM) for the International Standardization of Medical Imaging Data"
+    journal: "Yonsei Medical Journal"
     year: 2022
     doi: "10.3349/YMJ.2022.63.S74"
+    pmid: "35040608"
     type: article
     added: "2023"
   wang2025:
     label: "Wang et al. 2025a"
+    title: "A scoping review of OMOP CDM adoption for cancer research using real world data"
+    journal: "npj Digital Medicine"
     year: 2025
     doi: "10.1038/s41746-025-01581-7"
+    pmid: "40189628"
     type: article
     added: "2026-09"
   cai2025:
     label: "Cai et al. 2025"
+    title: "Semaglutide and Nonarteritic Anterior Ischemic Optic Neuropathy"
+    journal: "JAMA Ophthalmology"
     year: 2025
     doi: "10.1001/jamaophthalmol.2024.6555"
+    pmid: "39976940"
     type: article
     added: "2026-09"
   adams2025:
     label: "Adams et al. 2025"
+    title: "Breaking Digital Health Barriers Through a Large Language Model-Based Tool for Automated Observational Medical Outcomes Partnership Mapping: Development and Validation Study"
+    journal: "Journal of Medical Internet Research"
     year: 2025
     doi: "10.2196/69004"
+    pmid: "40146872"
     type: article
     added: "2026-09"
   blacketer2021:
     label: "Blacketer et al. 2021"
+    title: "Increasing trust in real-world evidence through evaluation of observational data quality"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2021
     doi: "10.1093/JAMIA/OCAB132"
+    pmid: "34313749"
     type: article
     added: "2023"
   voss2024:
     label: "Voss et al. 2024"
+    title: "European Health Data & Evidence Network-learnings from building out a standardized international health data network"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2024
     doi: "10.1093/jamia/ocad214"
+    pmid: "37952118"
     type: article
     added: "2026-09"
   blacketer2025:
     label: "Blacketer et al. 2025"
+    title: "Advancing Real-World Evidence Through a Federated Health Data Network (EHDEN): Descriptive Study"
+    journal: "Journal of Medical Internet Research"
     year: 2025
     doi: "10.2196/74119"
+    pmid: "40774333"
     type: article
     added: "2026-09"
   goncalves2020:
     label: "Goncalves et al. 2020"
+    title: "Generation and evaluation of synthetic patient data"
+    journal: "BMC Medical Research Methodology"
     year: 2020
     doi: "10.1186/S12874-020-00977-1"
+    pmid: "32381039"
     type: article
     added: "2023"
   lobe2022:
     label: "Löbe et al. 2022"
+    title: "Towards Harmonized Data Quality in the Medical Informatics Initiative - Current State and Future Directions"
+    journal: "Studies in Health Technology and Informatics"
     year: 2022
     doi: "10.3233/SHTI210904"
+    pmid: "35062137"
     type: article
     added: "2023"
   wang2015:
@@ -411,62 +573,92 @@ references:
     added: "2023"
   schwabe2024:
     label: "Schwabe et al. 2024"
+    title: "The METRIC-framework for assessing data quality for trustworthy AI in medicine: a systematic review"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01196-4"
+    pmid: "39097662"
     type: article
     added: "2026-09"
   hahn2022:
     label: "Hahn et al. 2022"
+    title: "Contribution of Synthetic Data Generation towards an Improved Patient Stratification in Palliative Care"
+    journal: "Journal of Personalized Medicine"
     year: 2022
     doi: "10.3390/JPM12081278"
+    pmid: "36013227"
     type: article
     added: "2023"
   vallevik2024:
     label: "Vallevik et al. 2024"
+    title: "Can I trust my fake data - A comprehensive quality assessment framework for synthetic tabular data in healthcare"
+    journal: "International Journal of Medical Informatics"
     year: 2024
     doi: "10.1016/j.ijmedinf.2024.105413"
+    pmid: "38493547"
     type: article
     added: "2026-09"
   sutton2020:
     label: "Sutton et al. 2020"
+    title: "An overview of clinical decision support systems: benefits, risks, and strategies for success"
+    journal: "npj Digital Medicine"
     year: 2020
     doi: "10.1038/s41746-020-0221-y"
+    pmid: "32047862"
     type: article
     added: "2023"
   shen2021:
     label: "Shen et al. 2021"
+    title: "Clinical decision support system, using expert consensus-derived logic and natural language processing, decreased sedation-type order errors for patients undergoing endoscopy"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2021
     doi: "10.1093/JAMIA/OCAA250"
+    pmid: "33175157"
     type: article
     added: "2023"
   ronicke2019:
     label: "Ronicke et al. 2019"
+    title: "Can a decision support system accelerate rare disease diagnosis? Evaluating the potential impact of Ada DX in a retrospective study"
+    journal: "Orphanet Journal of Rare Diseases"
     year: 2019
     doi: "10.1186/S13023-019-1040-6"
+    pmid: "30898118"
     type: article
     added: "2023"
   eltorai2020:
     label: "Eltorai et al. 2020"
+    title: "Thoracic Radiologists' Versus Computer Scientists' Perspectives on the Future of Artificial Intelligence in Radiology"
+    journal: "Journal of Thoracic Imaging"
     year: 2020
     doi: "10.1097/RTI.0000000000000453"
+    pmid: "31609778"
     type: article
     added: "2023"
   groenhof2019:
     label: "Groenhof et al. 2019"
+    title: "A computerised decision support system for cardiovascular risk management 'live' in the electronic health record environment: development, validation and implementation-the Utrecht Cardiovascular Cohort Initiative"
+    journal: "Netherlands Heart Journal"
     year: 2019
     doi: "10.1007/S12471-019-01308-W"
+    pmid: "31372838"
     type: article
     added: "2023"
   olakotan2020:
     label: "Olakotan et al. 2020"
+    title: "A Systematic Review on CDSS Alert Appropriateness"
+    journal: "Studies in Health Technology and Informatics"
     year: 2020
     doi: "10.3233/SHTI200293"
+    pmid: "32570513"
     type: article
     added: "2023"
   jacobs2021:
     label: "Jacobs et al. 2021"
+    title: "How machine-learning recommendations influence clinician treatment selections: the example of the antidepressant selection"
+    journal: "Translational Psychiatry"
     year: 2021
     doi: "10.1038/s41398-021-01224-x"
+    pmid: "33542191"
     type: article
     added: "2023"
   antoniadi2021:
@@ -477,20 +669,29 @@ references:
     added: "2023"
   wolfien2020:
     label: "Wolfien et al. 2020"
+    title: "Hematopoietic stem-cell senescence and myocardial repair - Coronary artery disease genotype/phenotype analysis of post-MI myocardial regeneration response induced by CABG/CD133+ bone marrow hematopoietic stem cell treatment in RCT PERFECT Phase 3"
+    journal: "eBioMedicine"
     year: 2020
     doi: "10.1016/J.EBIOM.2020.102862"
+    pmid: "32629392"
     type: article
     added: "2023"
   kostickquenet2022:
     label: "Kostick-Quenet and Gerke 2022"
+    title: "AI in the hands of imperfect users"
+    journal: "npj Digital Medicine"
     year: 2022
     doi: "10.1038/s41746-022-00737-z"
+    pmid: "36577851"
     type: article
     added: "2023"
   reps2018:
     label: "Reps et al. 2018"
+    title: "Design and implementation of a standardized framework to generate and evaluate patient-level prediction models using observational healthcare data"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2018
     doi: "10.1093/JAMIA/OCY032"
+    pmid: "29718407"
     type: article
     added: "2023"
   book-of-ohdsi-plp:
@@ -500,38 +701,56 @@ references:
     added: "2023"
   singhal2023:
     label: "Singhal et al. 2023"
+    title: "Large language models encode clinical knowledge"
+    journal: "Nature"
     year: 2023
     doi: "10.1038/s41586-023-06291-2"
+    pmid: "37438534"
     type: article
     added: "2023"
   singhal2025:
     label: "Singhal et al. 2025"
+    title: "Toward expert-level medical question answering with large language models"
+    journal: "Nature Medicine"
     year: 2025
     doi: "10.1038/s41591-024-03423-7"
+    pmid: "39779926"
     type: article
     added: "2026-09"
   vanveen2024:
     label: "Van Veen et al. 2024"
+    title: "Adapted large language models can outperform medical experts in clinical text summarization"
+    journal: "Nature Medicine"
     year: 2024
     doi: "10.1038/s41591-024-02855-5"
+    pmid: "38413730"
     type: article
     added: "2026-09"
   tu2025:
     label: "Tu et al. 2025"
+    title: "Towards conversational diagnostic artificial intelligence"
+    journal: "Nature"
     year: 2025
     doi: "10.1038/s41586-025-08866-7"
+    pmid: "40205050"
     type: article
     added: "2026-09"
   hager2024:
     label: "Hager et al. 2024"
+    title: "Evaluation and mitigation of the limitations of large language models in clinical decision-making"
+    journal: "Nature Medicine"
     year: 2024
     doi: "10.1038/s41591-024-03097-1"
+    pmid: "38965432"
     type: article
     added: "2026-09"
   goh2024:
     label: "Goh et al. 2024"
+    title: "Large Language Model Influence on Diagnostic Reasoning: A Randomized Clinical Trial"
+    journal: "JAMA Network Open"
     year: 2024
     doi: "10.1001/jamanetworkopen.2024.40969"
+    pmid: "39466245"
     type: article
     added: "2026-09"
   wolfien2026:
@@ -542,14 +761,20 @@ references:
     added: "2026-09"
   lambert2023:
     label: "Lambert et al. 2023"
+    title: "An integrative review on the acceptance of artificial intelligence among healthcare professionals in hospitals"
+    journal: "npj Digital Medicine"
     year: 2023
     doi: "10.1038/s41746-023-00852-5"
+    pmid: "37301946"
     type: article
     added: "2023"
   bayor2025:
     label: "Bayor et al. 2025"
+    title: "Designing Clinical Decision Support Systems (CDSS)-A User-Centered Lens of the Design Characteristics, Challenges, and Implications: Systematic Review"
+    journal: "Journal of Medical Internet Research"
     year: 2025
     doi: "10.2196/63733"
+    pmid: "40540451"
     type: article
     added: "2026-09"
   seneviratne2022:
@@ -560,8 +785,11 @@ references:
     added: "2023"
   hassan2024:
     label: "Hassan et al. 2024"
+    title: "Systematic review to understand users perspectives on AI-enabled decision aids to inform shared decision making"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01326-y"
+    pmid: "39572838"
     type: article
     added: "2026-09"
   clarke2016:
@@ -572,8 +800,11 @@ references:
     added: "2023"
   vornhagen2026:
     label: "Vornhagen et al. 2026"
+    title: "Design Practices for Data Dashboards in Health Care: Scoping Review"
+    journal: "Journal of Medical Internet Research"
     year: 2026
     doi: "10.2196/77361"
+    pmid: "41740151"
     type: article
     added: "2026-09"
   r-shiny:
@@ -586,76 +817,112 @@ references:
     url: "https://zenodo.org/record/3346213"
     type: resource
     added: "2023"
-  gao2016:
-    label: "Gao et al. 2016"
-    year: 2016
+  gao2013:
+    label: "Gao et al. 2013"
+    title: "Integrative analysis of complex cancer genomics and clinical profiles using the cBioPortal"
+    journal: "Science Signaling"
+    year: 2013
     doi: "10.1126/scisignal.2004088"
+    pmid: "23550210"
     type: article
     added: "2023"
   reimer2021:
     label: "Reimer et al. 2021"
+    title: "Challenges and Experiences Extending the cBioPortal for Cancer Genomics to a Molecular Tumor Board Platform"
+    journal: "Studies in Health Technology and Informatics"
     year: 2021
     doi: "10.3233/SHTI210833"
+    pmid: "34795098"
     type: article
     added: "2023"
   brlek2021:
     label: "Brlek et al. 2021"
+    title: "Integrative cBioPortal Analysis Revealed Molecular Mechanisms That Regulate EGFR-PI3K-AKT-mTOR Pathway in Diffuse Gliomas of the Brain"
+    journal: "Cancers"
     year: 2021
     doi: "10.3390/cancers13133247"
+    pmid: "34209611"
     type: article
     added: "2023"
   murphy2010:
     label: "Murphy et al. 2010"
+    title: "Serving the enterprise and beyond with informatics for integrating biology and the bedside (i2b2)"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2010
     doi: "10.1136/jamia.2009.000893"
+    pmid: "20190053"
     type: article
     added: "2023"
   castro2022:
     label: "Castro et al. 2022"
+    title: "The Mass General Brigham Biobank Portal: an i2b2-based data repository linking disparate and high-dimensional patient data to support multimodal analytics"
+    journal: "Journal of the American Medical Informatics Association"
     year: 2022
     doi: "10.1093/jamia/ocab264"
+    pmid: "34849976"
     type: article
     added: "2023"
   ismail2020:
     label: "Ismail et al. 2020"
+    title: "Requirements of Health Data Management Systems for Biomedical Care and Research: Scoping Review"
+    journal: "Journal of Medical Internet Research"
     year: 2020
     doi: "10.2196/17508"
+    pmid: "32348265"
     type: article
     added: "2023"
   ozaydin2020:
     label: "Ozaydin et al. 2020"
+    title: "Healthcare Research and Analytics Data Infrastructure Solution: A Data Warehouse for Health Services Research"
+    journal: "Journal of Medical Internet Research"
     year: 2020
     doi: "10.2196/18579"
+    pmid: "32496199"
     type: article
     added: "2023"
   allofus2024:
     label: "All of Us Research Program Genomics Investigators 2024"
+    title: "Genomic data in the All of Us Research Program"
+    journal: "Nature"
     year: 2024
     doi: "10.1038/s41586-023-06957-x"
+    pmid: "38374255"
     type: article
     added: "2026-09"
   wang2025b:
     label: "Wang et al. 2025b"
+    title: "Crossing borders securely: synthetic data and federated networks for privacy-preserving access to real-world data and emerging use cases"
+    journal: "npj Digital Medicine"
     year: 2025
     doi: "10.1038/s41746-025-02126-8"
+    pmid: "41398377"
     type: article
     added: "2026-09"
   mazein2018:
     label: "Mazein et al. 2018"
+    title: "Systems medicine disease maps: community-driven comprehensive representation of disease mechanisms"
+    journal: "npj Systems Biology and Applications"
     year: 2018
     doi: "10.1038/s41540-018-0059-y"
+    pmid: "29872544"
     type: article
     added: "2023"
   ostaszewski2021:
     label: "Ostaszewski et al. 2021"
+    title: "COVID19 Disease Map, a computational knowledge repository of virus-host interaction mechanisms"
+    journal: "Molecular Systems Biology"
     year: 2021
     doi: "10.15252/msb.202110387"
+    pmid: "34664389"
     type: article
     added: "2023"
   serhan2020:
     label: "Serhan and Gupta et al. 2020"
+    title: "The Atlas of Inflammation Resolution (AIR)"
+    journal: "Molecular Aspects of Medicine"
     year: 2020
     doi: "10.1016/j.mam.2020.100894"
+    pmid: "32893032"
     type: article
     added: "2023"
   scheel2021:
@@ -666,8 +933,11 @@ references:
     added: "2023"
   pereira2021:
     label: "Pereira et al. 2021"
+    title: "CyFi-MAP: an interactive pathway-based resource for cystic fibrosis"
+    journal: "Scientific Reports"
     year: 2021
     doi: "10.1038/s41598-021-01618-3"
+    pmid: "34782688"
     type: article
     added: "2023"
   zerrouk2022:
@@ -678,25 +948,37 @@ references:
     added: "2023"
   zerrouk2024:
     label: "Zerrouk et al. 2024a"
+    title: "Large-scale computational modelling of the M1 and M2 synovial macrophages in rheumatoid arthritis"
+    journal: "npj Systems Biology and Applications"
     year: 2024
     doi: "10.1038/s41540-024-00337-5"
+    pmid: "38272919"
     type: article
     added: "2026-09"
   zerrouk2024b:
     label: "Zerrouk et al. 2024b"
+    title: "Building a modular and multi-cellular virtual twin of the synovial joint in Rheumatoid Arthritis"
+    journal: "npj Digital Medicine"
     year: 2024
     doi: "10.1038/s41746-024-01396-y"
+    pmid: "39719524"
     type: article
     added: "2026-09"
   mazein2021:
     label: "Mazein et al. 2021"
+    title: "AsthmaMap: An interactive knowledge repository for mechanisms of asthma"
+    journal: "Journal of Allergy and Clinical Immunology"
     year: 2021
     doi: "10.1016/j.jaci.2020.11.032"
+    pmid: "33309742"
     type: article
     added: "2023"
   balaur2025:
     label: "Balaur et al. 2025"
+    title: "FAIR assessment of Disease Maps fosters open science and scientific crowdsourcing in systems biomedicine"
+    journal: "Scientific Data"
     year: 2025
     doi: "10.1038/s41597-025-05147-w"
+    pmid: "40410181"
     type: article
     added: "2026-09"
