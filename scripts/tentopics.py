@@ -138,8 +138,12 @@ def validate(topics, references):
             used.add(rid)
             if rid not in references:
                 errors.append(f"topics.yaml: {where}: unknown reference [@{rid}]")
+    import learn
+    modules = learn.load_modules()
+    errors += learn.validate(modules, references, topic_ids)
+    used |= learn.cited(modules)
     for rid in sorted(set(references) - used):
-        errors.append(f"references.yaml: {rid} is never cited in topics.yaml")
+        errors.append(f"references.yaml: {rid} is never cited in topics.yaml or a learning module")
 
     return errors
 

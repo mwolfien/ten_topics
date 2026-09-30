@@ -9,10 +9,12 @@ Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [
 - Website at https://mwolfien.github.io/ten_topics/ with one page per topic, full-text search, an "all references" page, schema.org metadata, a sitemap and `llms.txt`/`llms-full.txt` for LLMs. It is built by `scripts/tentopics.py site` and deployed automatically.
 - Downloads of all references (and per topic) as BibTeX and CSL-JSON, plus the topic structure as JSON.
 - Release helper `scripts/tentopics.py release-notes` and release checklist in `RELEASING.md`.
+- Pilot of interactive, bilingual learning modules under `learn/` (German and English): lessons in Markdown with dropdown quizzes, matching exercises, reflection questions and "why this matters for you" notes for five audiences. First module: history and development of medical informatics. See `learn/README.md`.
 
 ### Content
 - Added titles, journals and PubMed IDs to 94 references (from PubMed).
 - Corrected the year of the cBioPortal paper (Gao et al. 2013, previously listed as 2016).
+- Added three references for the first learning module (Haux 2006, Berg 2001, Sittig and Singh 2010).
 
 ## 2026-09
 

@@ -208,7 +208,7 @@ def jsonld_dataset(base, today, topics):
 
 # --------------------------------------------------------------------------- HTML
 
-def page(*, base, path, title, description, body, jsonld=None, alternate_md=None, current=None, extra_head=""):
+def page(*, base, path, title, description, body, jsonld=None, alternate_md=None, current=None, extra_head="", lang="en"):
     """Render a full HTML page. `path` is the page's directory relative to the site root ("" or "topics/x/")."""
     root = "../" * path.count("/")
     canonical = f"{base}/{path}"
@@ -224,7 +224,7 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
         f"<title>{esc(full_title)}</title>",
         f'<meta name="description" content="{esc(description)}">',
         f'<link rel="canonical" href="{esc(canonical)}">',
-        f'<meta property="og:type" content="website">',
+        '<meta property="og:type" content="website">',
         f'<meta property="og:site_name" content="{esc(TITLE)}">',
         f'<meta property="og:title" content="{esc(full_title)}">',
         f'<meta property="og:description" content="{esc(description)}">',
@@ -240,7 +240,7 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
         head.append(f'<script type="application/ld+json">\n{data}\n</script>')
     head.append(extra_head)
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 {chr(10).join(h for h in head if h)}
 </head>
@@ -253,6 +253,7 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
       <ul>
         {nav("index.html#topics-heading", "Topics", "home")}
         {nav("references/index.html", "All references", "references")}
+        {nav("learn/index.html", "Learn", "learn")}
         {nav("index.html#downloads", "Downloads", None)}
         {nav("index.html#cite", "How to cite", None)}
         <li><a href="{REPO}">GitHub</a></li>
@@ -531,6 +532,8 @@ def build(topics, references, out, base):
               f"- [All references (CSL-JSON)]({base}/data/references.json): titles, journals, years, DOIs",
               f"- [All references (BibTeX)]({base}/data/references.bib)",
               f"- [Topics and keyword items (JSON)]({base}/data/topics.json)", "",
+              "## Learning modules", "",
+              f"- [Interactive learning modules (German and English)]({base}/learn/): lessons with quizzes and exercises", "",
               "## Optional", "",
               f"- [Full collection as one Markdown file]({base}/llms-full.txt)",
               f"- [Source repository]({REPO})", ""]
@@ -540,8 +543,14 @@ def build(topics, references, out, base):
         full.append(re.sub(r"^(#+) ", r"#\1 ", topic_markdown(t, references, base), flags=re.M))
     write("llms-full.txt", "\n".join(full))
 
+    # ---- learning modules
+    import learn
+    shutil.copy(ASSETS / "learn.js", out / "assets" / "learn.js")
+    learn_urls = learn.build(write, page, learn.load_modules(), references, ref_url,
+                             {t["id"]: topic_heading(t) for t in topic_list}, base)
+
     # ---- sitemap
-    urls = [f"{base}/", f"{base}/references/"] + [f"{base}/topics/{t['id']}/" for t in topic_list]
+    urls = [f"{base}/", f"{base}/references/"] + [f"{base}/topics/{t['id']}/" for t in topic_list] + learn_urls
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{esc(u)}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) +

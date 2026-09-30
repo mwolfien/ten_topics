@@ -982,3 +982,30 @@ references:
     pmid: "40410181"
     type: article
     added: "2026-09"
+  haux2006:
+    label: "Haux 2006"
+    title: "Health information systems - past, present, future"
+    journal: "International Journal of Medical Informatics"
+    year: 2006
+    doi: "10.1016/j.ijmedinf.2005.08.002"
+    pmid: "16169771"
+    type: article
+    added: "2026-09"
+  berg2001:
+    label: "Berg 2001"
+    title: "Implementing information systems in health care organizations: myths and challenges"
+    journal: "International Journal of Medical Informatics"
+    year: 2001
+    doi: "10.1016/s1386-5056(01)00200-3"
+    pmid: "11734382"
+    type: article
+    added: "2026-09"
+  sittig2010:
+    label: "Sittig and Singh 2010"
+    title: "A new sociotechnical model for studying health information technology in complex adaptive healthcare systems"
+    journal: "Quality & Safety in Health Care"
+    year: 2010
+    doi: "10.1136/qshc.2010.042085"
+    pmid: "20959322"
+    type: article
+    added: "2026-09"

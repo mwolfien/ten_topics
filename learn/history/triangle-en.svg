@@ -1,0 +1,21 @@
+<svg viewBox="0 0 600 440" role="img" aria-labelledby="t-en d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-en">The socio-technical triangle</title>
+  <desc id="d-en">Digitalization sits between technology, organization and processes, which all influence each other.</desc>
+  <path class="edge" d="M300 78 L125 320 L475 320 Z"/>
+  <line class="edge" x1="300" y1="78" x2="300" y2="220"/>
+  <line class="edge" x1="125" y1="320" x2="300" y2="220"/>
+  <line class="edge" x1="475" y1="320" x2="300" y2="220"/>
+  <circle class="hub" cx="300" cy="220" r="66"/>
+  <text class="hub-label" x="300" y="225" text-anchor="middle">Digitalization</text>
+  <circle class="node" cx="300" cy="78" r="54"/>
+  <text class="label" x="300" y="83" text-anchor="middle">Technology</text>
+  <text class="small" x="300" y="14" text-anchor="middle">software, data, interfaces, infrastructure</text>
+  <circle class="node" cx="125" cy="320" r="62"/>
+  <text class="label" x="125" y="325" text-anchor="middle">Organization</text>
+  <text class="small" x="125" y="405" text-anchor="middle">roles, responsibilities,</text>
+  <text class="small" x="125" y="422" text-anchor="middle">governance, resources</text>
+  <circle class="node" cx="475" cy="320" r="62"/>
+  <text class="label" x="475" y="325" text-anchor="middle">Processes</text>
+  <text class="small" x="475" y="405" text-anchor="middle">clinical workflows, documentation,</text>
+  <text class="small" x="475" y="422" text-anchor="middle">communication, decisions</text>
+</svg>

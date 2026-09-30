@@ -28,6 +28,7 @@ The README is **generated**. Please do not edit `README.md` directly; edit these
 | `data/topics.yaml` | sections, topics, introductory text and keyword items |
 | `templates/README.md.in` | the text around the topics (introduction, citation, contributors) |
 | `templates/site/` | style and search script of the website |
+| `learn/` | interactive learning modules; see [learn/README.md](learn/README.md) |
 
 ### Adding a reference
 
