@@ -44,6 +44,36 @@ KEYWORDS = ["medical informatics", "health informatics", "privacy", "electronic 
 
 CITE = re.compile(r"\[@([a-z0-9-]+)\]")
 
+SUMMARY_DE = ("Eine lebendige, kuratierte Sammlung zentraler Themen und weiterführender Literatur für den Einstieg in die "
+              "Forschung der Medizinischen Informatik – von Datenschutz und Interoperabilitätsstandards (FHIR, OMOP) bis "
+              "zu Datenqualität, klinischer Entscheidungsunterstützung und großen Sprachmodellen.")
+
+# Interface texts of the site frame and the start page. Topic content stays in English.
+UI = {
+    "en": {
+        "home": "index.html", "skip": "Skip to content", "nav_label": "Main", "topics": "Topics",
+        "references": "All references", "learn": "Learn", "learn_href": "learn/index.html#en", "downloads": "Downloads",
+        "cite": "How to cite", "switch": "Deutsch", "switch_lang": "de",
+        "footer_license": "Content licensed under", "footer_cite": "Cite as", "and": "and",
+        "footer_suggest": "Suggestions welcome", "suggest": "suggest a reference", "contribute": "contribute",
+        "search_label": "Search the collection", "search_placeholder": "Search keywords, titles, journals… e.g. FHIR, federated, LLM",
+        "search_aria": "Search keywords, titles and journals", "filter": "Filter by topic", "all_topics": "All topics",
+        "new_in": "New in", "result_one": "1 result", "result_many": "{n} results",
+        "n_refs": "references", "n_new": "new",
+    },
+    "de": {
+        "home": "de/index.html", "skip": "Zum Inhalt springen", "nav_label": "Hauptmenü", "topics": "Themen",
+        "references": "Alle Referenzen", "learn": "Lernen", "learn_href": "learn/index.html#de", "downloads": "Downloads",
+        "cite": "Zitieren", "switch": "English", "switch_lang": "en",
+        "footer_license": "Inhalte lizenziert unter", "footer_cite": "Zitieren als", "and": "und",
+        "footer_suggest": "Vorschläge willkommen", "suggest": "Referenz vorschlagen", "contribute": "mitmachen",
+        "search_label": "Sammlung durchsuchen", "search_placeholder": "Englische Stichworte suchen … z. B. FHIR, federated, LLM",
+        "search_aria": "Stichworte, Titel und Zeitschriften durchsuchen", "filter": "Nach Thema filtern", "all_topics": "Alle Themen",
+        "new_in": "Neu in", "result_one": "1 Treffer", "result_many": "{n} Treffer",
+        "n_refs": "Referenzen", "n_new": "neu",
+    },
+}
+
 
 # --------------------------------------------------------------------------- helpers
 
@@ -208,8 +238,16 @@ def jsonld_dataset(base, today, topics):
 
 # --------------------------------------------------------------------------- HTML
 
-def page(*, base, path, title, description, body, jsonld=None, alternate_md=None, current=None, extra_head=""):
-    """Render a full HTML page. `path` is the page's directory relative to the site root ("" or "topics/x/")."""
+def page(*, base, path, title, description, body, jsonld=None, alternate_md=None, current=None, extra_head="",
+         lang="en", translation=None):
+    """Render a full HTML page. `path` is the page's directory relative to the site root ("" or "topics/x/").
+
+    `lang` selects the interface language. `translation` is the path (relative to the site root) of the same
+    page in the other language; without it, the language switch leads to the other language's start page.
+    """
+    ui = UI[lang]
+    other = ui["switch_lang"]
+    switch_href = translation or UI[other]["home"]
     root = "../" * path.count("/")
     canonical = f"{base}/{path}"
     full_title = title if title == TITLE else f"{title} – {TITLE}"
@@ -224,7 +262,7 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
         f"<title>{esc(full_title)}</title>",
         f'<meta name="description" content="{esc(description)}">',
         f'<link rel="canonical" href="{esc(canonical)}">',
-        f'<meta property="og:type" content="website">',
+        '<meta property="og:type" content="website">',
         f'<meta property="og:site_name" content="{esc(TITLE)}">',
         f'<meta property="og:title" content="{esc(full_title)}">',
         f'<meta property="og:description" content="{esc(description)}">',
@@ -233,6 +271,10 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
         f'<link rel="stylesheet" href="{root}assets/style.css">',
         f'<link rel="alternate" type="text/plain" title="llms.txt" href="{root}llms.txt">',
     ]
+    if translation:  # a real counterpart: tell search engines about both language versions
+        other_path = translation.removesuffix("index.html")
+        head.append(f'<link rel="alternate" hreflang="{lang}" href="{esc(canonical)}">')
+        head.append(f'<link rel="alternate" hreflang="{other}" href="{esc(base)}/{esc(other_path)}">')
     if alternate_md:
         head.append(f'<link rel="alternate" type="text/markdown" href="{alternate_md}">')
     if jsonld:
@@ -240,22 +282,24 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
         head.append(f'<script type="application/ld+json">\n{data}\n</script>')
     head.append(extra_head)
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 {chr(10).join(h for h in head if h)}
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{ui["skip"]}</a>
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="{root}index.html">{esc(TITLE)}</a>
-    <nav class="site" aria-label="Main">
+    <a class="brand" href="{root}{ui["home"]}">{esc(TITLE)}</a>
+    <nav class="site" aria-label="{ui["nav_label"]}">
       <ul>
-        {nav("index.html#topics-heading", "Topics", "home")}
-        {nav("references/index.html", "All references", "references")}
-        {nav("index.html#downloads", "Downloads", None)}
-        {nav("index.html#cite", "How to cite", None)}
+        {nav(ui["home"] + "#topics-heading", ui["topics"], "home")}
+        {nav("references/index.html", ui["references"], "references")}
+        {nav(ui["learn_href"], ui["learn"], "learn")}
+        {nav(ui["home"] + "#downloads", ui["downloads"], None)}
+        {nav(ui["home"] + "#cite", ui["cite"], None)}
         <li><a href="{REPO}">GitHub</a></li>
+        <li><a class="lang-link" href="{root}{switch_href}" hreflang="{other}" lang="{other}">🌐 {ui["switch"]}</a></li>
       </ul>
     </nav>
   </div>
@@ -267,8 +311,8 @@ def page(*, base, path, title, description, body, jsonld=None, alternate_md=None
 </main>
 <footer class="site">
   <div class="wrap">
-    <p>Content licensed under <a href="{LICENSE_URL}">CC BY 4.0</a>. Cite as <a href="https://doi.org/{CONCEPT_DOI}">doi:{CONCEPT_DOI}</a> and <a href="https://doi.org/{ARTICLE_DOI}">Wolfien et al. 2023</a>.</p>
-    <p>Suggestions welcome: <a href="{REPO}/issues/new?template=suggest-reference.yml">suggest a reference</a> · <a href="{REPO}/blob/main/CONTRIBUTING.md">contribute</a> · <a href="{root}llms.txt">llms.txt</a></p>
+    <p>{ui["footer_license"]} <a href="{LICENSE_URL}">CC BY 4.0</a>. {ui["footer_cite"]} <a href="https://doi.org/{CONCEPT_DOI}">doi:{CONCEPT_DOI}</a> {ui["and"]} <a href="https://doi.org/{ARTICLE_DOI}">Wolfien et al. 2023</a>.</p>
+    <p>{ui["footer_suggest"]}: <a href="{REPO}/issues/new?template=suggest-reference.yml">{ui["suggest"]}</a> · <a href="{REPO}/blob/main/CONTRIBUTING.md">{ui["contribute"]}</a> · <a href="{root}llms.txt">llms.txt</a></p>
   </div>
 </footer>
 </body>
@@ -326,6 +370,100 @@ def topic_markdown(topic, references, base):
 
 
 # --------------------------------------------------------------------------- build
+
+def home_page(lang, topics, topic_list, references, new_ids, latest, index_json, root):
+    """Body and extra head of the start page in one language."""
+    ui = UI[lang]
+    de = lang == "de"
+    options = "".join(f'<option value="{esc(t["id"])}">{esc(topic_heading(t))}</option>' for t in topic_list)
+    cards = []
+    for section in topics["sections"]:
+        cards.append(f'<h3 class="section-title" lang="en">{esc(section["title"])}</h3>\n<ul class="grid">')
+        for t in section["topics"]:
+            refs = topic_refs(t)
+            n_new = sum(1 for r in refs if r in new_ids)
+            desc = topic_description(t, references)
+            short = desc if len(desc) < 170 else desc[:167].rsplit(" ", 1)[0] + "…"
+            badge = f' · <span class=badge>{n_new} {ui["n_new"]}</span>' if n_new else ""
+            cards.append(f'<li class="card" lang="en"><h3><a href="{root}topics/{esc(t["id"])}/index.html">{esc(topic_heading(t))}</a></h3>'
+                         f'<p>{esc(short)}</p><span class="meta" lang="{lang}">{len(refs)} {ui["n_refs"]}{badge}</span></li>')
+        cards.append("</ul>")
+    article = f'<a href="https://doi.org/{ARTICLE_DOI}">“Ten Topics to Get Started in Medical Informatics Research”</a>'
+    if de:
+        intro = (f"<p>Die Sammlung erweitert den Übersichtsartikel {article} (J Med Internet Res 2023). Sie wird von "
+                 f"Forschenden kuratiert und regelmäßig aktualisiert: {len(references)} Referenzen, letzte Aktualisierung {esc(latest)}.</p>\n"
+                 f'<div class="callout"><p><strong>Neu: Lernmodule.</strong> Interaktive Einheiten auf Deutsch und Englisch mit '
+                 f'Quizfragen und Übungen, z. B. zur <a href="{root}learn/history/de/index.html">Geschichte der Medizinischen '
+                 f'Informatik</a>. <a href="{root}learn/index.html#de">Alle Lernmodule</a></p></div>\n'
+                 '<p class="muted">Die Themen und Literaturangaben der Sammlung sind englischsprachig, wie die Literatur selbst.</p>')
+        downloads = f"""<ul>
+  <li><a href="{root}data/references.bib">Alle Referenzen als BibTeX</a> (für Zotero, JabRef, LaTeX); jede Themenseite bietet zusätzlich eine eigene BibTeX-Datei</li>
+  <li><a href="{root}data/references.json">Alle Referenzen als CSL-JSON</a></li>
+  <li><a href="{root}data/topics.json">Themen und Stichpunkte als JSON</a></li>
+  <li><a href="{root}llms-full.txt">Die gesamte Sammlung als Markdown</a></li>
+</ul>"""
+        cite = f"""<div class="callout">
+  <p>Bitte zitieren Sie den Originalartikel:</p>
+  <p lang="en">{esc(ARTICLE)} <a href="https://doi.org/{ARTICLE_DOI}">doi:{ARTICLE_DOI}</a></p>
+  <p>Für die lebendige Sammlung: Wolfien M, Scheel J. {esc(TITLE)} [Data set]. Zenodo. <a href="https://doi.org/{CONCEPT_DOI}">doi:{CONCEPT_DOI}</a></p>
+</div>"""
+        contribute = (f'<h2>Mitmachen</h2>\n<p>Sie kennen einen Artikel, der hierher gehört? '
+                      f'<a href="{REPO}/issues/new?template=suggest-reference.yml">Referenz vorschlagen</a> oder '
+                      f'<a href="{REPO}/issues/new?template=propose-topic.yml">Thema vorschlagen</a>. Die Aufnahmekriterien stehen in den '
+                      f'<a href="{REPO}/blob/main/CONTRIBUTING.md">Beitragsrichtlinien</a> (englisch).</p>')
+    else:
+        intro = (f"<p>The collection extends the viewpoint article {article} (J Med Internet Res 2023). It is curated by "
+                 f"researchers and updated regularly: {len(references)} references, last update {esc(latest)}.</p>\n"
+                 f'<div class="callout"><p><strong>New: learning modules.</strong> Interactive lessons in English and German with '
+                 f'quizzes and exercises, e.g. on the <a href="{root}learn/history/en/index.html">history of medical informatics</a>. '
+                 f'<a href="{root}learn/index.html#en">All learning modules</a></p></div>')
+        downloads = f"""<ul>
+  <li><a href="{root}data/references.bib">All references as BibTeX</a> (for Zotero, JabRef, LaTeX); each topic page also offers its own BibTeX file</li>
+  <li><a href="{root}data/references.json">All references as CSL-JSON</a></li>
+  <li><a href="{root}data/topics.json">Topics and keyword items as JSON</a></li>
+  <li><a href="{root}llms-full.txt">The whole collection as Markdown</a></li>
+</ul>"""
+        cite = f"""<div class="callout">
+  <p>Please cite the original article:</p>
+  <p>{esc(ARTICLE)} <a href="https://doi.org/{ARTICLE_DOI}">doi:{ARTICLE_DOI}</a></p>
+  <p>To cite the living collection: Wolfien M, Scheel J. {esc(TITLE)} [Data set]. Zenodo. <a href="https://doi.org/{CONCEPT_DOI}">doi:{CONCEPT_DOI}</a></p>
+</div>"""
+        contribute = (f'<h2>Contribute</h2>\n<p>Know a paper that belongs here? '
+                      f'<a href="{REPO}/issues/new?template=suggest-reference.yml">Suggest a reference</a> or '
+                      f'<a href="{REPO}/issues/new?template=propose-topic.yml">propose a topic</a>. The inclusion criteria are described in the '
+                      f'<a href="{REPO}/blob/main/CONTRIBUTING.md">contribution guidelines</a>.</p>')
+    body = f"""<h1>{esc(TITLE)}</h1>
+<p class="lead">{esc(SUMMARY_DE if de else SUMMARY)}</p>
+{intro}
+
+<form class="search" id="search" role="search" aria-label="{esc(ui["search_label"])}">
+  <div class="search-controls">
+    <input type="search" id="q" name="q" placeholder="{esc(ui["search_placeholder"])}" aria-label="{esc(ui["search_aria"])}">
+    <select id="topic" aria-label="{esc(ui["filter"])}"><option value="">{esc(ui["all_topics"])}</option>{options}</select>
+    <label class="check"><input type="checkbox" id="new-only"> {esc(ui["new_in"])} {esc(latest)}</label>
+  </div>
+  <p id="search-status" class="muted" aria-live="polite" data-one="{esc(ui["result_one"])}" data-many="{esc(ui["result_many"])}" data-new="{esc(ui["n_new"])}"></p>
+  <ul id="results" class="results"></ul>
+</form>
+
+<div id="topics">
+<h2 id="topics-heading">{esc(ui["topics"])}</h2>
+{chr(10).join(cards)}
+</div>
+
+<h2 id="downloads">{esc(ui["downloads"])}</h2>
+{downloads}
+
+<h2 id="cite">{esc(ui["cite"])}</h2>
+{cite}
+
+{contribute}
+"""
+    # The search index links are relative to the site root; the German start page lives one level deeper.
+    extra_head = (f'<script type="application/json" id="search-index" data-root="{root}">{index_json}</script>\n'
+                  f'<script src="{root}assets/search.js" defer></script>')
+    return body, extra_head
+
 
 def build(topics, references, out, base):
     base = base.rstrip("/")
@@ -457,59 +595,19 @@ def build(topics, references, out, base):
                              for r in cited_ids(item)],
                 })
     index_json = json.dumps({"items": search_items}, ensure_ascii=False).replace("</", "<\\/")
-    options = "".join(f'<option value="{esc(t["id"])}">{esc(topic_heading(t))}</option>' for t in topic_list)
-    cards = []
-    for section in topics["sections"]:
-        cards.append(f'<h3 class="section-title">{esc(section["title"])}</h3>\n<ul class="grid">')
-        for t in section["topics"]:
-            refs = topic_refs(t)
-            n_new = sum(1 for r in refs if r in new_ids)
-            desc = topic_description(t, references)
-            short = desc if len(desc) < 170 else desc[:167].rsplit(" ", 1)[0] + "…"
-            cards.append(f'<li class="card"><h3><a href="topics/{esc(t["id"])}/index.html">{esc(topic_heading(t))}</a></h3>'
-                         f"<p>{esc(short)}</p><span class=\"meta\">{len(refs)} references"
-                         f"{f' · <span class=badge>{n_new} new</span>' if n_new else ''}</span></li>")
-        cards.append("</ul>")
-    body = f"""<h1>{esc(TITLE)}</h1>
-<p class="lead">{esc(SUMMARY)}</p>
-<p>The collection extends the viewpoint article <a href="https://doi.org/{ARTICLE_DOI}">“Ten Topics to Get Started in Medical Informatics Research”</a> (J Med Internet Res 2023). It is curated by researchers and updated regularly: {len(references)} references, last update {esc(latest)}.</p>
-
-<form class="search" id="search" role="search" aria-label="Search the collection">
-  <div class="search-controls">
-    <input type="search" id="q" name="q" placeholder="Search keywords, titles, journals… e.g. FHIR, federated, LLM" aria-label="Search keywords, titles and journals">
-    <select id="topic" aria-label="Filter by topic"><option value="">All topics</option>{options}</select>
-    <label class="check"><input type="checkbox" id="new-only"> New in {esc(latest)}</label>
-  </div>
-  <p id="search-status" class="muted" aria-live="polite"></p>
-  <ul id="results" class="results"></ul>
-</form>
-
-<div id="topics">
-<h2 id="topics-heading">Topics</h2>
-{chr(10).join(cards)}
-</div>
-
-<h2 id="downloads">Downloads</h2>
-<ul>
-  <li><a href="data/references.bib">All references as BibTeX</a> (for Zotero, JabRef, LaTeX); each topic page also offers its own BibTeX file</li>
-  <li><a href="data/references.json">All references as CSL-JSON</a></li>
-  <li><a href="data/topics.json">Topics and keyword items as JSON</a></li>
-  <li><a href="llms-full.txt">The whole collection as Markdown</a></li>
-</ul>
-
-<h2 id="cite">How to cite</h2>
-<div class="callout">
-  <p>Please cite the original article:</p>
-  <p>{esc(ARTICLE)} <a href="https://doi.org/{ARTICLE_DOI}">doi:{ARTICLE_DOI}</a></p>
-  <p>To cite the living collection: Wolfien M, Scheel J. {esc(TITLE)} [Data set]. Zenodo. <a href="https://doi.org/{CONCEPT_DOI}">doi:{CONCEPT_DOI}</a></p>
-</div>
-
-<h2>Contribute</h2>
-<p>Know a paper that belongs here? <a href="{REPO}/issues/new?template=suggest-reference.yml">Suggest a reference</a> or <a href="{REPO}/issues/new?template=propose-topic.yml">propose a topic</a>. The inclusion criteria are described in the <a href="{REPO}/blob/main/CONTRIBUTING.md">contribution guidelines</a>.</p>
-"""
-    extra_head = f'<script type="application/json" id="search-index">{index_json}</script>\n<script src="assets/search.js" defer></script>'
-    write("index.html", page(base=base, path="", title=TITLE, description=SUMMARY, body=body,
-                             jsonld=jsonld_dataset(base, today, topics), current="home", extra_head=extra_head))
+    for lang, path in (("en", ""), ("de", "de/")):
+        body, extra_head = home_page(lang, topics, topic_list, references, new_ids, latest, index_json, "../" * path.count("/"))
+        if lang == "en":
+            jsonld = jsonld_dataset(base, today, topics)
+        else:
+            jsonld = {"@context": "https://schema.org", "@type": "WebPage", "name": TITLE, "description": SUMMARY_DE,
+                      "url": f"{base}/de/", "inLanguage": "de",
+                      "about": {"@type": "Dataset", "name": TITLE, "url": base + "/",
+                                "identifier": f"https://doi.org/{CONCEPT_DOI}"}}
+        write(path + "index.html", page(
+            base=base, path=path, title=TITLE, description=SUMMARY if lang == "en" else SUMMARY_DE, body=body,
+            jsonld=jsonld, current="home", extra_head=extra_head, lang=lang,
+            translation="de/index.html" if lang == "en" else "index.html"))
 
     # ---- 404
     write("404.html", page(base=base, path="", title="Page not found", description="Page not found.",
@@ -531,6 +629,8 @@ def build(topics, references, out, base):
               f"- [All references (CSL-JSON)]({base}/data/references.json): titles, journals, years, DOIs",
               f"- [All references (BibTeX)]({base}/data/references.bib)",
               f"- [Topics and keyword items (JSON)]({base}/data/topics.json)", "",
+              "## Learning modules", "",
+              f"- [Interactive learning modules (German and English)]({base}/learn/): lessons with quizzes and exercises", "",
               "## Optional", "",
               f"- [Full collection as one Markdown file]({base}/llms-full.txt)",
               f"- [Source repository]({REPO})", ""]
@@ -540,8 +640,14 @@ def build(topics, references, out, base):
         full.append(re.sub(r"^(#+) ", r"#\1 ", topic_markdown(t, references, base), flags=re.M))
     write("llms-full.txt", "\n".join(full))
 
+    # ---- learning modules
+    import learn
+    shutil.copy(ASSETS / "learn.js", out / "assets" / "learn.js")
+    learn_urls = learn.build(write, page, learn.load_modules(), references, ref_url,
+                             {t["id"]: topic_heading(t) for t in topic_list}, base)
+
     # ---- sitemap
-    urls = [f"{base}/", f"{base}/references/"] + [f"{base}/topics/{t['id']}/" for t in topic_list]
+    urls = [f"{base}/", f"{base}/de/", f"{base}/references/"] + [f"{base}/topics/{t['id']}/" for t in topic_list] + learn_urls
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"  <url><loc>{esc(u)}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) +

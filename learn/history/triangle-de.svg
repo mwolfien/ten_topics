@@ -1,0 +1,21 @@
+<svg viewBox="0 0 600 440" role="img" aria-labelledby="t-de d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="t-de">Das sozio-technische Dreieck</title>
+  <desc id="d-de">Digitalisierung steht in der Mitte zwischen Technik, Organisation und Prozessen, die sich gegenseitig beeinflussen.</desc>
+  <path class="edge" d="M300 78 L125 320 L475 320 Z"/>
+  <line class="edge" x1="300" y1="78" x2="300" y2="220"/>
+  <line class="edge" x1="125" y1="320" x2="300" y2="220"/>
+  <line class="edge" x1="475" y1="320" x2="300" y2="220"/>
+  <circle class="hub" cx="300" cy="220" r="66"/>
+  <text class="hub-label" x="300" y="225" text-anchor="middle">Digitalisierung</text>
+  <circle class="node" cx="300" cy="78" r="54"/>
+  <text class="label" x="300" y="83" text-anchor="middle">Technik</text>
+  <text class="small" x="300" y="14" text-anchor="middle">Software, Daten, Schnittstellen, Infrastruktur</text>
+  <circle class="node" cx="125" cy="320" r="62"/>
+  <text class="label" x="125" y="325" text-anchor="middle">Organisation</text>
+  <text class="small" x="125" y="405" text-anchor="middle">Rollen, Zuständigkeiten,</text>
+  <text class="small" x="125" y="422" text-anchor="middle">Governance, Ressourcen</text>
+  <circle class="node" cx="475" cy="320" r="62"/>
+  <text class="label" x="475" y="325" text-anchor="middle">Prozesse</text>
+  <text class="small" x="475" y="405" text-anchor="middle">klinische Abläufe, Dokumentation,</text>
+  <text class="small" x="475" y="422" text-anchor="middle">Kommunikation, Entscheidungen</text>
+</svg>

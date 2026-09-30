@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml
+      - run: pip install pyyaml markdown
       - name: Validate data files
         run: python scripts/tentopics.py validate
       - name: Check that README.md is generated from the data files
@@ -34,5 +34,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml
+      - run: pip install pyyaml markdown
       - run: python scripts/tentopics.py links
