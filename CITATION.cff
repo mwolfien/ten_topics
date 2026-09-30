@@ -13,6 +13,11 @@ authors:
     given-names: Markus
   - family-names: Scheel
     given-names: Julia
+doi: 10.5281/zenodo.23047297
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23047297
+    description: Concept DOI, resolves to the latest version on Zenodo
 repository-code: "https://github.com/mwolfien/ten_topics"
 license: CC-BY-4.0
 keywords:
