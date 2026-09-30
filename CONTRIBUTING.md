@@ -27,6 +27,7 @@ The README is **generated**. Please do not edit `README.md` directly; edit these
 | `data/references.yaml` | all references, keyed by a short id |
 | `data/topics.yaml` | sections, topics, introductory text and keyword items |
 | `templates/README.md.in` | the text around the topics (introduction, citation, contributors) |
+| `templates/site/` | style and search script of the website |
 
 ### Adding a reference
 
@@ -41,7 +42,7 @@ The README is **generated**. Please do not edit `README.md` directly; edit these
        added: "2026-10"               # when it was added to this collection (YYYY-MM)
    ```
 
-   The id is the first author's surname and the year, in lowercase, with a letter suffix if needed (`smith2025b`). The optional fields `title`, `journal` and `note` may be added as well.
+   The id is the first author's surname and the year, in lowercase, with a letter suffix if needed (`smith2025b`). The optional fields `title`, `journal`, `pmid` (PubMed ID) and `note` may be added as well; `title` and `journal` are shown on the website and in the BibTeX export.
 
 2. Cite it in `data/topics.yaml` with `[@smith2025]`, either in an existing keyword item or in a new one:
 
@@ -57,6 +58,7 @@ The README is **generated**. Please do not edit `README.md` directly; edit these
    python scripts/tentopics.py validate
    python scripts/tentopics.py build
    python scripts/tentopics.py links   # optional: checks that DOIs and URLs resolve
+   python scripts/tentopics.py site    # optional: builds the website into _site/ for a local preview
    ```
 
 4. Commit the changed data files **and** the regenerated `README.md`, then open a pull request.
@@ -67,7 +69,7 @@ The validation rejects, for example, unknown or unused reference ids, duplicate 
 
 - Pull requests are checked automatically (data validation, README up to date, DOIs and links) and reviewed by a maintainer before merging.
 - Links and DOIs are additionally checked once a month; broken ones are reported in an issue.
-- Larger updates are released as new versions and noted in the [CHANGELOG](CHANGELOG.md), so that each version can be cited.
+- Larger updates are released as new versions and noted in the [CHANGELOG](CHANGELOG.md), so that each version can be cited. The release steps are described in [RELEASING.md](RELEASING.md).
 
 ## License
 

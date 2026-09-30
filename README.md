@@ -8,6 +8,8 @@
 ![References](https://img.shields.io/badge/references-117-blue)
 ![Last update](https://img.shields.io/badge/last_update-2026--09-green)
 
+**Website:** [mwolfien.github.io/ten_topics](https://mwolfien.github.io/ten_topics/): search all topics and references, and download them as [BibTeX](https://mwolfien.github.io/ten_topics/data/references.bib) or [CSL-JSON](https://mwolfien.github.io/ten_topics/data/references.json).
+
 The vast and heterogeneous data being constantly generated in the clinics can provide great wealth for patients and research alike. The quickly evolving field of Medical Informatics research contributed numerous concepts, algorithms, and standards to facilitate this development.
 The here addressed topics are part of our viewpoint article "Ten Topics to Get Started in Medical Informatics Research" - [Wolfien et al. 2023](https://doi.org/10.2196/45948), published in the Journal of Medical Internet Research.
 
@@ -107,7 +109,7 @@ Large volumes of data collected from patient registries, health centers, genomic
 
 * User-centred design for AI in health care - [Seneviratne et al. 2022](https://informatics.bmj.com/content/29/1/e100656), users' perspectives on AI-enabled decision aids - [Hassan et al. 2024](https://doi.org/10.1038/s41746-024-01326-y)
 * Dashboards with positive influence [Clarke et al. 2016](https://pubmed.ncbi.nlm.nih.gov/27332223/) and design practices - [Vornhagen et al. 2026](https://doi.org/10.2196/77361), like [R Shiny](https://shiny.posit.co/) or [Plotly Dash](https://zenodo.org/record/3346213)
-* Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [Gao et al. 2016](https://doi.org/10.1126/scisignal.2004088), [Reimer et al. 2021](https://doi.org/10.3233/SHTI210833), [Brlek et al. 2021](https://doi.org/10.3390/cancers13133247), or i2b2 [Murphy et al. 2010](https://doi.org/10.1136/jamia.2009.000893), [Castro et al. 2022](https://doi.org/10.1093/jamia/ocab264)
+* Visualization of multi-dimensional biomedical data, e.g., cBioPortal - [Gao et al. 2013](https://doi.org/10.1126/scisignal.2004088), [Reimer et al. 2021](https://doi.org/10.3233/SHTI210833), [Brlek et al. 2021](https://doi.org/10.3390/cancers13133247), or i2b2 [Murphy et al. 2010](https://doi.org/10.1136/jamia.2009.000893), [Castro et al. 2022](https://doi.org/10.1093/jamia/ocab264)
 
 ## Additional Topics
 

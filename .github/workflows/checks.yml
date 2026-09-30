@@ -22,6 +22,8 @@ jobs:
         run: python scripts/tentopics.py validate
       - name: Check that README.md is generated from the data files
         run: python scripts/tentopics.py build --check
+      - name: Build the website (fails on broken internal links)
+        run: python scripts/tentopics.py site --out "$RUNNER_TEMP/site"
 
   links:
     name: Check DOIs and links
