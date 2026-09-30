@@ -2,6 +2,7 @@
      Do not edit it directly: edit those files and run `python scripts/tentopics.py build`. -->
 # Ten Topics for Medical Informatics
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23047297.svg)](https://doi.org/10.5281/zenodo.23047297)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 [![Checks](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml/badge.svg)](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml)
 ![References](https://img.shields.io/badge/references-117-blue)
@@ -135,15 +136,19 @@ If you use this resource, please cite the original article:
 
 > Wolfien M, Ahmadi N, Fitzer K, Grummt S, Heine KL, Jung IC, Krefting D, Kühn A, Peng Y, Reinecke I, Scheel J, Schmidt T, Schmücker P, Schüttler C, Waltemath D, Zoch M, Sedlmayr M. Ten Topics to Get Started in Medical Informatics Research. *J Med Internet Res* 2023;25:e45948. [doi:10.2196/45948](https://doi.org/10.2196/45948)
 
-To cite a specific version of this living collection, use the "Cite this repository" button (see [CITATION.cff](CITATION.cff)). Changes between versions are listed in the [CHANGELOG](CHANGELOG.md).
+To cite this living collection, please use:
+
+> Wolfien M, Scheel J. Ten Topics for Medical Informatics [Data set]. Zenodo. [doi:10.5281/zenodo.23047297](https://doi.org/10.5281/zenodo.23047297)
+
+This DOI always resolves to the latest version; the DOI of a specific version is listed on [Zenodo](https://doi.org/10.5281/zenodo.23047297). The "Cite this repository" button uses [CITATION.cff](CITATION.cff). Changes between versions are listed in the [CHANGELOG](CHANGELOG.md).
 
 ## Contributing
 
 Suggestions are very welcome! The quickest way is to [suggest a reference](https://github.com/mwolfien/ten_topics/issues/new?template=suggest-reference.yml) or [propose a new topic](https://github.com/mwolfien/ten_topics/issues/new?template=propose-topic.yml) via an issue. To contribute directly, please read [CONTRIBUTING.md](CONTRIBUTING.md): it describes the inclusion criteria and how to add a reference to `data/references.yaml` and `data/topics.yaml`. Please stick to the original ten topics as much as possible; if no existing topic fits, novel ones can be proposed and integrated.
 
 ### Contributors list
-[Markus Wolfien](https://github.com/mwolfien)
-[Julia Scheel](https://github.com/JuliaScheel)
+- [Markus Wolfien](https://github.com/mwolfien)
+- [Julia Scheel](https://github.com/JuliaScheel)
 
 ## License
 

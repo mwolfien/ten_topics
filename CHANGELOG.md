@@ -1,7 +1,7 @@
 # Changelog
 
 This collection is a living resource. Notable changes to its content and structure are listed here.
-Each release on GitHub corresponds to a citable version (see [CITATION.cff](CITATION.cff)).
+Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [10.5281/zenodo.23047297](https://doi.org/10.5281/zenodo.23047297) always resolves to the latest version.
 
 ## 2026-09
 
