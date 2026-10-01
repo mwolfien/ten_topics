@@ -10,12 +10,14 @@ Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [
 - Downloads of all references (and per topic) as BibTeX and CSL-JSON, plus the topic structure as JSON.
 - Release helper `scripts/tentopics.py release-notes` and release checklist in `RELEASING.md`.
 - Pilot of interactive, bilingual learning modules under `learn/` (German and English): lessons in Markdown with dropdown quizzes, matching exercises, reflection questions and "why this matters for you" notes for five audiences. First module: history and development of medical informatics. See `learn/README.md`.
+- Second learning module: therapy, guidelines and patient-centred care, following a lung cancer case from screening to the tumour board and therapy over time. It builds on the first module.
+- Learning path: modules have an order and can build on each other (`order`, `builds_on`); module pages show "builds on" and "continue with" links, `[[module-id]]` links between modules, and a new `case` block for running patient cases.
 - Bilingual website frame: navigation, footer, search and a German start page at `/de/`, with a language switch on every page and `hreflang` links between language versions. Topics and references stay in English.
 
 ### Content
 - Added titles, journals and PubMed IDs to 94 references (from PubMed).
 - Corrected the year of the cBioPortal paper (Gao et al. 2013, previously listed as 2016).
-- Added three references for the first learning module (Haux 2006, Berg 2001, Sittig and Singh 2010).
+- Added three references for the first learning module (Haux 2006, Berg 2001, Sittig and Singh 2010) and four for the second (Elwyn et al. 2012, Basch et al. 2016, de Koning et al. 2020, Gladstone et al. 2025).
 
 ## 2026-09
 

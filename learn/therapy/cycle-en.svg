@@ -1,0 +1,24 @@
+<svg viewBox="0 0 640 450" role="img" aria-labelledby="tc-t-en tc-d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="tc-t-en">Therapy as a course</title>
+  <desc id="tc-d-en">Cycle of deciding, treating, measuring, evaluating and adjusting, aligned with the therapy goal.</desc>
+  <defs><marker id="tc-arrow-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <path class="edge" d="M387.1 74.3 A165 165 0 0 1 442.6 114.6" marker-end="url(#tc-arrow-en)"/>
+  <path class="edge" d="M484.1 242.2 A165 165 0 0 1 462.9 307.5" marker-end="url(#tc-arrow-en)"/>
+  <path class="edge" d="M354.3 386.4 A165 165 0 0 1 285.7 386.4" marker-end="url(#tc-arrow-en)"/>
+  <path class="edge" d="M177.1 307.5 A165 165 0 0 1 155.9 242.2" marker-end="url(#tc-arrow-en)"/>
+  <path class="edge" d="M197.4 114.6 A165 165 0 0 1 252.9 74.3" marker-end="url(#tc-arrow-en)"/>
+  <circle class="hub" cx="320" cy="225" r="56"/>
+  <text class="hub-label" x="320" y="222" text-anchor="middle">Therapy</text>
+  <text class="hub-label" x="320" y="240" text-anchor="middle">goal</text>
+  <rect class="node" x="258.0" y="40.0" width="124" height="40" rx="20"/>
+  <text class="label" x="320.0" y="65.0" text-anchor="middle">Decide</text>
+  <rect class="node" x="414.9" y="154.0" width="124" height="40" rx="20"/>
+  <text class="label" x="476.9" y="179.0" text-anchor="middle">Treat</text>
+  <rect class="node" x="355.0" y="338.5" width="124" height="40" rx="20"/>
+  <text class="label" x="417.0" y="363.5" text-anchor="middle">Measure</text>
+  <rect class="node" x="161.0" y="338.5" width="124" height="40" rx="20"/>
+  <text class="label" x="223.0" y="363.5" text-anchor="middle">Evaluate</text>
+  <rect class="node" x="101.1" y="154.0" width="124" height="40" rx="20"/>
+  <text class="label" x="163.1" y="179.0" text-anchor="middle">Adjust</text>
+  <text class="small" x="417.0" y="420.5" text-anchor="middle">imaging, labs, side effects, PROs</text>
+</svg>

@@ -10,6 +10,11 @@ fenced blocks for interactive elements (see learn/README.md):
   ```persona   "Why this matters for you" box for one audience
   ```timeline  a vertical timeline
   ```include   inline an SVG file from the module folder (theme-aware)
+  ```case      a box for a running patient case
+
+Modules can form a learning path: `order` sets their position, `builds_on`
+lists the modules they build on, and [[module-id]] links to another module in
+the same language.
 
 References are cited with [@id] (ids from data/references.yaml), as in topics.yaml.
 Everything runs in the browser; nothing is stored on a server.
@@ -25,8 +30,9 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 LEARN = ROOT / "learn"
 CITE = re.compile(r"\[@([a-z0-9-]+)\]")
-FENCE = re.compile(r"^```(quiz|match|reflect|persona|timeline|include)[ \t]*([^\n]*)\n(.*?)^```[ \t]*$", re.M | re.S)
-BLOCK_TYPES = {"quiz", "match", "reflect", "persona", "timeline", "include"}
+FENCE = re.compile(r"^```(quiz|match|reflect|persona|timeline|include|case)[ \t]*([^\n]*)\n(.*?)^```[ \t]*$", re.M | re.S)
+MODULE_LINK = re.compile(r"\[\[([a-z0-9-]+)\]\]")
+TEXT_BLOCKS = ("persona", "include", "case")  # blocks whose content is Markdown or a file name, not YAML
 
 AUDIENCES = {
     "med": {"de": "Medizinstudierende", "en": "Medical students"},
@@ -46,6 +52,8 @@ UI = {
         "other_lang": "English version", "modules": "Lernmodule", "all_modules": "Alle Lernmodule",
         "matched": "von", "reset": "Zurücksetzen", "learn_nav": "Lernen",
         "intro": "Interaktive Lernmodule zu den Themen der Sammlung – mit kurzen Quizfragen, Übungen und Reflexionsfragen. Ohne Anmeldung, nichts wird gespeichert.",
+        "module": "Modul", "builds_on": "Baut auf", "builds_on_end": "auf", "next": "Weiter mit", "case": "Unser Fall",
+        "path": "Lernpfad", "course": "Lehrveranstaltung",
     },
     "en": {
         "choose": "– choose an answer –", "correct": "Correct!", "wrong": "Not quite.",
@@ -56,6 +64,8 @@ UI = {
         "other_lang": "Deutsche Version", "modules": "Learning modules", "all_modules": "All learning modules",
         "matched": "of", "reset": "Reset", "learn_nav": "Learn",
         "intro": "Interactive learning modules on the topics of the collection – with short quizzes, exercises and reflection questions. No login, nothing is stored.",
+        "module": "Module", "builds_on": "Builds on", "builds_on_end": "", "next": "Continue with", "case": "Our case",
+        "path": "Learning path", "course": "Course",
     },
 }
 
@@ -85,7 +95,7 @@ def blocks(module):
     """Yield (kind, arg, parsed_yaml_or_text) for each interactive block."""
     for m in FENCE.finditer(module["body"]):
         kind, arg, content = m.group(1), m.group(2).strip(), m.group(3)
-        if kind in ("persona", "include"):
+        if kind in TEXT_BLOCKS:
             yield kind, arg, content
         else:
             yield kind, arg, yaml.safe_load(content)
@@ -98,7 +108,7 @@ def validate(modules, references, topic_ids):
             where = f"learn/{mid}/{lang}.md"
             if lang not in UI:
                 errors.append(f"{where}: unsupported language {lang!r}")
-            for field in ("title", "summary", "objectives", "duration_minutes", "level", "audiences"):
+            for field in ("title", "summary", "objectives", "duration_minutes", "level", "audiences", "order"):
                 if field not in mod:
                     errors.append(f"{where}: missing front matter field {field!r}")
             for a in mod.get("audiences", []):
@@ -110,6 +120,11 @@ def validate(modules, references, topic_ids):
             for tid in mod.get("related_topics", []):
                 if tid not in topic_ids:
                     errors.append(f"{where}: unknown topic id {tid!r}")
+            if "order" in mod and not isinstance(mod["order"], int):
+                errors.append(f"{where}: order must be a number")
+            for other_id in list(mod.get("builds_on", [])) + MODULE_LINK.findall(mod["body"]):
+                if other_id not in modules or lang not in modules[other_id]:
+                    errors.append(f"{where}: unknown module {other_id!r} (or it has no {lang} version)")
             try:
                 for kind, arg, data in blocks(mod):
                     if kind == "quiz":
@@ -146,7 +161,7 @@ def _md(text, cite):
     return cite(html_out)
 
 
-def render_body(mod, references, ref_url):
+def render_body(mod, references, ref_url, modules=None, root=""):
     lang = mod["lang"]
     ui = UI[lang]
     counter = {"n": 0}
@@ -155,7 +170,13 @@ def render_body(mod, references, ref_url):
         def one(m):
             ref = references[m.group(1)]
             return f'<a href="{esc(ref_url(ref))}">{esc(ref["label"])}</a>'
-        return CITE.sub(one, text)
+
+        def module_link(m):
+            other = (modules or {}).get(m.group(1), {}).get(lang)
+            if not other:
+                return esc(m.group(1))
+            return f'<a class="module-link" href="{root}learn/{other["id"]}/{lang}/index.html">{esc(other["title"])}</a>'
+        return MODULE_LINK.sub(module_link, CITE.sub(one, text))
 
     def uid():
         counter["n"] += 1
@@ -205,6 +226,8 @@ def render_body(mod, references, ref_url):
                 return (f'<details class="timeline"><summary>{inline(data["collapsed"])}</summary>'
                         f'{title}<ol>{items}</ol></details>')
             return f'<div class="timeline">{title}<ol>{items}</ol></div>'
+        if kind == "case":
+            return f'<aside class="case"><p class="case-label">🩺 {esc(ui["case"])}</p>{_md(data, cite)}</aside>'
         if kind == "include":
             svg = (mod["path"].parent / arg).read_text(encoding="utf-8")
             return f'<figure class="diagram">{svg}</figure>'
@@ -215,7 +238,7 @@ def render_body(mod, references, ref_url):
 
     def stash(m):
         kind, arg, content = m.group(1), m.group(2).strip(), m.group(3)
-        data = content if kind in ("persona", "include") else yaml.safe_load(content)
+        data = content if kind in TEXT_BLOCKS else yaml.safe_load(content)
         key = f"BLOCK{len(parts)}X"
         parts[key] = render_block(kind, arg, data)
         return f"\n\n{key}\n\n"
@@ -258,10 +281,24 @@ def module_jsonld(mod, base, url, other_url, references, ref_url):
     return node
 
 
-def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_link=None):
+def ordered(modules):
+    """One representative (any language) per module, sorted by `order`, then id."""
+    reps = [next(iter(langs.values())) for langs in modules.values()]
+    return sorted(reps, key=lambda m: (m.get("order", 999), m["id"]))
+
+
+def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_link=None, modules=None):
     """The complete, self-contained HTML of one module in one language (an <article class="module">)."""
     lang, mid, ui = mod["lang"], mod["id"], UI[mod["lang"]]
     pick = f"persona-{mid}-{lang}"
+    modules = modules or {}
+
+    def mlink(other_id):
+        target = modules[other_id][lang]
+        return f'<a href="{root}learn/{other_id}/{lang}/index.html">{esc(target["title"])}</a>'
+
+    before = [b for b in mod.get("builds_on", []) if lang in modules.get(b, {})]
+    after = [m for m in ordered(modules) if mid in m.get("builds_on", []) and lang in modules[m["id"]]]
     body = [
         f'<article class="module" lang="{lang}" data-correct="{esc(ui["correct"])}" data-wrong="{esc(ui["wrong"])}">',
         f'<p class="eyebrow"><a href="{root}learn/index.html#{lang}">{esc(ui["modules"])}</a></p>',
@@ -277,9 +314,11 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
         f'<select id="{pick}"><option value="">{esc(ui["persona_all"])}</option>'
         + "".join(f'<option value="{a}">{esc(AUDIENCES[a][lang])}</option>' for a in mod["audiences"])
         + "</select></div>",
+        (f'<p class="path-note">🔗 {esc(ui["builds_on"])} ' + ", ".join(mlink(b) for b in before)
+         + f' {esc(ui["builds_on_end"])}</p>'.replace(" </p>", "</p>") if before else ""),
         f'<div class="callout"><p><strong>{esc(ui["objectives"])}</strong></p><ul>'
         + "".join(f"<li>{esc(o)}</li>" for o in mod["objectives"]) + "</ul></div>",
-        render_body(mod, references, ref_url),
+        render_body(mod, references, ref_url, modules, root),
     ]
     if mod.get("readings"):
         body.append(f'<h2>{esc(ui["readings"])}</h2><ul class="refs">')
@@ -292,6 +331,9 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
     if mod.get("related_topics"):
         body.append(f'<p>{esc(ui["related"])}: ' + " · ".join(
             f'<a href="{root}topics/{t}/index.html">{esc(topic_lookup[t])}</a>' for t in mod["related_topics"]) + "</p>")
+    if after:
+        body.append(f'<p class="path-note next">➡️ {esc(ui["next"])}: '
+                    + ", ".join(mlink(m["id"]) for m in after) + "</p>")
     if mod.get("source"):
         body.append(f'<p class="muted">{esc(ui["source"])}: {esc(mod["source"])}</p>')
     body.append(f'<div class="scorebar" hidden><span>{esc(ui["score"])}: <strong class="score">0</strong> '
@@ -305,14 +347,15 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
     """Write learn/ pages via the site's `write` and `page` helpers. Returns sitemap URLs."""
     urls = []
     cards = {"de": [], "en": []}
-    for mid, langs in sorted(modules.items()):
+    for position, rep_mod in enumerate(ordered(modules), 1):
+        mid, langs = rep_mod["id"], modules[rep_mod["id"]]
         for lang, mod in langs.items():
             path = f"learn/{mid}/{lang}/"
             root = "../../../"
             other = next((l for l in langs if l != lang), None)
             other_url = f"{base}/learn/{mid}/{other}/" if other else None
             other_link = f"{root}learn/{mid}/{other}/index.html" if other else None
-            body = [module_html(mod, references, ref_url, topic_lookup, root, other, other_link)]
+            body = [module_html(mod, references, ref_url, topic_lookup, root, other, other_link, modules)]
             extra = f'<script src="{root}assets/learn.js" defer></script>'
             write(path + "index.html", page(
                 base=base, path=path, title=mod["title"], description=mod["summary"], body="\n".join(body),
@@ -320,15 +363,22 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
                 current="learn", extra_head=extra, lang=lang,
                 translation=f"learn/{mid}/{other}/index.html" if other else None))
             urls.append(f"{base}/{path}")
+            ui = UI[lang]
+            builds = [modules[b][lang]["title"] for b in mod.get("builds_on", []) if lang in modules.get(b, {})]
+            course = f' · {esc(mod["course"])}' if mod.get("course") else ""
             cards[lang].append(
-                f'<li class="card"><h3><a href="{mid}/{lang}/index.html" hreflang="{lang}">{esc(mod["title"])}</a></h3>'
-                f'<p>{esc(mod["summary"])}</p><span class="meta">{int(mod["duration_minutes"])} min · {esc(mod["level"])}</span></li>')
+                f'<li class="card step"><p class="eyebrow">{esc(ui["module"])} {position}</p>'
+                f'<h3><a href="{mid}/{lang}/index.html" hreflang="{lang}">{esc(mod["title"])}</a></h3>'
+                f'<p>{esc(mod["summary"])}</p>'
+                + (f'<p class="builds">🔗 {esc(ui["builds_on"])}: {esc(", ".join(builds))}</p>' if builds else "")
+                + f'<span class="meta">{int(mod["duration_minutes"])} min · {esc(mod["level"])}{course}</span></li>')
 
     sections = []
     for lang, heading in (("de", "Deutsch"), ("en", "English")):
         if cards[lang]:
             sections.append(f'<section lang="{lang}"><h2 id="{lang}">{heading}</h2>'
-                            f'<p class="muted">{esc(UI[lang]["intro"])}</p><ul class="grid">{"".join(cards[lang])}</ul></section>')
+                            f'<p class="muted">{esc(UI[lang]["intro"])}</p>'
+                            f'<h3>{esc(UI[lang]["path"])}</h3><ol class="grid path">{"".join(cards[lang])}</ol></section>')
     write("learn/index.html", page(
         base=base, path="learn/", title="Learning modules / Lernmodule",
         description="Interactive, bilingual learning modules on medical informatics with quizzes and exercises.",

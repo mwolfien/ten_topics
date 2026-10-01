@@ -5,8 +5,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23047297.svg)](https://doi.org/10.5281/zenodo.23047297)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 [![Checks](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml/badge.svg)](https://github.com/mwolfien/ten_topics/actions/workflows/checks.yml)
-![References](https://img.shields.io/badge/references-120-blue)
-![Last update](https://img.shields.io/badge/last_update-2026--09-green)
+![References](https://img.shields.io/badge/references-124-blue)
+![Last update](https://img.shields.io/badge/last_update-2026--10-green)
 
 **Website:** [mwolfien.github.io/ten_topics](https://mwolfien.github.io/ten_topics/) ([Deutsch](https://mwolfien.github.io/ten_topics/de/)): search all topics and references, download them as [BibTeX](https://mwolfien.github.io/ten_topics/data/references.bib) or [CSL-JSON](https://mwolfien.github.io/ten_topics/data/references.json), and try the interactive [learning modules](https://mwolfien.github.io/ten_topics/learn/) in English and German.
 
