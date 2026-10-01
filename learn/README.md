@@ -27,6 +27,9 @@ summary: "One or two sentences shown under the title and in search results."
 duration_minutes: 30
 level: "Einstieg"                    # free text, e.g. Einstieg / Introductory
 audiences: [med, cs, clin, tech, pat]
+order: 1                             # position in the learning path
+builds_on: []                        # module ids this module builds on, e.g. [history]
+course: "Einführung in die Medizinische Informatik"   # optional: the course it comes from
 author: "Markus Wolfien"
 objectives:
   - "…"
@@ -48,7 +51,15 @@ Audiences:
 
 ## Content
 
-Write normal Markdown (headings, lists, tables, quotes). Cite references with `[@id]`, as in `data/topics.yaml`. Interactive elements are fenced blocks:
+Write normal Markdown (headings, lists, tables, quotes). Cite references with `[@id]`, as in `data/topics.yaml`, and link to another module in the same language with `[[module-id]]` (e.g. `[[history]]`); the link shows that module's title.
+
+## Learning path
+
+Modules are listed in the order given by `order`. A module with `builds_on: [history]` shows "Builds on …" at the top, and the module it builds on shows "Continue with …" at the end, so readers can follow the path in both directions. Use `[[module-id]]` in the text to pick up concepts from earlier modules.
+
+## Interactive elements
+
+Interactive elements are fenced blocks:
 
 **Quiz** – one question, the answer is chosen from a dropdown. The explanation appears after a correct answer.
 
@@ -110,7 +121,15 @@ events:
 ```
 ````
 
-**Include** – inline an SVG file from the module folder. Use the CSS classes `node`, `hub`, `edge`, `label`, `small` and `hub-label` so the diagram follows the light and dark theme.
+**Case** – a box for a running patient case that the module follows from section to section.
+
+````
+```case
+Ein **62-jähriger Raucher** kommt zur hausärztlichen Kontrolle …
+```
+````
+
+**Include** – inline an SVG file from the module folder. Use the CSS classes `node`, `hub`, `edge`, `label`, `small`, `hub-label` and `arrowhead` (for arrow markers) so the diagram follows the light and dark theme.
 
 ````
 ```include triangle-de.svg

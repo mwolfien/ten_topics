@@ -4,6 +4,8 @@ summary: "Warum viele heutige Digitalisierungsprobleme – Silos, Medienbrüche,
 duration_minutes: 30
 level: "Einstieg"
 audiences: [med, cs, clin, tech, pat]
+order: 1
+course: "Einführung in die Medizinische Informatik"
 author: "Markus Wolfien"
 objectives:
   - "Frühe Treiber der Digitalisierung im Gesundheitswesen benennen"

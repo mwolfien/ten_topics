@@ -4,6 +4,8 @@ summary: "Why many of today's digitalization problems – silos, media breaks, l
 duration_minutes: 30
 level: "Introductory"
 audiences: [med, cs, clin, tech, pat]
+order: 1
+course: "Introduction to Medical Informatics"
 author: "Markus Wolfien"
 objectives:
   - "Name early drivers of digitalization in health care"

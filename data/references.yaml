@@ -1009,3 +1009,39 @@ references:
     pmid: "20959322"
     type: article
     added: "2026-09"
+  elwyn2012:
+    label: "Elwyn et al. 2012"
+    title: "Shared decision making: a model for clinical practice"
+    journal: "Journal of General Internal Medicine"
+    year: 2012
+    doi: "10.1007/s11606-012-2077-6"
+    pmid: "22618581"
+    type: article
+    added: "2026-10"
+  basch2016:
+    label: "Basch et al. 2016"
+    title: "Symptom Monitoring With Patient-Reported Outcomes During Routine Cancer Treatment: A Randomized Controlled Trial"
+    journal: "Journal of Clinical Oncology"
+    year: 2016
+    doi: "10.1200/JCO.2015.63.0830"
+    pmid: "26644527"
+    type: article
+    added: "2026-10"
+  dekoning2020:
+    label: "de Koning et al. 2020"
+    title: "Reduced Lung-Cancer Mortality with Volume CT Screening in a Randomized Trial"
+    journal: "New England Journal of Medicine"
+    year: 2020
+    doi: "10.1056/NEJMoa1911793"
+    pmid: "31995683"
+    type: article
+    added: "2026-10"
+  gladstone2025:
+    label: "Gladstone et al. 2025"
+    title: "Systematic review and meta-analysis of molecular tumor board data on clinical effectiveness and evaluation gaps"
+    journal: "npj Precision Oncology"
+    year: 2025
+    doi: "10.1038/s41698-025-00865-1"
+    pmid: "40175535"
+    type: article
+    added: "2026-10"
