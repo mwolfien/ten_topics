@@ -6,7 +6,8 @@ level: "Foundations"
 audiences: [med, cs, clin, tech, pat]
 order: 2
 builds_on: [history]
-course: "Medicine for Computer Scientists"
+course: medicine
+lecture: 7
 author: "Markus Wolfien"
 objectives:
   - "Name basic forms of therapy and explain them with examples"
@@ -18,7 +19,7 @@ objectives:
   - "Understand guidelines as a framework for decisions and explain their limits"
 readings: [elwyn2012, basch2016, dekoning2020, gladstone2025, hassan2024]
 related_topics: [cdss, ehr-cis, fhir, data-quality, visualizations]
-source: "Lecture 7 “Therapy, Guidelines and Patient-Centred Care”, Medicine for Computer Scientists (summer term 2026), Markus Wolfien, IMB & ZMI"
+source: "Lecture 7 “Therapy, Guidelines and Patient-Centred Care”, Foundations of Medicine (summer term 2026), Markus Wolfien, IMB & ZMI"
 ---
 
 > **Guiding question:** How does an abnormal finding become a good, patient-centred therapy decision?

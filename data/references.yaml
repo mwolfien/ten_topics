@@ -1045,3 +1045,19 @@ references:
     pmid: "40175535"
     type: article
     added: "2026-10"
+  carraro2007:
+    label: "Carraro and Plebani 2007"
+    title: "Errors in a stat laboratory: types and frequencies 10 years later"
+    journal: "Clinical Chemistry"
+    year: 2007
+    doi: "10.1373/clinchem.2007.088344"
+    pmid: "17525103"
+    type: article
+    added: "2026-10"
+  winter2023:
+    label: "Winter et al. 2023"
+    title: "Health Information Systems: Technological and Management Perspectives (3rd edition, open access)"
+    year: 2023
+    doi: "10.1007/978-3-031-12310-8"
+    type: book
+    added: "2026-10"

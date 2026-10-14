@@ -1,0 +1,49 @@
+<svg viewBox="0 0 720 450" role="img" aria-labelledby="hl-t-de hl-d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="hl-t-de">Hybride Systemlandschaft</title>
+  <desc id="hl-d-de">Eine KIS-Suite mit sechs Modulen, ein Kommunikationsserver, Spezialsysteme verschiedener Hersteller und mehrere Direktverbindungen am Server vorbei.</desc>
+  <rect class="group" x="20" y="60" width="240" height="300" rx="14"/>
+  <text class="label" x="140" y="88" text-anchor="middle">KIS-Suite (Hersteller A)</text>
+  <rect class="chip" x="28" y="110" width="104" height="40" rx="8"/>
+  <text class="small" x="80" y="134" text-anchor="middle">ADT</text>
+  <rect class="chip" x="148" y="110" width="104" height="40" rx="8"/>
+  <text class="small" x="200" y="134" text-anchor="middle">Order Entry</text>
+  <rect class="chip" x="28" y="190" width="104" height="40" rx="8"/>
+  <text class="small" x="80" y="214" text-anchor="middle">Pflegedoku</text>
+  <rect class="chip" x="148" y="190" width="104" height="40" rx="8"/>
+  <text class="small" x="200" y="214" text-anchor="middle">Arztbriefe</text>
+  <rect class="chip" x="28" y="270" width="104" height="40" rx="8"/>
+  <text class="small" x="80" y="294" text-anchor="middle">Abrechnung</text>
+  <rect class="chip" x="148" y="270" width="104" height="40" rx="8"/>
+  <text class="small" x="200" y="294" text-anchor="middle">Apotheke</text>
+  <line class="edge" x1="260" y1="210" x2="301" y2="210"/>
+  <line class="edge" x1="345" y1="210" x2="430" y2="72"/>
+  <line class="edge" x1="345" y1="210" x2="430" y2="152"/>
+  <line class="edge" x1="345" y1="210" x2="430" y2="252"/>
+  <line class="edge" x1="345" y1="210" x2="430" y2="332"/>
+  <circle class="hub" cx="345" cy="210" r="44"/>
+  <text class="hub-label" x="345" y="207" text-anchor="middle">Komm.-</text>
+  <text class="hub-label" x="345" y="224" text-anchor="middle">Server</text>
+  <rect class="node" x="430" y="50" width="130" height="44" rx="10"/>
+  <text class="label" x="495" y="77" text-anchor="middle">LIS (B)</text>
+  <rect class="node" x="430" y="130" width="130" height="44" rx="10"/>
+  <text class="label" x="495" y="157" text-anchor="middle">PDMS (D)</text>
+  <rect class="node" x="430" y="230" width="130" height="44" rx="10"/>
+  <text class="label" x="495" y="257" text-anchor="middle">OP-System (E)</text>
+  <rect class="node" x="430" y="310" width="130" height="44" rx="10"/>
+  <text class="label" x="495" y="337" text-anchor="middle">RIS (C)</text>
+  <line class="dashed" x1="560" y1="72" x2="600" y2="72"/>
+  <rect class="node" x="600" y="50" width="104" height="44" rx="10"/>
+  <text class="label" x="652" y="77" text-anchor="middle">POCT-MW</text>
+  <line class="dashed" x1="560" y1="152" x2="600" y2="152"/>
+  <rect class="node" x="600" y="130" width="104" height="44" rx="10"/>
+  <text class="label" x="652" y="157" text-anchor="middle">Geräte</text>
+  <line class="dashed" x1="560" y1="332" x2="600" y2="332"/>
+  <rect class="node" x="600" y="310" width="104" height="44" rx="10"/>
+  <text class="label" x="652" y="337" text-anchor="middle">PACS (F)</text>
+  <path class="dashed" d="M140 360 L140 392 L652 392 L652 354"/>
+  <text class="small" x="396" y="386" text-anchor="middle">Bildlink KIS → PACS</text>
+  <line class="edge" x1="20" y1="428" x2="60" y2="428"/>
+  <text class="small" x="68" y="432">über den Kommunikationsserver</text>
+  <line class="dashed" x1="330" y1="428" x2="370" y2="428"/>
+  <text class="small" x="378" y="432">direkt</text>
+</svg>

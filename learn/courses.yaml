@@ -1,0 +1,19 @@
+# Courses (Lehrveranstaltungen) that the learning modules belong to.
+# Modules refer to a course by its id (front matter `course:`) and may give
+# the lecture number (`lecture:`). The overview page lists courses in this order.
+courses:
+  - id: intro
+    title:
+      de: "Einführung in die Medizininformatik"
+      en: "Introduction to Medical Informatics"
+  - id: medicine
+    title:
+      de: "Grundlagen der Medizin"
+      en: "Foundations of Medicine"
+  - id: his
+    title:
+      de: "Informationssysteme im Gesundheitswesen"
+      en: "Health Information Systems"
+    term:
+      de: "WiSe 2026/27"
+      en: "winter term 2026/27"

@@ -307,6 +307,20 @@ details.timeline[open] summary { margin-bottom: 0.75rem; }
   cursor: pointer;
 }
 main table { margin: 1rem 0; }
+main pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  overflow-x: auto;
+  max-width: var(--measure);
+  font: 0.85rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+main pre code { font: inherit; }
+main :not(pre) > code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--accent-soft); padding: 0.05em 0.3em; border-radius: 4px; }
+.diagram svg .chip { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; }
+.diagram svg .group { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.diagram svg .dashed { stroke: var(--new); stroke-width: 2; stroke-dasharray: 6 5; fill: none; }
 .case {
   background: var(--new-soft);
   border-radius: var(--radius);

@@ -1,0 +1,32 @@
+<svg viewBox="0 0 640 440" role="img" aria-labelledby="cl-t-en cl-d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="cl-t-en">The order loop</title>
+  <desc id="cl-d-en">Order, acceptance, execution, release, reporting back and acknowledgement form a closed loop.</desc>
+  <defs><marker id="cl-arrow-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <path class="edge" d="M379.9 66.7 A160 160 0 0 1 418.5 88.9" marker-end="url(#cl-arrow-en)"/>
+  <path class="edge" d="M478.4 192.7 A160 160 0 0 1 478.4 237.3" marker-end="url(#cl-arrow-en)"/>
+  <path class="edge" d="M418.5 341.1 A160 160 0 0 1 379.9 363.3" marker-end="url(#cl-arrow-en)"/>
+  <path class="edge" d="M260.1 363.3 A160 160 0 0 1 221.5 341.1" marker-end="url(#cl-arrow-en)"/>
+  <path class="edge" d="M161.6 237.3 A160 160 0 0 1 161.6 192.7" marker-end="url(#cl-arrow-en)"/>
+  <path class="edge" d="M221.5 88.9 A160 160 0 0 1 260.1 66.7" marker-end="url(#cl-arrow-en)"/>
+  <circle class="hub" cx="320" cy="215" r="54"/>
+  <text class="hub-label" x="320" y="212" text-anchor="middle">Closed</text>
+  <text class="hub-label" x="320" y="230" text-anchor="middle">loop</text>
+  <rect class="node" x="245.0" y="32.0" width="150" height="46" rx="12"/>
+  <text class="label" x="320.0" y="53.0" text-anchor="middle">Order</text>
+  <text class="small" x="320.0" y="69.0" text-anchor="middle">physician, HIS</text>
+  <rect class="node" x="383.6" y="112.0" width="150" height="46" rx="12"/>
+  <text class="label" x="458.6" y="133.0" text-anchor="middle">Acceptance</text>
+  <text class="small" x="458.6" y="149.0" text-anchor="middle">service unit</text>
+  <rect class="node" x="383.6" y="272.0" width="150" height="46" rx="12"/>
+  <text class="label" x="458.6" y="293.0" text-anchor="middle">Execution</text>
+  <text class="small" x="458.6" y="309.0" text-anchor="middle">sample / exam</text>
+  <rect class="node" x="245.0" y="352.0" width="150" height="46" rx="12"/>
+  <text class="label" x="320.0" y="373.0" text-anchor="middle">Release</text>
+  <text class="small" x="320.0" y="389.0" text-anchor="middle">validation / report</text>
+  <rect class="node" x="106.4" y="272.0" width="150" height="46" rx="12"/>
+  <text class="label" x="181.4" y="293.0" text-anchor="middle">Reporting back</text>
+  <text class="small" x="181.4" y="309.0" text-anchor="middle">into the HIS</text>
+  <rect class="node" x="106.4" y="112.0" width="150" height="46" rx="12"/>
+  <text class="label" x="181.4" y="133.0" text-anchor="middle">Acknowledgement</text>
+  <text class="small" x="181.4" y="149.0" text-anchor="middle">and action</text>
+</svg>
