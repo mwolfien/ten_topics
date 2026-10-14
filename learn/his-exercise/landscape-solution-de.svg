@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 440" role="img" aria-labelledby="ex-t-de ex-d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="ex-t-de">Musterlösung: Systemlandschaft des Falls</title>
+  <desc id="ex-d-de">Eine KIS-Suite mit vier Modulen ist über den Kommunikationsserver mit LIS, Blutbank, RIS, OP-System und PDMS verbunden. Das PACS hängt nur direkt am RIS, die Monitoring-Geräte nur direkt am PDMS.</desc>
+  <rect class="group" x="20" y="90" width="240" height="230" rx="14"/>
+  <text class="label" x="140" y="118" text-anchor="middle">KIS-Suite (Hersteller A)</text>
+  <rect class="chip" x="26" y="150" width="108" height="40" rx="8"/>
+  <text class="small" x="80" y="174" text-anchor="middle">Aufnahme/ADT</text>
+  <rect class="chip" x="146" y="150" width="108" height="40" rx="8"/>
+  <text class="small" x="200" y="174" text-anchor="middle">Dokumentation</text>
+  <rect class="chip" x="26" y="240" width="108" height="40" rx="8"/>
+  <text class="small" x="80" y="264" text-anchor="middle">Order Entry</text>
+  <rect class="chip" x="146" y="240" width="108" height="40" rx="8"/>
+  <text class="small" x="200" y="264" text-anchor="middle">Abrechnung</text>
+  <line class="edge" x1="260" y1="205" x2="301" y2="205"/>
+  <line class="edge" x1="345" y1="205" x2="430" y2="45"/>
+  <line class="edge" x1="345" y1="205" x2="430" y2="125"/>
+  <line class="edge" x1="345" y1="205" x2="430" y2="205"/>
+  <line class="edge" x1="345" y1="205" x2="430" y2="285"/>
+  <line class="edge" x1="345" y1="205" x2="430" y2="365"/>
+  <circle class="hub" cx="345" cy="205" r="44"/>
+  <text class="hub-label" x="345" y="202" text-anchor="middle">Komm.-</text>
+  <text class="hub-label" x="345" y="219" text-anchor="middle">Server</text>
+  <rect class="node" x="430" y="23" width="136" height="44" rx="10"/>
+  <text class="label" x="498" y="50" text-anchor="middle">LIS (B)</text>
+  <rect class="node" x="430" y="103" width="136" height="44" rx="10"/>
+  <text class="label" x="498" y="130" text-anchor="middle">Blutbank (C)</text>
+  <rect class="node" x="430" y="183" width="136" height="44" rx="10"/>
+  <text class="label" x="498" y="210" text-anchor="middle">RIS (D)</text>
+  <rect class="node" x="430" y="263" width="136" height="44" rx="10"/>
+  <text class="label" x="498" y="290" text-anchor="middle">OP-System (E)</text>
+  <rect class="node" x="430" y="343" width="136" height="44" rx="10"/>
+  <text class="label" x="498" y="370" text-anchor="middle">PDMS (F)</text>
+  <line class="dashed" x1="566" y1="205" x2="600" y2="205"/>
+  <rect class="node" x="600" y="183" width="104" height="44" rx="10"/>
+  <text class="label" x="652" y="210" text-anchor="middle">PACS (G)</text>
+  <line class="dashed" x1="566" y1="365" x2="600" y2="365"/>
+  <rect class="node" x="600" y="343" width="104" height="44" rx="10"/>
+  <text class="label" x="652" y="370" text-anchor="middle">Monitoring</text>
+  <text class="small" x="652" y="245" text-anchor="middle">ohne Anschluss</text>
+  <text class="small" x="652" y="262" text-anchor="middle">am Server</text>
+  <line class="edge" x1="20" y1="420" x2="60" y2="420"/>
+  <text class="small" x="68" y="424">über den Kommunikationsserver</text>
+  <line class="dashed" x1="330" y1="420" x2="370" y2="420"/>
+  <text class="small" x="378" y="424">direkt</text>
+</svg>

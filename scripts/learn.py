@@ -6,7 +6,9 @@ fenced blocks for interactive elements (see learn/README.md):
 
   ```quiz      one question, answer chosen from a dropdown, instant feedback
   ```match     several items, each matched to an option from a dropdown
-  ```reflect   open question with a hidden sample answer
+  ```reflect   open question with a hidden sample answer (in exercises: a task
+               whose answer is kept locally and whose solution notes appear
+               once the reader has written something)
   ```persona   "Why this matters for you" box for one audience
   ```timeline  a vertical timeline
   ```include   inline an SVG file from the module folder (theme-aware)
@@ -15,7 +17,7 @@ fenced blocks for interactive elements (see learn/README.md):
 Modules belong to a course from learn/courses.yaml (`course:` id, optional
 `lecture:` number) and can form a learning path: `order` sets their position,
 `builds_on` lists the modules they build on, and [[module-id]] links to another
-module in the same language.
+module in the same language. `kind: exercise` marks a self-paced exercise.
 
 References are cited with [@id] (ids from data/references.yaml), as in topics.yaml.
 Everything runs in the browser; nothing is stored on a server.
@@ -56,6 +58,11 @@ UI = {
         "intro": "Interaktive Lernmodule zu den Themen der Sammlung – mit kurzen Quizfragen, Übungen und Reflexionsfragen. Ohne Anmeldung, nichts wird gespeichert.",
         "module": "Modul", "builds_on": "Baut auf", "builds_on_end": "auf", "next": "Weiter mit", "case": "Unser Fall",
         "path": "Lernpfad", "course": "Lehrveranstaltung", "lecture": "VL",
+        "exercise": "Übung", "solution": "Lösungshinweise anzeigen",
+        "gate": "Notieren Sie zuerst Ihre eigene Antwort – dann erscheinen die Lösungshinweise.",
+        "notes": "Ihre Antworten werden nur in diesem Browser gespeichert und nirgendwohin gesendet.",
+        "download": "Antworten herunterladen", "clear": "Antworten löschen",
+        "clear_confirm": "Alle Antworten dieser Übung in diesem Browser löschen?",
     },
     "en": {
         "choose": "– choose an answer –", "correct": "Correct!", "wrong": "Not quite.",
@@ -68,6 +75,11 @@ UI = {
         "intro": "Interactive learning modules on the topics of the collection – with short quizzes, exercises and reflection questions. No login, nothing is stored.",
         "module": "Module", "builds_on": "Builds on", "builds_on_end": "", "next": "Continue with", "case": "Our case",
         "path": "Learning path", "course": "Course", "lecture": "Lecture",
+        "exercise": "Exercise", "solution": "Show solution notes",
+        "gate": "Write down your own answer first – then the solution notes appear.",
+        "notes": "Your answers are only saved in this browser and never sent anywhere.",
+        "download": "Download answers", "clear": "Clear answers",
+        "clear_confirm": "Delete all answers to this exercise from this browser?",
     },
 }
 
@@ -109,6 +121,8 @@ def course_label(mod, courses, lang):
     label = course["title"][lang]
     if mod.get("lecture"):
         label += f' · {UI[lang]["lecture"]} {mod["lecture"]}'
+    if mod.get("kind") == "exercise":
+        label += f' · {UI[lang]["exercise"]}'
     return label
 
 
@@ -148,6 +162,8 @@ def validate(modules, references, topic_ids):
                     errors.append(f"{where}: unknown topic id {tid!r}")
             if mod.get("course") is not None and mod["course"] not in courses:
                 errors.append(f"{where}: unknown course {mod['course']!r} (see learn/courses.yaml)")
+            if mod.get("kind", "lesson") not in ("lesson", "exercise"):
+                errors.append(f"{where}: kind must be 'lesson' or 'exercise'")
             if "lecture" in mod and not isinstance(mod["lecture"], int):
                 errors.append(f"{where}: lecture must be a number")
             if "order" in mod and not isinstance(mod["order"], int):
@@ -194,6 +210,7 @@ def _md(text, cite):
 def render_body(mod, references, ref_url, modules=None, root=""):
     lang = mod["lang"]
     ui = UI[lang]
+    exercise = mod.get("kind") == "exercise"
     counter = {"n": 0}
 
     def cite(text):
@@ -240,6 +257,12 @@ def render_body(mod, references, ref_url, modules=None, root=""):
         if kind == "reflect":
             i = uid()
             answers = "".join(f"<li>{inline(a)}</li>" for a in data.get("answers", []))
+            if exercise:  # open task: notes are kept locally, solution notes appear once something is written
+                return (f'<div class="reflect task"><label for="{i}" class="q">✏️ {inline(data["question"])}</label>'
+                        f'<textarea id="{i}" rows="{int(data.get("rows", 4))}" data-key="{i}"></textarea>'
+                        f'<p class="gate muted" hidden>{esc(ui["gate"])}</p>'
+                        f'<details class="solution"><summary>{esc(ui["solution"])}</summary>'
+                        f'{"<p>" + inline(data["intro"]) + "</p>" if data.get("intro") else ""}<ul>{answers}</ul></details></div>')
             return (f'<div class="reflect"><label for="{i}" class="q">💬 {inline(data["question"])}</label>'
                     f'<textarea id="{i}" rows="3" placeholder="{esc(ui["your_notes"])}"></textarea>'
                     f'<details><summary>{esc(ui["reveal"])}</summary>'
@@ -260,6 +283,9 @@ def render_body(mod, references, ref_url, modules=None, root=""):
             return f'<aside class="case"><p class="case-label">🩺 {esc(ui["case"])}</p>{_md(data, cite)}</aside>'
         if kind == "include":
             svg = (mod["path"].parent / arg).read_text(encoding="utf-8")
+            if data.strip():  # text after the file name: show the figure collapsed, e.g. as a sample solution
+                return (f'<details class="diagram-solution"><summary>{inline(data.strip())}</summary>'
+                        f'<figure class="diagram">{svg}</figure></details>')
             return f'<figure class="diagram">{svg}</figure>'
         raise ValueError(kind)
 
@@ -320,6 +346,7 @@ def ordered(modules):
 def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_link=None, modules=None, courses=None):
     """The complete, self-contained HTML of one module in one language (an <article class="module">)."""
     lang, mid, ui = mod["lang"], mod["id"], UI[mod["lang"]]
+    exercise = mod.get("kind") == "exercise"
     pick = f"persona-{mid}-{lang}"
     modules = modules or {}
 
@@ -330,7 +357,9 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
     before = [b for b in mod.get("builds_on", []) if lang in modules.get(b, {})]
     after = [m for m in ordered(modules) if mid in m.get("builds_on", []) and lang in modules[m["id"]]]
     body = [
-        f'<article class="module" lang="{lang}" data-correct="{esc(ui["correct"])}" data-wrong="{esc(ui["wrong"])}">',
+        f'<article class="module{" exercise" if exercise else ""}" lang="{lang}" data-module="{mid}"'
+        f' data-correct="{esc(ui["correct"])}" data-wrong="{esc(ui["wrong"])}"'
+        + (f' data-confirm="{esc(ui["clear_confirm"])}"' if exercise else "") + ">",
         f'<p class="eyebrow"><a href="{root}learn/index.html#{lang}">{esc(ui["modules"])}</a>'
         + (f' · {esc(course_label(mod, courses or {}, lang))}' if course_label(mod, courses or {}, lang) else "") + "</p>",
         f'<h1>{esc(mod["title"])}</h1>',
@@ -351,6 +380,10 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
         + "".join(f"<li>{esc(o)}</li>" for o in mod["objectives"]) + "</ul></div>",
         render_body(mod, references, ref_url, modules, root),
     ]
+    if exercise:
+        body.append(f'<div class="notes-bar" hidden><p class="muted">💾 {esc(ui["notes"])}</p>'
+                    f'<button type="button" class="download">⬇️ {esc(ui["download"])}</button> '
+                    f'<button type="button" class="clear">{esc(ui["clear"])}</button></div>')
     if mod.get("readings"):
         body.append(f'<h2>{esc(ui["readings"])}</h2><ul class="refs">')
         for rid in mod["readings"]:
@@ -398,8 +431,11 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
             ui = UI[lang]
             builds = [modules[b][lang]["title"] for b in mod.get("builds_on", []) if lang in modules.get(b, {})]
             lecture = f'{esc(ui["lecture"])} {mod["lecture"]}' if mod.get("lecture") else esc(ui["module"])
+            exercise = mod.get("kind") == "exercise"
+            if exercise:
+                lecture += f' · {esc(ui["exercise"])}'
             cards[lang].setdefault(mod.get("course"), []).append(
-                f'<li class="card step"><p class="eyebrow">{lecture}</p>'
+                f'<li class="card step{" exercise" if exercise else ""}"><p class="eyebrow">{lecture}</p>'
                 f'<h3><a href="{mid}/{lang}/index.html" hreflang="{lang}">{esc(mod["title"])}</a></h3>'
                 f'<p>{esc(mod["summary"])}</p>'
                 + (f'<p class="builds">🔗 {esc(ui["builds_on"])}: {esc(", ".join(builds))}</p>' if builds else "")

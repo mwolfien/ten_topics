@@ -334,6 +334,22 @@ main :not(pre) > code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consola
 .path-note.next { font-size: 1.05rem; color: var(--text); margin-top: 2rem; }
 ol.path { counter-reset: none; }
 .card.step .eyebrow { margin: 0; }
+.card.step.exercise { border-left: 4px solid var(--new); }
+.reflect.task { border-left: 4px solid var(--new); }
+.reflect .gate { font-size: 0.9rem; margin: 0.4rem 0 0; }
+.diagram-solution { max-width: var(--measure); margin: 1rem 0; }
+.diagram-solution summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.notes-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+  margin: 1.5rem 0;
+  max-width: var(--measure);
+}
+.notes-bar p { margin: 0 0 0.5rem; }
+.notes-bar button { font: inherit; padding: 0.35rem 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); cursor: pointer; margin: 0 0.4rem 0.3rem 0; }
+.notes-bar button.download { background: var(--accent); border-color: var(--accent); color: var(--bg); }
 .card .builds { font-size: 0.85rem; color: var(--muted); }
 @media (max-width: 560px) {
   .quiz.match tr { display: block; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
@@ -343,7 +359,8 @@ ol.path { counter-reset: none; }
 }
 
 @media print {
-  header.site, footer.site, .search, .skip-link, .scorebar, .persona-picker { display: none; }
+  header.site, footer.site, .search, .skip-link, .scorebar, .persona-picker, .notes-bar, .reflect .gate { display: none; }
+  .reflect .solution[hidden] { display: block; }
   .explain[hidden], .reflect details > *:not(summary) { display: block; }
   a { color: inherit; }
 }
