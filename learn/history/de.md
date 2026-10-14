@@ -5,7 +5,8 @@ duration_minutes: 30
 level: "Einstieg"
 audiences: [med, cs, clin, tech, pat]
 order: 1
-course: "Einführung in die Medizinische Informatik"
+course: intro
+lecture: 2
 author: "Markus Wolfien"
 objectives:
   - "Frühe Treiber der Digitalisierung im Gesundheitswesen benennen"
@@ -15,7 +16,7 @@ objectives:
   - "Grundlegende ethische Fragen zu Verantwortung und Delegation erkennen"
 readings: [haux2006, berg2001, sittig2010, hayrinen2008]
 related_topics: [ehr-cis, fhir, cdss]
-source: "Vorlesung 2 „Geschichte und Entwicklung der Medizinischen Informatik“, Einführung in die Medizinische Informatik (SoSe 2026), Markus Wolfien, IMB & ZMI"
+source: "Vorlesung 2 „Geschichte und Entwicklung der Medizinischen Informatik“, Einführung in die Medizininformatik (SoSe 2026), Markus Wolfien, IMB & ZMI"
 ---
 
 > *„Befund gesucht – Akte nicht verfügbar – Information wird erneut erhoben.“*

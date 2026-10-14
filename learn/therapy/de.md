@@ -6,7 +6,8 @@ level: "Grundlagen"
 audiences: [med, cs, clin, tech, pat]
 order: 2
 builds_on: [history]
-course: "Grundlagen der Medizin für Informatiker:innen"
+course: medicine
+lecture: 7
 author: "Markus Wolfien"
 objectives:
   - "Grundlegende Therapieformen benennen und an Beispielen erklären"
@@ -18,7 +19,7 @@ objectives:
   - "Leitlinien als Entscheidungsrahmen verstehen und ihre Grenzen erklären"
 readings: [elwyn2012, basch2016, dekoning2020, gladstone2025, hassan2024]
 related_topics: [cdss, ehr-cis, fhir, data-quality, visualizations]
-source: "Vorlesung 7 „Therapie, Leitlinien und Patientenzentrierung“, Grundlagen der Medizin für Informatiker:innen (SoSe 2026), Markus Wolfien, IMB & ZMI"
+source: "Vorlesung 7 „Therapie, Leitlinien und Patientenzentrierung“, Grundlagen der Medizin (SoSe 2026), Markus Wolfien, IMB & ZMI"
 ---
 
 > **Leitfrage:** Wie wird aus einem auffälligen Befund eine gute, patientenzentrierte Therapieentscheidung?

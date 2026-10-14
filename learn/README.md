@@ -8,6 +8,7 @@ Everything runs in the reader's browser: no login, no grading, nothing is stored
 
 ```
 learn/
+  courses.yaml        the courses modules belong to (titles in German and English)
   <module-id>/        e.g. history
     de.md             German version
     en.md             English version
@@ -29,7 +30,8 @@ level: "Einstieg"                    # free text, e.g. Einstieg / Introductory
 audiences: [med, cs, clin, tech, pat]
 order: 1                             # position in the learning path
 builds_on: []                        # module ids this module builds on, e.g. [history]
-course: "Einführung in die Medizinische Informatik"   # optional: the course it comes from
+course: intro                        # optional: course id from learn/courses.yaml
+lecture: 2                           # optional: lecture number within the course
 author: "Markus Wolfien"
 objectives:
   - "…"
@@ -51,7 +53,22 @@ Audiences:
 
 ## Content
 
-Write normal Markdown (headings, lists, tables, quotes). Cite references with `[@id]`, as in `data/topics.yaml`, and link to another module in the same language with `[[module-id]]` (e.g. `[[history]]`); the link shows that module's title.
+Write normal Markdown (headings, lists, tables, quotes, and code blocks such as ```` ```text ```` for HL7 messages). Cite references with `[@id]`, as in `data/topics.yaml`, and link to another module in the same language with `[[module-id]]` (e.g. `[[history]]`); the link shows that module's title.
+
+## Courses
+
+`learn/courses.yaml` lists the courses in the order they appear on the overview page. Each course has an `id`, a `title` in `de` and `en`, and an optional `term` (e.g. "WiSe 2026/27"). The overview groups modules by course, and module pages show the course and lecture number above the title.
+
+```yaml
+courses:
+  - id: his
+    title:
+      de: "Informationssysteme im Gesundheitswesen"
+      en: "Health Information Systems"
+    term:
+      de: "WiSe 2026/27"
+      en: "winter term 2026/27"
+```
 
 ## Learning path
 
@@ -129,7 +146,7 @@ Ein **62-jähriger Raucher** kommt zur hausärztlichen Kontrolle …
 ```
 ````
 
-**Include** – inline an SVG file from the module folder. Use the CSS classes `node`, `hub`, `edge`, `label`, `small`, `hub-label` and `arrowhead` (for arrow markers) so the diagram follows the light and dark theme.
+**Include** – inline an SVG file from the module folder. Use the CSS classes `node`, `hub`, `edge`, `label`, `small`, `hub-label`, `chip`, `group`, `dashed` and `arrowhead` (for arrow markers) so the diagram follows the light and dark theme.
 
 ````
 ```include triangle-de.svg

@@ -12,9 +12,10 @@ fenced blocks for interactive elements (see learn/README.md):
   ```include   inline an SVG file from the module folder (theme-aware)
   ```case      a box for a running patient case
 
-Modules can form a learning path: `order` sets their position, `builds_on`
-lists the modules they build on, and [[module-id]] links to another module in
-the same language.
+Modules belong to a course from learn/courses.yaml (`course:` id, optional
+`lecture:` number) and can form a learning path: `order` sets their position,
+`builds_on` lists the modules they build on, and [[module-id]] links to another
+module in the same language.
 
 References are cited with [@id] (ids from data/references.yaml), as in topics.yaml.
 Everything runs in the browser; nothing is stored on a server.
@@ -29,6 +30,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 LEARN = ROOT / "learn"
+COURSES = LEARN / "courses.yaml"
 CITE = re.compile(r"\[@([a-z0-9-]+)\]")
 FENCE = re.compile(r"^```(quiz|match|reflect|persona|timeline|include|case)[ \t]*([^\n]*)\n(.*?)^```[ \t]*$", re.M | re.S)
 MODULE_LINK = re.compile(r"\[\[([a-z0-9-]+)\]\]")
@@ -53,7 +55,7 @@ UI = {
         "matched": "von", "reset": "Zurücksetzen", "learn_nav": "Lernen",
         "intro": "Interaktive Lernmodule zu den Themen der Sammlung – mit kurzen Quizfragen, Übungen und Reflexionsfragen. Ohne Anmeldung, nichts wird gespeichert.",
         "module": "Modul", "builds_on": "Baut auf", "builds_on_end": "auf", "next": "Weiter mit", "case": "Unser Fall",
-        "path": "Lernpfad", "course": "Lehrveranstaltung",
+        "path": "Lernpfad", "course": "Lehrveranstaltung", "lecture": "VL",
     },
     "en": {
         "choose": "– choose an answer –", "correct": "Correct!", "wrong": "Not quite.",
@@ -65,7 +67,7 @@ UI = {
         "matched": "of", "reset": "Reset", "learn_nav": "Learn",
         "intro": "Interactive learning modules on the topics of the collection – with short quizzes, exercises and reflection questions. No login, nothing is stored.",
         "module": "Module", "builds_on": "Builds on", "builds_on_end": "", "next": "Continue with", "case": "Our case",
-        "path": "Learning path", "course": "Course",
+        "path": "Learning path", "course": "Course", "lecture": "Lecture",
     },
 }
 
@@ -91,6 +93,25 @@ def load_modules():
     return modules
 
 
+def load_courses():
+    """Return the courses as an ordered dict {id: course}."""
+    if not COURSES.exists():
+        return {}
+    data = yaml.safe_load(COURSES.read_text(encoding="utf-8")) or {}
+    return {c["id"]: c for c in data.get("courses", [])}
+
+
+def course_label(mod, courses, lang):
+    """E.g. "Einführung in die Medizininformatik · VL 2" (empty if the module has no course)."""
+    course = courses.get(mod.get("course"))
+    if not course:
+        return ""
+    label = course["title"][lang]
+    if mod.get("lecture"):
+        label += f' · {UI[lang]["lecture"]} {mod["lecture"]}'
+    return label
+
+
 def blocks(module):
     """Yield (kind, arg, parsed_yaml_or_text) for each interactive block."""
     for m in FENCE.finditer(module["body"]):
@@ -103,6 +124,11 @@ def blocks(module):
 
 def validate(modules, references, topic_ids):
     errors = []
+    courses = load_courses()
+    for cid, course in courses.items():
+        for lang in UI:
+            if lang not in course.get("title", {}):
+                errors.append(f"learn/courses.yaml: course {cid!r} has no {lang} title")
     for mid, langs in modules.items():
         for lang, mod in langs.items():
             where = f"learn/{mid}/{lang}.md"
@@ -120,6 +146,10 @@ def validate(modules, references, topic_ids):
             for tid in mod.get("related_topics", []):
                 if tid not in topic_ids:
                     errors.append(f"{where}: unknown topic id {tid!r}")
+            if mod.get("course") is not None and mod["course"] not in courses:
+                errors.append(f"{where}: unknown course {mod['course']!r} (see learn/courses.yaml)")
+            if "lecture" in mod and not isinstance(mod["lecture"], int):
+                errors.append(f"{where}: lecture must be a number")
             if "order" in mod and not isinstance(mod["order"], int):
                 errors.append(f"{where}: order must be a number")
             for other_id in list(mod.get("builds_on", [])) + MODULE_LINK.findall(mod["body"]):
@@ -157,7 +187,7 @@ def cited(modules):
 # --------------------------------------------------------------------------- rendering
 
 def _md(text, cite):
-    html_out = markdown.markdown(text, extensions=["tables", "sane_lists"])
+    html_out = markdown.markdown(text, extensions=["tables", "sane_lists", "fenced_code"])
     return cite(html_out)
 
 
@@ -287,7 +317,7 @@ def ordered(modules):
     return sorted(reps, key=lambda m: (m.get("order", 999), m["id"]))
 
 
-def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_link=None, modules=None):
+def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_link=None, modules=None, courses=None):
     """The complete, self-contained HTML of one module in one language (an <article class="module">)."""
     lang, mid, ui = mod["lang"], mod["id"], UI[mod["lang"]]
     pick = f"persona-{mid}-{lang}"
@@ -301,7 +331,8 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
     after = [m for m in ordered(modules) if mid in m.get("builds_on", []) and lang in modules[m["id"]]]
     body = [
         f'<article class="module" lang="{lang}" data-correct="{esc(ui["correct"])}" data-wrong="{esc(ui["wrong"])}">',
-        f'<p class="eyebrow"><a href="{root}learn/index.html#{lang}">{esc(ui["modules"])}</a></p>',
+        f'<p class="eyebrow"><a href="{root}learn/index.html#{lang}">{esc(ui["modules"])}</a>'
+        + (f' · {esc(course_label(mod, courses or {}, lang))}' if course_label(mod, courses or {}, lang) else "") + "</p>",
         f'<h1>{esc(mod["title"])}</h1>',
         f'<p class="lead">{esc(mod["summary"])}</p>',
         '<div class="module-meta">'
@@ -346,8 +377,9 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
 def build(write, page, modules, references, ref_url, topic_lookup, base):
     """Write learn/ pages via the site's `write` and `page` helpers. Returns sitemap URLs."""
     urls = []
-    cards = {"de": [], "en": []}
-    for position, rep_mod in enumerate(ordered(modules), 1):
+    courses = load_courses()
+    cards = {"de": {}, "en": {}}  # lang -> course id -> card list
+    for rep_mod in ordered(modules):
         mid, langs = rep_mod["id"], modules[rep_mod["id"]]
         for lang, mod in langs.items():
             path = f"learn/{mid}/{lang}/"
@@ -355,7 +387,7 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
             other = next((l for l in langs if l != lang), None)
             other_url = f"{base}/learn/{mid}/{other}/" if other else None
             other_link = f"{root}learn/{mid}/{other}/index.html" if other else None
-            body = [module_html(mod, references, ref_url, topic_lookup, root, other, other_link, modules)]
+            body = [module_html(mod, references, ref_url, topic_lookup, root, other, other_link, modules, courses)]
             extra = f'<script src="{root}assets/learn.js" defer></script>'
             write(path + "index.html", page(
                 base=base, path=path, title=mod["title"], description=mod["summary"], body="\n".join(body),
@@ -365,20 +397,29 @@ def build(write, page, modules, references, ref_url, topic_lookup, base):
             urls.append(f"{base}/{path}")
             ui = UI[lang]
             builds = [modules[b][lang]["title"] for b in mod.get("builds_on", []) if lang in modules.get(b, {})]
-            course = f' · {esc(mod["course"])}' if mod.get("course") else ""
-            cards[lang].append(
-                f'<li class="card step"><p class="eyebrow">{esc(ui["module"])} {position}</p>'
+            lecture = f'{esc(ui["lecture"])} {mod["lecture"]}' if mod.get("lecture") else esc(ui["module"])
+            cards[lang].setdefault(mod.get("course"), []).append(
+                f'<li class="card step"><p class="eyebrow">{lecture}</p>'
                 f'<h3><a href="{mid}/{lang}/index.html" hreflang="{lang}">{esc(mod["title"])}</a></h3>'
                 f'<p>{esc(mod["summary"])}</p>'
                 + (f'<p class="builds">🔗 {esc(ui["builds_on"])}: {esc(", ".join(builds))}</p>' if builds else "")
-                + f'<span class="meta">{int(mod["duration_minutes"])} min · {esc(mod["level"])}{course}</span></li>')
+                + f'<span class="meta">{int(mod["duration_minutes"])} min · {esc(mod["level"])}</span></li>')
 
     sections = []
     for lang, heading in (("de", "Deutsch"), ("en", "English")):
-        if cards[lang]:
-            sections.append(f'<section lang="{lang}"><h2 id="{lang}">{heading}</h2>'
-                            f'<p class="muted">{esc(UI[lang]["intro"])}</p>'
-                            f'<h3>{esc(UI[lang]["path"])}</h3><ol class="grid path">{"".join(cards[lang])}</ol></section>')
+        if not cards[lang]:
+            continue
+        groups = []
+        for cid in list(courses) + [c for c in cards[lang] if c not in courses]:
+            if cid not in cards[lang]:
+                continue
+            course = courses.get(cid)
+            title = course["title"][lang] if course else UI[lang]["modules"]
+            term = f' <span class="muted">· {esc(course["term"][lang])}</span>' if course and course.get("term") else ""
+            groups.append(f'<h3 class="course-title">{esc(title)}{term}</h3>'
+                          f'<ol class="grid path">{"".join(cards[lang][cid])}</ol>')
+        sections.append(f'<section lang="{lang}"><h2 id="{lang}">{heading}</h2>'
+                        f'<p class="muted">{esc(UI[lang]["intro"])}</p>{"".join(groups)}</section>')
     write("learn/index.html", page(
         base=base, path="learn/", title="Learning modules / Lernmodule",
         description="Interactive, bilingual learning modules on medical informatics with quizzes and exercises.",
