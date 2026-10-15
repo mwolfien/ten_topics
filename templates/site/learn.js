@@ -1,6 +1,7 @@
 // Interactive elements of the learning modules (see scripts/learn.py).
-// Everything happens in the browser. Only the chosen persona is remembered
-// (in localStorage, if the browser allows it); answers are never stored or sent.
+// Everything happens in the browser and nothing is sent anywhere. Only the
+// chosen persona and, in exercises, the reader's own written answers are kept
+// in localStorage (if the browser allows it).
 (function () {
   "use strict";
 
@@ -109,5 +110,63 @@
     }
   }
 
+  // Exercises: keep written answers locally, show solution notes only after an
+  // own attempt, and let readers download their answers.
+  function setupExercise(module) {
+    var key = "tentopics-notes-" + module.dataset.module + "-" + module.lang;
+    var tasks = Array.prototype.slice.call(module.querySelectorAll(".reflect.task"));
+    var bar = module.querySelector(".notes-bar");
+    var notes = {};
+    try { notes = JSON.parse(localStorage.getItem(key) || "{}") || {}; } catch (e) { notes = {}; }
+
+    function save() {
+      try { localStorage.setItem(key, JSON.stringify(notes)); } catch (e) { /* storage blocked */ }
+    }
+
+    function gate(task) {
+      var written = task.querySelector("textarea").value.trim().length > 0;
+      var solution = task.querySelector(".solution");
+      solution.hidden = !written;
+      if (!written) solution.open = false;
+      task.querySelector(".gate").hidden = written;
+    }
+
+    tasks.forEach(function (task) {
+      var area = task.querySelector("textarea");
+      if (notes[area.dataset.key]) area.value = notes[area.dataset.key];
+      gate(task);
+      area.addEventListener("input", function () {
+        if (area.value.trim()) notes[area.dataset.key] = area.value; else delete notes[area.dataset.key];
+        save();
+        gate(task);
+      });
+    });
+
+    if (!bar || !tasks.length) return;
+    bar.hidden = false;
+    bar.querySelector(".download").addEventListener("click", function () {
+      var title = module.querySelector("h1").textContent;
+      var lines = ["# " + title, "", location.href, ""];
+      tasks.forEach(function (task) {
+        lines.push("## " + task.querySelector(".q").textContent.replace(/^\S+\s/, "").trim(), "");
+        lines.push(task.querySelector("textarea").value.trim() || "–", "");
+      });
+      var blob = new Blob([lines.join("\n")], { type: "text/markdown;charset=utf-8" });
+      var link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = module.dataset.module + "-" + module.lang + ".md";
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(function () { URL.revokeObjectURL(link.href); link.remove(); }, 0);
+    });
+    bar.querySelector(".clear").addEventListener("click", function () {
+      if (!window.confirm(module.dataset.confirm || "Clear?")) return;
+      notes = {};
+      try { localStorage.removeItem(key); } catch (e) { /* storage blocked */ }
+      tasks.forEach(function (task) { task.querySelector("textarea").value = ""; gate(task); });
+    });
+  }
+
   document.querySelectorAll(".module").forEach(setup);
+  document.querySelectorAll(".module.exercise").forEach(setupExercise);
 })();
