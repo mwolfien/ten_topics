@@ -1061,3 +1061,39 @@ references:
     doi: "10.1007/978-3-031-12310-8"
     type: book
     added: "2026-10"
+  bates1998:
+    label: "Bates et al. 1998"
+    title: "Effect of computerized physician order entry and a team intervention on prevention of serious medication errors"
+    journal: "JAMA"
+    year: 1998
+    doi: "10.1001/jama.280.15.1311"
+    pmid: "9794308"
+    type: article
+    added: "2026-10"
+  vandersijs2006:
+    label: "van der Sijs et al. 2006"
+    title: "Overriding of drug safety alerts in computerized physician order entry"
+    journal: "Journal of the American Medical Informatics Association"
+    year: 2006
+    doi: "10.1197/jamia.M1809"
+    pmid: "16357358"
+    type: article
+    added: "2026-10"
+  haynes2009:
+    label: "Haynes et al. 2009"
+    title: "A surgical safety checklist to reduce morbidity and mortality in a global population"
+    journal: "New England Journal of Medicine"
+    year: 2009
+    doi: "10.1056/NEJMsa0810119"
+    pmid: "19144931"
+    type: article
+    added: "2026-10"
+  sendelbach2013:
+    label: "Sendelbach and Funk 2013"
+    title: "Alarm fatigue: a patient safety concern"
+    journal: "AACN Advanced Critical Care"
+    year: 2013
+    doi: "10.1097/NCI.0b013e3182a903f9"
+    pmid: "24153215"
+    type: article
+    added: "2026-10"

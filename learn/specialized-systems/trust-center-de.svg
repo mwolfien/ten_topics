@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 280" role="img" aria-labelledby="tp-t-de tp-d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="tp-t-de">Trennung von Identität und Daten</title>
+  <desc id="tp-d-de">Die Klinik kennt die Identität, die Treuhandstelle verwaltet getrennt die Zuordnung zum Pseudonym und den Einwilligungsstatus, Biobank und Forschung arbeiten nur mit dem Pseudonym.</desc>
+  <defs><marker id="tp-arrow-de" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <rect class="node" x="20" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="120.0" y="72" text-anchor="middle">Klinik</text>
+  <text class="small" x="120.0" y="92" text-anchor="middle">kennt die Identität</text>
+  <rect class="chip" x="34" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="132" text-anchor="middle">Peter Krause</text>
+  <rect class="chip" x="34" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="172" text-anchor="middle">*14.05.1964</text>
+  <rect class="chip" x="34" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="212" text-anchor="middle">Patienten-ID 4711-K</text>
+  <rect class="group" x="260" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="360.0" y="72" text-anchor="middle">Treuhandstelle</text>
+  <text class="small" x="360.0" y="92" text-anchor="middle">verwaltet die Zuordnung</text>
+  <rect class="chip" x="274" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="132" text-anchor="middle">4711-K ↔ PSN-7Q2K-91XD</text>
+  <rect class="chip" x="274" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="172" text-anchor="middle">Einwilligungsstatus</text>
+  <rect class="chip" x="274" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="212" text-anchor="middle">(Broad Consent)</text>
+  <rect class="node" x="500" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="600.0" y="72" text-anchor="middle">Biobank & Forschung</text>
+  <text class="small" x="600.0" y="92" text-anchor="middle">arbeiten pseudonymisiert</text>
+  <rect class="chip" x="514" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="132" text-anchor="middle">PSN-7Q2K-91XD</text>
+  <rect class="chip" x="514" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="172" text-anchor="middle">Proben, Aliquote</text>
+  <rect class="chip" x="514" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="212" text-anchor="middle">klinische Daten</text>
+  <line class="edge" x1="224" y1="140" x2="256" y2="140" marker-end="url(#tp-arrow-de)"/>
+  <line class="edge" x1="464" y1="140" x2="496" y2="140" marker-end="url(#tp-arrow-de)"/>
+  <text class="small" x="240" y="266" text-anchor="middle">Pseudonym anfordern</text>
+  <text class="small" x="480" y="266" text-anchor="middle">nur Pseudonym</text>
+</svg>

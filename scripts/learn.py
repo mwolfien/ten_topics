@@ -16,8 +16,9 @@ fenced blocks for interactive elements (see learn/README.md):
 
 Modules belong to a course from learn/courses.yaml (`course:` id, optional
 `lecture:` number) and can form a learning path: `order` sets their position,
-`builds_on` lists the modules they build on, and [[module-id]] links to another
-module in the same language. `kind: exercise` marks a self-paced exercise.
+`builds_on` lists the modules they build on, [[module-id]] links to another
+module in the same language and [[topic:topic-id]] to a topic of the collection.
+`kind: exercise` marks a self-paced exercise.
 
 References are cited with [@id] (ids from data/references.yaml), as in topics.yaml.
 Everything runs in the browser; nothing is stored on a server.
@@ -37,6 +38,7 @@ COURSES = LEARN / "courses.yaml"
 CITE = re.compile(r"\[@([a-z0-9-]+)\]")
 FENCE = re.compile(r"^```(quiz|match|reflect|persona|timeline|include|case)[ \t]*([^\n]*)\n(.*?)^```[ \t]*$", re.M | re.S)
 MODULE_LINK = re.compile(r"\[\[([a-z0-9-]+)\]\]")
+TOPIC_LINK = re.compile(r"\[\[topic:([a-z0-9-]+)\]\]")
 TEXT_BLOCKS = ("persona", "include", "case")  # blocks whose content is Markdown or a file name, not YAML
 
 AUDIENCES = {
@@ -189,7 +191,7 @@ def validate(modules, references, topic_ids):
             for rid in CITE.findall(mod["body"]) + list(mod.get("readings", [])):
                 if rid not in references:
                     errors.append(f"{where}: unknown reference {rid!r}")
-            for tid in mod.get("related_topics", []):
+            for tid in list(mod.get("related_topics", [])) + TOPIC_LINK.findall(mod["body"]):
                 if tid not in topic_ids:
                     errors.append(f"{where}: unknown topic id {tid!r}")
             if mod.get("course") is not None and mod["course"] not in courses:
@@ -239,7 +241,7 @@ def _md(text, cite):
     return cite(html_out)
 
 
-def render_body(mod, references, ref_url, modules=None, root=""):
+def render_body(mod, references, ref_url, modules=None, root="", topic_lookup=None):
     lang = mod["lang"]
     ui = UI[lang]
     exercise = mod.get("kind") == "exercise"
@@ -255,7 +257,10 @@ def render_body(mod, references, ref_url, modules=None, root=""):
             if not other:
                 return esc(m.group(1))
             return f'<a class="module-link" href="{root}learn/{other["id"]}/{lang}/index.html">{esc(other["title"])}</a>'
-        return MODULE_LINK.sub(module_link, CITE.sub(one, text))
+        def topic_link(m):
+            title = (topic_lookup or {}).get(m.group(1), m.group(1))
+            return f'<a class="topic-link" href="{root}topics/{m.group(1)}/index.html">{esc(title)}</a>'
+        return MODULE_LINK.sub(module_link, TOPIC_LINK.sub(topic_link, CITE.sub(one, text)))
 
     def uid():
         counter["n"] += 1
@@ -371,6 +376,16 @@ def module_jsonld(mod, base, url, other_url, references, ref_url):
     return node
 
 
+def modules_by_topic(modules):
+    """topic id -> list of (module, lang) for modules listing it in `related_topics`, in learning-path order."""
+    out = {}
+    for rep_mod in ordered(modules):
+        for lang, mod in modules[rep_mod["id"]].items():
+            for tid in mod.get("related_topics", []):
+                out.setdefault(tid, []).append(mod)
+    return out
+
+
 def ordered(modules):
     """One representative (any language) per module, sorted by `order`, then id."""
     reps = [next(iter(langs.values())) for langs in modules.values()]
@@ -412,7 +427,7 @@ def module_html(mod, references, ref_url, topic_lookup, root, other=None, other_
          + f' {esc(ui["builds_on_end"])}</p>'.replace(" </p>", "</p>") if before else ""),
         f'<div class="callout"><p><strong>{esc(ui["objectives"])}</strong></p><ul>'
         + "".join(f"<li>{esc(o)}</li>" for o in mod["objectives"]) + "</ul></div>",
-        render_body(mod, references, ref_url, modules, root),
+        render_body(mod, references, ref_url, modules, root, topic_lookup),
     ]
     if exercise:
         body.append(f'<div class="notes-bar" hidden><p class="muted">💾 {esc(ui["notes"])}</p>'

@@ -54,7 +54,7 @@ Audiences:
 
 ## Content
 
-Write normal Markdown (headings, lists, tables, quotes, and code blocks such as ```` ```text ```` for HL7 messages). Cite references with `[@id]`, as in `data/topics.yaml`, and link to another module in the same language with `[[module-id]]` (e.g. `[[history]]`); the link shows that module's title.
+Write normal Markdown (headings, lists, tables, quotes, and code blocks such as ```` ```text ```` for HL7 messages). Cite references with `[@id]`, as in `data/topics.yaml`, and link to another module in the same language with `[[module-id]]` (e.g. `[[history]]`); the link shows that module's title. Link to a topic of the collection with `[[topic:topic-id]]` (e.g. `[[topic:cdss]]`), ideally where the text discusses it. Every topic page lists the modules that name it in `related_topics`, so modules and topics link to each other.
 
 ## Courses
 

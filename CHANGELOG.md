@@ -15,13 +15,14 @@ Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [
 - Courses: learning modules are grouped by course (`learn/courses.yaml`) and show the lecture they are based on – "Einführung in die Medizininformatik" (history), "Grundlagen der Medizin" (therapy) and "Informationssysteme im Gesundheitswesen" (winter term 2026/27).
 - Third learning module: HIS, LIS and RIS/PACS – how clinical information systems work together, following one patient's data through admission, laboratory, radiology and a transfer, with HL7 v2 messages to read and a failure scenario. Markdown code blocks are now supported in modules.
 - First self-paced exercise, "Wenn Systeme sich nicht einig sind" / "When systems disagree" (90 minutes), for the HIS, LIS and RIS/PACS lecture: an unknown emergency patient is identified later and the PACS misses the merge. Exercises (`kind: exercise`) show solution notes only after an own answer, keep answers locally in the browser and let readers download them.
+- Fourth learning module: specialised clinical systems from the workstation to the biobank (CPOE, tumour board, OR management, PDMS, biobank), following Mr Krause from the therapy module and analysing each system with a five-question grid. Topic pages now list the learning modules on that topic, and modules link to topics in the text (`[[topic:id]]`).
 - Quiz options and match items are shuffled when the site is built, so the order in which they were written no longer gives answers away (`shuffle: false` keeps a natural order).
 - Bilingual website frame: navigation, footer, search and a German start page at `/de/`, with a language switch on every page and `hreflang` links between language versions. Topics and references stay in English.
 
 ### Content
 - Added titles, journals and PubMed IDs to 94 references (from PubMed).
 - Corrected the year of the cBioPortal paper (Gao et al. 2013, previously listed as 2016).
-- Added three references for the first learning module (Haux 2006, Berg 2001, Sittig and Singh 2010) four for the second (Elwyn et al. 2012, Basch et al. 2016, de Koning et al. 2020, Gladstone et al. 2025) and two for the third (Winter et al. 2023, Carraro and Plebani 2007).
+- Added three references for the first learning module (Haux 2006, Berg 2001, Sittig and Singh 2010) four for the second (Elwyn et al. 2012, Basch et al. 2016, de Koning et al. 2020, Gladstone et al. 2025) and two for the third (Winter et al. 2023, Carraro and Plebani 2007) and four for the fourth (Bates et al. 1998, van der Sijs et al. 2006, Haynes et al. 2009, Sendelbach and Funk 2013).
 
 ## 2026-09
 
