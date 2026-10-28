@@ -15,6 +15,7 @@ Each release on GitHub is archived on Zenodo with its own DOI; the concept DOI [
 - Courses: learning modules are grouped by course (`learn/courses.yaml`) and show the lecture they are based on – "Einführung in die Medizininformatik" (history), "Grundlagen der Medizin" (therapy) and "Informationssysteme im Gesundheitswesen" (winter term 2026/27).
 - Third learning module: HIS, LIS and RIS/PACS – how clinical information systems work together, following one patient's data through admission, laboratory, radiology and a transfer, with HL7 v2 messages to read and a failure scenario. Markdown code blocks are now supported in modules.
 - First self-paced exercise, "Wenn Systeme sich nicht einig sind" / "When systems disagree" (90 minutes), for the HIS, LIS and RIS/PACS lecture: an unknown emergency patient is identified later and the PACS misses the merge. Exercises (`kind: exercise`) show solution notes only after an own answer, keep answers locally in the browser and let readers download them.
+- Quiz options and match items are shuffled when the site is built, so the order in which they were written no longer gives answers away (`shuffle: false` keeps a natural order).
 - Bilingual website frame: navigation, footer, search and a German start page at `/de/`, with a language switch on every page and `hreflang` links between language versions. Topics and references stay in English.
 
 ### Content

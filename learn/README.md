@@ -107,6 +107,8 @@ explain: "Optional explanation shown when all items are correct."
 ```
 ````
 
+**Answer order** – When the site is built, quiz options and match items are put into a fixed pseudo-random order, so you can write them in any order (e.g. the correct answer first) without giving the answer away. The order stays the same between builds and is the same in both languages. Match dropdowns keep the options in the order you wrote them, so a natural order (1–7, A01–A40, phases) is preserved. For a quiz whose options have a natural order (numbers, ranges, phases), add `shuffle: false`.
+
 **Reflect** – an open question with a text field (not stored) and hidden sample answers.
 
 ````

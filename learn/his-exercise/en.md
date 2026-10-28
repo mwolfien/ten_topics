@@ -207,6 +207,7 @@ answers:
 question: "Task 3.3a: Which HL7 v2 event fits the merge at 20:00?"
 options: ["A02 – transfer", "A08 – update patient information", "A11 – cancel admission", "A40 – merge patient"]
 answer: "A40 – merge patient"
+shuffle: false  # options in a natural order
 explain: "With `ADT^A40` the temporary ID 99127 is merged into the existing ID 34821. The permanent ID remains, and the temporary one is marked as merged. An A08 would only change the data under 99127 – the two records would stay separate."
 ```
 

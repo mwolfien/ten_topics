@@ -24,6 +24,7 @@ Everything runs in the browser; nothing is stored on a server.
 """
 
 import html
+import random
 import re
 from pathlib import Path
 
@@ -124,6 +125,37 @@ def course_label(mod, courses, lang):
     if mod.get("kind") == "exercise":
         label += f' · {UI[lang]["exercise"]}'
     return label
+
+
+def shuffled(data, kind, seed):
+    """Quiz options and match items in a fixed, pseudo-random order, so that the
+    order in which an author wrote them never gives the answer away.
+
+    The order depends only on `seed` (module id and block number), so pages stay
+    the same between builds and both languages get the same order. Quiz options
+    with `shuffle: false` (e.g. numbers or phases in a natural order) are kept.
+    Match items are shuffled, their dropdown options keep the authored order."""
+    if kind == "quiz":
+        if data.get("shuffle") is False or len(data["options"]) < 2:
+            return data
+        for attempt in range(50):  # every position is equally likely for the answer
+            rng = random.Random(f"{seed}:{attempt}")
+            options = [o for o in data["options"] if o != data["answer"]]
+            rng.shuffle(options)
+            options.insert(rng.randrange(len(data["options"])), data["answer"])
+            if options != data["options"]:
+                break
+        return {**data, "options": options}
+    if kind == "match" and data.get("shuffle") is not False and len(data["items"]) > 2:
+        rank = {o: i for i, o in enumerate(data["options"])}
+        for attempt in range(50):
+            items = list(data["items"])
+            random.Random(f"{seed}:{attempt}").shuffle(items)
+            order = [rank[i["answer"]] for i in items]
+            if items != data["items"] and order != sorted(order):
+                break
+        return {**data, "items": items}
+    return data
 
 
 def blocks(module):
@@ -295,6 +327,8 @@ def render_body(mod, references, ref_url, modules=None, root=""):
     def stash(m):
         kind, arg, content = m.group(1), m.group(2).strip(), m.group(3)
         data = content if kind in TEXT_BLOCKS else yaml.safe_load(content)
+        if kind in ("quiz", "match"):
+            data = shuffled(data, kind, f"{mod['id']}:{len(parts)}")
         key = f"BLOCK{len(parts)}X"
         parts[key] = render_block(kind, arg, data)
         return f"\n\n{key}\n\n"
