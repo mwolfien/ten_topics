@@ -207,6 +207,7 @@ answers:
 question: "Aufgabe 3.3a: Welches HL7-v2-Ereignis passt zur Zusammenführung um 20:00?"
 options: ["A02 – Verlegung", "A08 – Patientendaten aktualisieren", "A11 – Aufnahme stornieren", "A40 – Patienten zusammenführen"]
 answer: "A40 – Patienten zusammenführen"
+shuffle: false  # options in a natural order
 explain: "Mit `ADT^A40` wird die temporäre ID 99127 in die bestehende ID 34821 überführt. Die dauerhafte ID bleibt, die temporäre wird als zusammengeführt markiert. Ein A08 würde nur die Daten unter 99127 ändern – die beiden Akten blieben getrennt."
 ```
 

@@ -59,6 +59,7 @@ options:
   - "6–9 – ein paar Spezialsysteme mehr"
   - "10 oder mehr – eine ganze Landschaft"
 answer: "10 oder mehr – eine ganze Landschaft"
+shuffle: false  # options in a natural order
 explain: "KIS mit Aufnahme/ADT, Order Entry und klinischer Dokumentation, Kommunikationsserver, LIS Klinische Chemie, LIS Mikrobiologie, POCT-Middleware für die Blutgasanalyse, RIS, Modalität (Röntgen/CT), PACS, PDMS auf der Intensivstation, Abrechnung/DRG – je nach Haus noch deutlich mehr. **Jedes dieser Systeme braucht denselben Kontext: Wer ist die Patientin? Zu welchem Fall gehört das? Wo ist sie gerade?**"
 ```
 
@@ -105,6 +106,7 @@ Im **Spaghetti**-Muster spricht jedes System direkt mit jedem anderen. Im ungün
 question: "Ein Haus hat 30 Systeme. Wie viele Schnittstellen wären es im Spaghetti-Muster im ungünstigsten Fall?"
 options: ["30", "60", "435", "900"]
 answer: "435"
+shuffle: false  # options in a natural order
 explain: "30 · 29 / 2 = 435 – im Stern wären es 30. Die Rechnung ist ein Worst Case, denn nicht jedes System muss mit jedem sprechen. Das Prinzip bleibt: Direktverbindungen skalieren schlecht."
 ```
 
@@ -347,6 +349,7 @@ Das LIS steuert drei Phasen. Die eigentliche Messung im Gerät ist nur der mittl
 question: "In welcher Phase lag in einer Studie eines Notfalllabors der größte Anteil der bestätigten Laborfehler?"
 options: ["Präanalytik", "Analytik", "Postanalytik"]
 answer: "Präanalytik"
+shuffle: false  # options in a natural order
 explain: "Von 160 bestätigten Fehlern lagen 61,9 % in der Präanalytik, 15,0 % in der Analytik und 23,1 % in der Postanalytik [@carraro2007]. Die meisten Fehler passieren nicht im Analysegerät, sondern an den Übergängen – Identifikation, Etikett, Transport, Übermittlung. Genau dort können Informationssysteme ansetzen."
 ```
 

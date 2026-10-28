@@ -59,6 +59,7 @@ options:
   - "6–9 – a few more specialist systems"
   - "10 or more – a whole landscape"
 answer: "10 or more – a whole landscape"
+shuffle: false  # options in a natural order
 explain: "HIS with admission/ADT, order entry and clinical documentation, communication server, LIS for clinical chemistry, LIS for microbiology, POCT middleware for the blood gas analysis, RIS, modality (X-ray/CT), PACS, PDMS in intensive care, billing/DRG – and considerably more depending on the hospital. **Every one of these systems needs the same context: Who is the patient? Which case does this belong to? Where is she right now?**"
 ```
 
@@ -105,6 +106,7 @@ In the **spaghetti** pattern every system talks directly to every other. In the 
 question: "A hospital has 30 systems. How many interfaces would the spaghetti pattern need in the worst case?"
 options: ["30", "60", "435", "900"]
 answer: "435"
+shuffle: false  # options in a natural order
 explain: "30 · 29 / 2 = 435 – the star would need 30. The calculation is a worst case, because not every system has to talk to every other. The principle holds: direct connections scale badly."
 ```
 
@@ -347,6 +349,7 @@ The LIS controls three phases. The actual measurement in the analyser is only th
 question: "In which phase did a study of an emergency laboratory find the largest share of confirmed laboratory errors?"
 options: ["Pre-analytical", "Analytical", "Post-analytical"]
 answer: "Pre-analytical"
+shuffle: false  # options in a natural order
 explain: "Of 160 confirmed errors, 61.9 % were pre-analytical, 15.0 % analytical and 23.1 % post-analytical [@carraro2007]. Most errors do not happen in the analyser but at the hand-overs – identification, label, transport, transmission. That is exactly where information systems can help."
 ```
 
