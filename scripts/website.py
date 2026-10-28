@@ -504,6 +504,9 @@ def build(topics, references, out, base):
     write("data/topics.json", json.dumps(topics_json, ensure_ascii=False, indent=1) + "\n")
 
     # ---- topic pages
+    import learn
+    learn_modules = learn.load_modules()
+    by_topic = learn.modules_by_topic(learn_modules)
     for n, topic in enumerate(topic_list):
         path = f"topics/{topic['id']}/"
         root = "../../"
@@ -521,6 +524,12 @@ def build(topics, references, out, base):
         body.append(f'<h2 id="references">References ({len(refs)})</h2>')
         body.append('<ol class="refs">' + "".join(
             f"<li>{ref_line_html(references[r], r in new_ids)}</li>" for r in refs) + "</ol>")
+        if by_topic.get(topic["id"]):
+            body.append('<h2 id="learn">Learning modules on this topic</h2><ul class="module-links">' + "".join(
+                f'<li lang="{m["lang"]}"><a href="{root}learn/{m["id"]}/{m["lang"]}/index.html" hreflang="{m["lang"]}">'
+                f'{esc(m["title"])}</a> <span class="muted">({"Deutsch" if m["lang"] == "de" else "English"}'
+                f'{" · " + esc(learn.course_label(m, learn.load_courses(), m["lang"])) if m.get("course") else ""})</span></li>'
+                for m in by_topic[topic["id"]]) + "</ul>")
         body.append(f'<p class="muted">Download: <a href="references.bib">BibTeX</a> · '
                     f'<a href="index.md">Markdown</a> · '
                     f'<a href="{REPO}/issues/new?template=suggest-reference.yml">Suggest a reference</a></p>')
@@ -641,9 +650,8 @@ def build(topics, references, out, base):
     write("llms-full.txt", "\n".join(full))
 
     # ---- learning modules
-    import learn
     shutil.copy(ASSETS / "learn.js", out / "assets" / "learn.js")
-    learn_urls = learn.build(write, page, learn.load_modules(), references, ref_url,
+    learn_urls = learn.build(write, page, learn_modules, references, ref_url,
                              {t["id"]: topic_heading(t) for t in topic_list}, base)
 
     # ---- sitemap

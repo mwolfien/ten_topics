@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 280" role="img" aria-labelledby="tp-t-en tp-d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="tp-t-en">Separating identity and data</title>
+  <desc id="tp-d-en">The hospital knows the identity, the trusted third party separately manages the link to the pseudonym and the consent status, and the biobank and researchers only work with the pseudonym.</desc>
+  <defs><marker id="tp-arrow-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <rect class="node" x="20" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="120.0" y="72" text-anchor="middle">Hospital</text>
+  <text class="small" x="120.0" y="92" text-anchor="middle">knows the identity</text>
+  <rect class="chip" x="34" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="132" text-anchor="middle">Peter Krause</text>
+  <rect class="chip" x="34" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="172" text-anchor="middle">born 14 May 1964</text>
+  <rect class="chip" x="34" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="120.0" y="212" text-anchor="middle">patient ID 4711-K</text>
+  <rect class="group" x="260" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="360.0" y="72" text-anchor="middle">Trusted third party</text>
+  <text class="small" x="360.0" y="92" text-anchor="middle">manages the link</text>
+  <rect class="chip" x="274" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="132" text-anchor="middle">4711-K ↔ PSN-7Q2K-91XD</text>
+  <rect class="chip" x="274" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="172" text-anchor="middle">consent status</text>
+  <rect class="chip" x="274" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="360.0" y="212" text-anchor="middle">(broad consent)</text>
+  <rect class="node" x="500" y="40" width="200" height="200" rx="14"/>
+  <text class="label" x="600.0" y="72" text-anchor="middle">Biobank & research</text>
+  <text class="small" x="600.0" y="92" text-anchor="middle">work with pseudonyms</text>
+  <rect class="chip" x="514" y="112" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="132" text-anchor="middle">PSN-7Q2K-91XD</text>
+  <rect class="chip" x="514" y="152" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="172" text-anchor="middle">samples, aliquots</text>
+  <rect class="chip" x="514" y="192" width="172" height="30" rx="8"/>
+  <text class="small" x="600.0" y="212" text-anchor="middle">clinical data</text>
+  <line class="edge" x1="224" y1="140" x2="256" y2="140" marker-end="url(#tp-arrow-en)"/>
+  <line class="edge" x1="464" y1="140" x2="496" y2="140" marker-end="url(#tp-arrow-en)"/>
+  <text class="small" x="240" y="266" text-anchor="middle">request pseudonym</text>
+  <text class="small" x="480" y="266" text-anchor="middle">pseudonym only</text>
+</svg>

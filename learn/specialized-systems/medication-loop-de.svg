@@ -1,0 +1,32 @@
+<svg viewBox="0 0 640 440" role="img" aria-labelledby="ml-t-de ml-d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="ml-t-de">Medikation als geschlossener Kreislauf</title>
+  <desc id="ml-d-de">Verordnung, Prüfung, Bereitstellung, Verabreichung, Dokumentation und Monitoring sind über dieselbe Patienten- und Arzneimittel-ID verbunden.</desc>
+  <defs><marker id="ml-arrow-de" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <path class="edge" d="M379.9 66.7 A160 160 0 0 1 418.5 88.9" marker-end="url(#ml-arrow-de)"/>
+  <path class="edge" d="M478.4 192.7 A160 160 0 0 1 478.4 237.3" marker-end="url(#ml-arrow-de)"/>
+  <path class="edge" d="M418.5 341.1 A160 160 0 0 1 379.9 363.3" marker-end="url(#ml-arrow-de)"/>
+  <path class="edge" d="M260.1 363.3 A160 160 0 0 1 221.5 341.1" marker-end="url(#ml-arrow-de)"/>
+  <path class="edge" d="M161.6 237.3 A160 160 0 0 1 161.6 192.7" marker-end="url(#ml-arrow-de)"/>
+  <path class="edge" d="M221.5 88.9 A160 160 0 0 1 260.1 66.7" marker-end="url(#ml-arrow-de)"/>
+  <circle class="hub" cx="320" cy="215" r="56"/>
+  <text class="hub-label" x="320" y="212" text-anchor="middle">Closed Loop</text>
+  <text class="hub-label" x="320" y="230" text-anchor="middle">Medikation</text>
+  <rect class="node" x="240.0" y="32.0" width="160" height="46" rx="12"/>
+  <text class="label" x="320.0" y="53.0" text-anchor="middle">Verordnung</text>
+  <text class="small" x="320.0" y="69.0" text-anchor="middle">CPOE, Ärztin</text>
+  <rect class="node" x="378.6" y="112.0" width="160" height="46" rx="12"/>
+  <text class="label" x="458.6" y="133.0" text-anchor="middle">Prüfung</text>
+  <text class="small" x="458.6" y="149.0" text-anchor="middle">Apotheke, AMTS</text>
+  <rect class="node" x="378.6" y="272.0" width="160" height="46" rx="12"/>
+  <text class="label" x="458.6" y="293.0" text-anchor="middle">Bereitstellung</text>
+  <text class="small" x="458.6" y="309.0" text-anchor="middle">z. B. Unit-Dose</text>
+  <rect class="node" x="240.0" y="352.0" width="160" height="46" rx="12"/>
+  <text class="label" x="320.0" y="373.0" text-anchor="middle">Verabreichung</text>
+  <text class="small" x="320.0" y="389.0" text-anchor="middle">Barcode-Scan, Pflege</text>
+  <rect class="node" x="101.4" y="272.0" width="160" height="46" rx="12"/>
+  <text class="label" x="181.4" y="293.0" text-anchor="middle">Dokumentation</text>
+  <text class="small" x="181.4" y="309.0" text-anchor="middle">Zeitpunkt, Dosis</text>
+  <rect class="node" x="101.4" y="112.0" width="160" height="46" rx="12"/>
+  <text class="label" x="181.4" y="133.0" text-anchor="middle">Monitoring</text>
+  <text class="small" x="181.4" y="149.0" text-anchor="middle">Wirkung, Labor</text>
+</svg>
