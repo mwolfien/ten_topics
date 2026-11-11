@@ -1097,3 +1097,19 @@ references:
     pmid: "24153215"
     type: article
     added: "2026-10"
+  dolin2006:
+    label: "Dolin et al. 2006"
+    title: "HL7 Clinical Document Architecture, Release 2"
+    journal: "Journal of the American Medical Informatics Association"
+    year: 2006
+    doi: "10.1197/jamia.M1888"
+    pmid: "16221939"
+    type: article
+    added: "2026-11"
+  benson2021:
+    label: "Benson and Grieve 2021"
+    title: "Principles of Health Interoperability: FHIR, HL7 and SNOMED CT (4th edition)"
+    year: 2021
+    doi: "10.1007/978-3-030-56883-2"
+    type: book
+    added: "2026-11"
