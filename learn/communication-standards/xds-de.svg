@@ -1,0 +1,25 @@
+<svg viewBox="0 0 720 330" role="img" aria-labelledby="xd-t-de xd-d-de" xmlns="http://www.w3.org/2000/svg">
+  <title id="xd-t-de">IHE XDS.b: Dokumente einrichtungsübergreifend teilen</title>
+  <desc id="xd-d-de">Das Klinikum als Document Source stellt den Entlassbrief per ITI-41 in ein Repository, das ihn per ITI-42 in der Registry registriert. Die Hausarztpraxis als Document Consumer sucht per ITI-18 in der Registry und holt das Dokument per ITI-43 aus dem Repository.</desc>
+  <defs><marker id="xd-de" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <rect class="node" x="20" y="30" width="180" height="58" rx="10"/>
+  <text class="label" x="110.0" y="57.0" text-anchor="middle">Document Source</text>
+  <text class="small" x="110.0" y="74.0" text-anchor="middle">Klinikum</text>
+  <rect class="node" x="270" y="30" width="180" height="58" rx="10"/>
+  <text class="label" x="360.0" y="57.0" text-anchor="middle">Document Repository</text>
+  <text class="small" x="360.0" y="74.0" text-anchor="middle">speichert Dokumente</text>
+  <rect class="node" x="520" y="30" width="180" height="58" rx="10"/>
+  <text class="label" x="610.0" y="57.0" text-anchor="middle">Document Registry</text>
+  <text class="small" x="610.0" y="74.0" text-anchor="middle">kennt die Metadaten</text>
+  <rect class="group" x="395" y="240" width="180" height="58" rx="10"/>
+  <text class="label" x="485.0" y="267.0" text-anchor="middle">Document Consumer</text>
+  <text class="small" x="485.0" y="284.0" text-anchor="middle">Hausarztpraxis</text>
+  <line class="edge" x1="200" y1="59" x2="266" y2="59" marker-end="url(#xd-de)"/>
+  <line class="edge" x1="450" y1="59" x2="516" y2="59" marker-end="url(#xd-de)"/>
+  <text class="small" x="235" y="118" text-anchor="middle">ITI-41 Bereitstellen</text>
+  <text class="small" x="485" y="118" text-anchor="middle">ITI-42 Registrieren</text>
+  <line class="edge" x1="545" y1="238" x2="600" y2="92" marker-end="url(#xd-de)"/>
+  <line class="edge" x1="425" y1="238" x2="370" y2="92" marker-end="url(#xd-de)"/>
+  <text class="small" x="612" y="175">ITI-18 Suchen</text>
+  <text class="small" x="358" y="175" text-anchor="end">ITI-43 Abrufen</text>
+</svg>

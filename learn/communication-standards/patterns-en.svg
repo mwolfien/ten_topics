@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 250" role="img" aria-labelledby="cp-t-en cp-d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="cp-t-en">Communication patterns</title>
+  <desc id="cp-d-en">Push: the sender sends when an event occurs. Pull: the receiver asks when needed and gets a response. Publish/subscribe: a sender publishes to a broker that distributes to all subscribers.</desc>
+  <defs><marker id="cp-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <rect class="group" x="10" y="10" width="220" height="230" rx="14"/>
+  <text class="label" x="120" y="38" text-anchor="middle">Push</text>
+  <rect class="group" x="250" y="10" width="220" height="230" rx="14"/>
+  <text class="label" x="360" y="38" text-anchor="middle">Pull</text>
+  <rect class="group" x="490" y="10" width="220" height="230" rx="14"/>
+  <text class="label" x="600" y="38" text-anchor="middle">Publish/subscribe</text>
+  <rect class="node" x="30" y="60" width="180" height="44" rx="10"/>
+  <text class="label" x="120.0" y="86.0" text-anchor="middle">Sender</text>
+  <rect class="node" x="30" y="176" width="180" height="44" rx="10"/>
+  <text class="label" x="120.0" y="202.0" text-anchor="middle">Receiver</text>
+  <line class="edge" x1="120" y1="106" x2="120" y2="172" marker-end="url(#cp-en)"/>
+  <text class="small" x="130" y="145">event</text>
+  <rect class="node" x="270" y="60" width="180" height="44" rx="10"/>
+  <text class="label" x="360.0" y="86.0" text-anchor="middle">Source</text>
+  <rect class="node" x="270" y="176" width="180" height="44" rx="10"/>
+  <text class="label" x="360.0" y="202.0" text-anchor="middle">Requester</text>
+  <line class="edge" x1="330" y1="174" x2="330" y2="108" marker-end="url(#cp-en)"/>
+  <line class="dashed" x1="390" y1="106" x2="390" y2="172" marker-end="url(#cp-en)"/>
+  <text class="small" x="322" y="145" text-anchor="end">request</text>
+  <text class="small" x="398" y="145">response</text>
+  <rect class="node" x="520" y="52" width="80" height="40" rx="10"/>
+  <text class="label" x="560.0" y="76.0" text-anchor="middle">Pub</text>
+  <rect class="hub" x="510" y="118" width="100" height="44" rx="10"/>
+  <text class="hub-label" x="560.0" y="144.0" text-anchor="middle">Broker</text>
+  <rect class="node" x="500" y="190" width="80" height="40" rx="10"/>
+  <text class="label" x="540.0" y="214.0" text-anchor="middle">Sub A</text>
+  <rect class="node" x="630" y="190" width="80" height="40" rx="10"/>
+  <text class="label" x="670.0" y="214.0" text-anchor="middle">Sub B</text>
+  <line class="edge" x1="560" y1="94" x2="560" y2="114" marker-end="url(#cp-en)"/>
+  <line class="edge" x1="545" y1="164" x2="540" y2="186" marker-end="url(#cp-en)"/>
+  <line class="edge" x1="590" y1="164" x2="660" y2="186" marker-end="url(#cp-en)"/>
+</svg>
