@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 260" role="img" aria-labelledby="cc-t-en cc-d-en" xmlns="http://www.w3.org/2000/svg">
+  <title id="cc-t-en">The CDSS chain, using Maria K. as an example</title>
+  <desc id="cc-d-en">Data, trigger, logic, output, action and feedback form a chain; feedback flows back into data, rules and models.</desc>
+  <defs><marker id="cc-a-en" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0 L10 5 L0 10 Z"/></marker></defs>
+  <rect class="node" x="13" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="64.0" y="96" text-anchor="middle">DATA</text>
+  <text class="small" x="64.0" y="120" text-anchor="middle">RR 26, BP 96,</text>
+  <text class="small" x="64.0" y="136" text-anchor="middle">SpO₂ 91 %</text>
+  <line class="edge" x1="116" y1="112" x2="128" y2="112" marker-end="url(#cc-a-en)"/>
+  <rect class="node" x="129" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="180.0" y="96" text-anchor="middle">TRIGGER</text>
+  <text class="small" x="180.0" y="120" text-anchor="middle">new</text>
+  <text class="small" x="180.0" y="136" text-anchor="middle">vital signs</text>
+  <line class="edge" x1="232" y1="112" x2="244" y2="112" marker-end="url(#cc-a-en)"/>
+  <rect class="node" x="245" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="296.0" y="96" text-anchor="middle">LOGIC</text>
+  <text class="small" x="296.0" y="120" text-anchor="middle">rule or</text>
+  <text class="small" x="296.0" y="136" text-anchor="middle">model</text>
+  <line class="edge" x1="348" y1="112" x2="360" y2="112" marker-end="url(#cc-a-en)"/>
+  <rect class="node" x="361" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="412.0" y="96" text-anchor="middle">OUTPUT</text>
+  <text class="small" x="412.0" y="120" text-anchor="middle">note /</text>
+  <text class="small" x="412.0" y="136" text-anchor="middle">warning</text>
+  <line class="edge" x1="464" y1="112" x2="476" y2="112" marker-end="url(#cc-a-en)"/>
+  <rect class="group" x="477" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="528.0" y="96" text-anchor="middle">ACTION</text>
+  <text class="small" x="528.0" y="120" text-anchor="middle">clinical</text>
+  <text class="small" x="528.0" y="136" text-anchor="middle">review</text>
+  <line class="edge" x1="580" y1="112" x2="592" y2="112" marker-end="url(#cc-a-en)"/>
+  <rect class="node" x="593" y="70" width="102" height="84" rx="12"/>
+  <text class="label" x="644.0" y="96" text-anchor="middle">FEEDBACK</text>
+  <text class="small" x="644.0" y="120" text-anchor="middle">confirmed or</text>
+  <text class="small" x="644.0" y="136" text-anchor="middle">dismissed</text>
+  <text class="small" x="528.0" y="56" text-anchor="middle">a person decides here</text>
+  <line class="dashed" x1="528.0" y1="62" x2="528.0" y2="68"/>
+  <path class="edge" d="M644.0 156 L644.0 200 L64.0 200 L64.0 160" fill="none" marker-end="url(#cc-a-en)"/>
+  <text class="small" x="360" y="220" text-anchor="middle">Feedback improves data, rules and models</text>
+</svg>
