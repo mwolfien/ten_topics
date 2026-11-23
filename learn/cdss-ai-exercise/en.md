@@ -30,7 +30,7 @@ source: "Exercise for lecture 6 “Clinical Decision Support & AI – from Rules
 ## How to start
 
 <div class="launch">
-<a class="primary" href="../../../lab/index.html?path=cdss-ai-exercise/Uebung_VL6_CDSS_Aufgaben.ipynb">▶ Open the notebook in your browser</a>
+<a class="primary" href="../../../lab/lab/index.html?path=cdss-ai-exercise/Uebung_VL6_CDSS_Aufgaben.ipynb">▶ Open the notebook in your browser</a>
 <a href="../notebook.zip" download>⬇ Download notebook and data (ZIP)</a>
 </div>
 

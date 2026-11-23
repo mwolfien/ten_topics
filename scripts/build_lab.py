@@ -3,7 +3,7 @@
 Every learning module may have a folder learn/<module-id>/notebook/ with notebooks and data files.
 They are copied to <out>/lab/ under <module-id>/, so a notebook opens at
 
-    lab/index.html?path=<module-id>/<notebook>.ipynb
+    lab/lab/index.html?path=<module-id>/<notebook>.ipynb
 
 Everything runs in the reader's browser: no account, no server, files stay on their device.
 Python packages such as numpy, pandas, scikit-learn and matplotlib are loaded from the Pyodide CDN.
@@ -24,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 LEARN = ROOT / "learn"
 PYODIDE_KERNEL = {"name": "python", "display_name": "Python (Pyodide)", "language": "python"}
+REDIRECT = '<script>location.replace("lab/index.html" + location.search + location.hash);</script>'
 
 
 def main():
@@ -48,6 +49,11 @@ def main():
         subprocess.run(["jupyter", "lite", "build", "--contents", str(contents), "--lite-dir", tmp,
                         "--output-dir", str(Path(args.out).resolve() / "lab"), "--no-sourcemaps"],
                        cwd=tmp, check=True)
+    # JupyterLite's own root page stays blank when the site is served from a subpath
+    # (e.g. /ten_topics/lab/), so send visitors straight on to the JupyterLab app. The page
+    # itself must stay: the apps read their configuration (jupyter-config-data) from it.
+    root = Path(args.out).resolve() / "lab" / "index.html"
+    root.write_text(root.read_text(encoding="utf-8").replace("<head>", "<head>\n    " + REDIRECT, 1), encoding="utf-8")
     print(f"built JupyterLite with {len(notebook_dirs)} notebook folder(s) into {Path(args.out) / 'lab'}")
 
 
