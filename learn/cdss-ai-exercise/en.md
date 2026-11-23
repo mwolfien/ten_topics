@@ -25,12 +25,12 @@ source: "Exercise for lecture 6 “Clinical Decision Support & AI – from Rules
 
 > **What this is about:** in the module [[cdss-ai]] you met the CDSS chain: **DATA → TRIGGER → LOGIC → OUTPUT → ACTION → FEEDBACK**. Now you build its middle part yourself – a **rule**, a **model**, a **threshold** – and check whether the whole thing still works in a second hospital.
 
-**Note:** the notebook, its comments and the column names are in **German**. The questions below give an English version of each question in the notebook.
+**Note:** the notebook is in English; only the column names of the data set are German – part 1 of the notebook explains them in a glossary (e.g. `verschlechterung_6h` = deterioration within 6 h).
 
 ## How to start
 
 <div class="launch">
-<a class="primary" href="../../../lab/lab/index.html?path=cdss-ai-exercise/Uebung_VL6_CDSS_Aufgaben.ipynb">▶ Open the notebook in your browser</a>
+<a class="primary" href="../../../lab/lab/index.html?path=cdss-ai-exercise/Exercise_VL6_CDSS_Tasks.ipynb">▶ Open the notebook in your browser</a>
 <a href="../notebook.zip" download>⬇ Download notebook and data (ZIP)</a>
 </div>
 
@@ -40,7 +40,7 @@ source: "Exercise for lecture 6 “Clinical Decision Support & AI – from Rules
 - Use a **normal browser window** (Chrome, Edge, Firefox, Safari) – in private mode, especially in Firefox, the notebook cannot find the CSV files.
 - Your changes are saved **only in this browser**. Save your notebook now and then via *File → Download*.
 
-**Locally:** unzip the file and open the notebook in Jupyter (e.g. JupyterLab or VS Code). You need Python ≥ 3.10 with `numpy`, `pandas`, `scikit-learn` and `matplotlib` (plus `scipy` for the bonus in part 6). The CSV files must be in the same folder as the notebook.
+**Locally:** unzip the file and open `Exercise_VL6_CDSS_Tasks.ipynb` in Jupyter (e.g. JupyterLab or VS Code). You need Python ≥ 3.10 with `numpy`, `pandas`, `scikit-learn` and `matplotlib` (plus `scipy` for the bonus in part 6). The CSV files must be in the same folder as the notebook.
 
 > ⚠️ The data set is **fully synthetic** (hospital A: 2,000, hospital B: 1,500 patients). The outcome `verschlechterung_6h` (deterioration within 6 h) is defined for teaching – **not a sepsis diagnosis**. What you build is a **teaching prototype** with no medical intended purpose.
 
