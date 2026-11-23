@@ -38,7 +38,7 @@ source: "Übung zu Vorlesung 6 „Clinical Decision Support & KI – von Regeln 
 - Nutzen Sie ein **normales Browserfenster** (Chrome, Edge, Firefox, Safari) – im privaten Modus, besonders in Firefox, findet das Notebook die CSV-Dateien nicht.
 - Ihre Änderungen bleiben **nur in diesem Browser** gespeichert. Sichern Sie Ihr Notebook zwischendurch über *File → Download*.
 
-**Lokal:** Entpacken Sie die ZIP-Datei und öffnen Sie das Notebook in Jupyter (z. B. JupyterLab oder VS Code). Sie brauchen Python ≥ 3.10 mit `numpy`, `pandas`, `scikit-learn` und `matplotlib` (für den Bonus in Teil 6 zusätzlich `scipy`). Die CSV-Dateien müssen im selben Ordner wie das Notebook liegen.
+**Lokal:** Entpacken Sie die ZIP-Datei und öffnen Sie `Uebung_VL6_CDSS_Aufgaben.ipynb` in Jupyter (z. B. JupyterLab oder VS Code). Sie brauchen Python ≥ 3.10 mit `numpy`, `pandas`, `scikit-learn` und `matplotlib` (für den Bonus in Teil 6 zusätzlich `scipy`). Die CSV-Dateien müssen im selben Ordner wie das Notebook liegen.
 
 > ⚠️ Der Datensatz ist **vollständig synthetisch** (Klinik A: 2.000, Klinik B: 1.500 Patient:innen). Das Outcome `verschlechterung_6h` ist eine didaktisch definierte Verschlechterung innerhalb von 6 Stunden – **keine Sepsisdiagnose**. Was Sie bauen, ist ein **Lehrprototyp** ohne medizinische Zweckbestimmung.
 
