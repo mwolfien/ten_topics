@@ -1113,3 +1113,84 @@ references:
     doi: "10.1007/978-3-030-56883-2"
     type: book
     added: "2026-11"
+  wong2021:
+    label: "Wong et al. 2021"
+    title: "External validation of a widely implemented proprietary sepsis prediction model in hospitalized patients"
+    journal: "JAMA Internal Medicine"
+    year: 2021
+    doi: "10.1001/jamainternmed.2021.2626"
+    pmid: "34152373"
+    type: article
+    added: "2026-11"
+  adams2022:
+    label: "Adams et al. 2022"
+    title: "Prospective, multi-site study of patient outcomes after implementation of the TREWS machine learning-based early warning system for sepsis"
+    journal: "Nature Medicine"
+    year: 2022
+    doi: "10.1038/s41591-022-01894-0"
+    pmid: "35864252"
+    type: article
+    added: "2026-11"
+  zech2018:
+    label: "Zech et al. 2018"
+    title: "Variable generalization performance of a deep learning model to detect pneumonia in chest radiographs: a cross-sectional study"
+    journal: "PLOS Medicine"
+    year: 2018
+    doi: "10.1371/journal.pmed.1002683"
+    pmid: "30399157"
+    type: article
+    added: "2026-11"
+  agniel2018:
+    label: "Agniel et al. 2018"
+    title: "Biases in electronic health record data due to processes within the healthcare system: retrospective observational study"
+    journal: "BMJ"
+    year: 2018
+    doi: "10.1136/bmj.k1479"
+    pmid: "29712648"
+    type: article
+    added: "2026-11"
+  finlayson2021:
+    label: "Finlayson et al. 2021"
+    title: "The clinician and dataset shift in artificial intelligence"
+    journal: "New England Journal of Medicine"
+    year: 2021
+    doi: "10.1056/NEJMc2104626"
+    pmid: "34260843"
+    type: article
+    added: "2026-11"
+  singer2016:
+    label: "Singer et al. 2016"
+    title: "The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)"
+    journal: "JAMA"
+    year: 2016
+    doi: "10.1001/jama.2016.0287"
+    pmid: "26903338"
+    type: article
+    added: "2026-11"
+  evans2021:
+    label: "Evans et al. 2021"
+    title: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021"
+    journal: "Critical Care Medicine"
+    year: 2021
+    doi: "10.1097/CCM.0000000000005337"
+    pmid: "34605781"
+    type: article
+    added: "2026-11"
+  collins2024:
+    label: "Collins et al. 2024"
+    title: "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods"
+    journal: "BMJ"
+    year: 2024
+    doi: "10.1136/bmj-2023-078378"
+    pmid: "38626948"
+    type: article
+    added: "2026-11"
+  vasey2022:
+    label: "Vasey et al. 2022"
+    title: "Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI"
+    journal: "Nature Medicine"
+    year: 2022
+    doi: "10.1038/s41591-022-01772-9"
+    pmid: "35585198"
+    type: article
+    added: "2026-11"
