@@ -126,6 +126,7 @@
     function gate(task) {
       var written = task.querySelector("textarea").value.trim().length > 0;
       var solution = task.querySelector(".solution");
+      if (!solution) return;  // solution notes not published yet
       solution.hidden = !written;
       if (!written) solution.open = false;
       task.querySelector(".gate").hidden = written;

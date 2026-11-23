@@ -22,11 +22,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml markdown
+      - run: pip install pyyaml markdown jupyterlite-core==0.8.7 jupyterlite-pyodide-kernel==0.8.7 jupyter-server
       - id: pages
         uses: actions/configure-pages@v5
       - name: Build the website
         run: python scripts/tentopics.py site --out _site --base-url "${{ steps.pages.outputs.base_url }}"
+      - name: Build the in-browser notebooks (JupyterLite)
+        run: python scripts/build_lab.py --out _site
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

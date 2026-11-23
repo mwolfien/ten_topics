@@ -17,13 +17,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml markdown
+      - run: pip install pyyaml markdown jupyterlite-core==0.8.7 jupyterlite-pyodide-kernel==0.8.7 jupyter-server
       - name: Validate data files
         run: python scripts/tentopics.py validate
       - name: Check that README.md is generated from the data files
         run: python scripts/tentopics.py build --check
       - name: Build the website (fails on broken internal links)
         run: python scripts/tentopics.py site --out "$RUNNER_TEMP/site"
+      - name: Build the in-browser notebooks (JupyterLite)
+        run: python scripts/build_lab.py --out "$RUNNER_TEMP/site"
 
   links:
     name: Check DOIs and links
