@@ -28,7 +28,7 @@ source: "Übung zu Vorlesung 6 „Clinical Decision Support & KI – von Regeln 
 ## So starten Sie
 
 <div class="launch">
-<a class="primary" href="../../../lab/index.html?path=cdss-ai-exercise/Uebung_VL6_CDSS_Aufgaben.ipynb">▶ Notebook im Browser öffnen</a>
+<a class="primary" href="../../../lab/lab/index.html?path=cdss-ai-exercise/Uebung_VL6_CDSS_Aufgaben.ipynb">▶ Notebook im Browser öffnen</a>
 <a href="../notebook.zip" download>⬇ Notebook und Daten herunterladen (ZIP)</a>
 </div>
 
