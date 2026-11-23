@@ -175,6 +175,17 @@ A module with `kind: exercise` is a self-paced exercise that applies what was le
 
 Mix open tasks with `quiz` and `match` blocks wherever an answer can be checked automatically.
 
+A `reflect` block without `answers` in an exercise shows “solution notes will follow” instead of a solution. Use this to publish the questions now and add the solution notes later.
+
+### Exercise notebooks
+
+An exercise can come with a Jupyter notebook: put it and its data files into `learn/<module-id>/notebook/` (see `learn/cdss-ai-exercise/`). The website then offers
+
+- a download of each file and of the whole folder as `learn/<module-id>/notebook.zip`, and
+- an in-browser version (JupyterLite with a Pyodide kernel) at `lab/index.html?path=<module-id>/<notebook>.ipynb`: no installation, no account, no server; files stay on the reader's device. numpy, pandas, scikit-learn, matplotlib and scipy are available.
+
+Link to both from the exercise page, e.g. in a `<div class="launch">` with two links (see the example). The in-browser version is built by `scripts/build_lab.py` after the site (in CI, or locally with `pip install jupyterlite-core==0.8.7 jupyterlite-pyodide-kernel==0.8.7 jupyter-server`). It switches the notebook's kernel to Pyodide; the downloadable copy keeps the usual `python3` kernel. Only commit the task version of a notebook – solution notebooks go in later, once students have had their time.
+
 ## Checking a module
 
 ```sh

@@ -336,7 +336,10 @@ ol.path { counter-reset: none; }
 .card.step .eyebrow { margin: 0; }
 .card.step.exercise { border-left: 4px solid var(--new); }
 .reflect.task { border-left: 4px solid var(--new); }
-.reflect .gate { font-size: 0.9rem; margin: 0.4rem 0 0; }
+.reflect .gate, .reflect .pending { font-size: 0.9rem; margin: 0.4rem 0 0; }
+.launch { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1rem 0 1.5rem; }
+.launch a { display: inline-block; padding: 0.55rem 1rem; border-radius: 8px; border: 1px solid var(--accent); font-weight: 600; text-decoration: none; }
+.launch a.primary { background: var(--accent); color: var(--bg); }
 .diagram-solution { max-width: var(--measure); margin: 1rem 0; }
 .diagram-solution summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .notes-bar {

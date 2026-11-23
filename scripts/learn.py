@@ -63,6 +63,7 @@ UI = {
         "path": "Lernpfad", "course": "Lehrveranstaltung", "lecture": "VL",
         "exercise": "Übung", "solution": "Lösungshinweise anzeigen",
         "gate": "Notieren Sie zuerst Ihre eigene Antwort – dann erscheinen die Lösungshinweise.",
+        "pending": "Lösungshinweise folgen nach der Bearbeitungszeit.",
         "notes": "Ihre Antworten werden nur in diesem Browser gespeichert und nirgendwohin gesendet.",
         "download": "Antworten herunterladen", "clear": "Antworten löschen",
         "clear_confirm": "Alle Antworten dieser Übung in diesem Browser löschen?",
@@ -80,6 +81,7 @@ UI = {
         "path": "Learning path", "course": "Course", "lecture": "Lecture",
         "exercise": "Exercise", "solution": "Show solution notes",
         "gate": "Write down your own answer first – then the solution notes appear.",
+        "pending": "Solution notes will follow after the working period.",
         "notes": "Your answers are only saved in this browser and never sent anywhere.",
         "download": "Download answers", "clear": "Clear answers",
         "clear_confirm": "Delete all answers to this exercise from this browser?",
@@ -294,6 +296,10 @@ def render_body(mod, references, ref_url, modules=None, root="", topic_lookup=No
         if kind == "reflect":
             i = uid()
             answers = "".join(f"<li>{inline(a)}</li>" for a in data.get("answers", []))
+            if exercise and not data.get("answers"):  # open task whose solution notes are published later
+                return (f'<div class="reflect task"><label for="{i}" class="q">✏️ {inline(data["question"])}</label>'
+                        f'<textarea id="{i}" rows="{int(data.get("rows", 4))}" data-key="{i}"></textarea>'
+                        f'<p class="pending muted">⏳ {esc(ui["pending"])}</p></div>')
             if exercise:  # open task: notes are kept locally, solution notes appear once something is written
                 return (f'<div class="reflect task"><label for="{i}" class="q">✏️ {inline(data["question"])}</label>'
                         f'<textarea id="{i}" rows="{int(data.get("rows", 4))}" data-key="{i}"></textarea>'

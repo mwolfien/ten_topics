@@ -19,6 +19,7 @@ import html
 import json
 import re
 import shutil
+import zipfile
 from datetime import date
 from pathlib import Path
 
@@ -653,6 +654,14 @@ def build(topics, references, out, base):
     shutil.copy(ASSETS / "learn.js", out / "assets" / "learn.js")
     learn_urls = learn.build(write, page, learn_modules, references, ref_url,
                              {t["id"]: topic_heading(t) for t in topic_list}, base)
+    # Exercise notebooks and their data: downloadable as files and as one ZIP per module.
+    # The in-browser JupyterLite environment under lab/ is built separately (scripts/build_lab.py).
+    for nb_dir in sorted(learn.LEARN.glob("*/notebook")):
+        target = out / "learn" / nb_dir.parent.name / "notebook"
+        shutil.copytree(nb_dir, target)
+        with zipfile.ZipFile(target.parent / "notebook.zip", "w", zipfile.ZIP_DEFLATED) as zf:
+            for f in sorted(nb_dir.iterdir()):
+                zf.write(f, f"{nb_dir.parent.name}/{f.name}")
 
     # ---- sitemap
     urls = [f"{base}/", f"{base}/de/", f"{base}/references/"] + [f"{base}/topics/{t['id']}/" for t in topic_list] + learn_urls
@@ -676,6 +685,8 @@ def check_internal_links(out):
             if not path:
                 continue
             resolved = (page_file.parent / path).resolve()
+            if resolved.is_relative_to((out / "lab").resolve()):
+                continue  # JupyterLite, built after the site by scripts/build_lab.py
             if resolved.is_dir():
                 resolved = resolved / "index.html"
             if not resolved.exists():
